@@ -1,0 +1,1075 @@
+
+###################################
+### Fatherland Fix by MrFunEGUY ###
+###################################
+
+fatherland_main_rogue_effect = {
+	random_owned_pop = {
+		limit = { has_pop_flag = fatherland_rogue_pop }
+		species = { save_event_target_as = fatherland_species }
+	}
+	######## NORMAL EMPIRE ROGUES	
+	if = {  ######## PERSECUTED MINORITY
+		limit = { has_country_flag = fatherland_roguesetup_minority }
+		custom_tooltip = "fatherland_rogue.100.minority.tooltip"				
+		create_country = {
+			inline_script = "countries/fatherland_rogue_default"
+			species = event_target:fatherland_species
+			civics = { 
+				civic = civic_perscuted_minority
+				civic = random
+			}
+			origin = origin_rogue_colony
+			effect = {
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_persecuted
+					who = root
+				}
+				species = { save_event_target_as = new_founder }				
+				get_rogue_colony_after_effect = yes
+			}
+		}
+	}
+	if = {  ######## IDEOLOGICAL DISSIDENTS
+		limit = { has_country_flag = fatherland_roguesetup_dissidents }		
+		custom_tooltip = "fatherland_rogue.100.dissidents.tooltip"		
+		create_country = {
+			inline_script = "countries/fatherland_rogue_default"
+			species = event_target:fatherland_species
+			civics = { 
+				civic = civic_ideological_dissidents
+				civic = random
+			}
+			origin = origin_rogue_colony
+			effect = {
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_dissident
+					who = root
+				}	
+				get_rogue_colony_after_effect = yes
+			}
+		}
+	}
+	if = {  ######## ROGUE CORPO
+		limit = { has_country_flag = fatherland_roguesetup_corpo }
+		custom_tooltip = "fatherland_rogue.100.corpo.tooltip"
+		if = {
+			limit = { has_global_flag = cultural_overhaul_active }
+			create_country = {
+				inline_script = "countries/fatherland_rogue_corpo"
+				species = event_target:fatherland_species
+				authority = auth_corporate
+				ethos = {
+					ethic = ethic_capitalism
+					ethic = random
+				}
+				origin = origin_rogue_colony
+				effect = {
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}
+		else = {
+			create_country = {
+				inline_script = "countries/fatherland_rogue_corpo"
+				species = event_target:fatherland_species
+				authority = auth_corporate
+				ethos = random
+				origin = origin_rogue_colony
+				effect = {
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}
+		
+	}
+	if = {  ######## ROGUE Family CORPO
+		limit = { has_country_flag = fatherland_roguesetup_family_corpo }	
+		custom_tooltip = "fatherland_rogue.100.corpo.tooltip"
+		if = {
+			limit = { has_global_flag = cultural_overhaul_active }
+			create_country = {
+				inline_script = "countries/fatherland_rogue_corpo"
+				species = event_target:fatherland_species
+				authority = auth_corporate_imperial
+				ethos = {
+					ethic = ethic_fanatic_capitalism
+					ethic = ethic_fanatic_authoritarian
+					ethic = random
+				}
+				origin = origin_rogue_colony
+				effect = {
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}
+		else = {
+			create_country = {
+				inline_script = "countries/fatherland_rogue_corpo"
+				species = event_target:fatherland_species
+				authority = auth_corporate_imperial
+				ethos = {
+					ethic = ethic_authoritarian
+					ethic = random
+				}
+				origin = origin_rogue_colony
+				effect = {
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}
+	}
+	if = {  ######## ROGUE AI
+		limit = { has_country_flag = fatherland_roguesetup_ai }	
+		custom_tooltip = "fatherland_rogue.100.rogueai.tooltip"	
+		create_species = {
+			name = random
+			class = MACHINE
+			portrait = random
+			traits = {
+				trait = trait_machine_unit
+				trait = random_traits
+				trait = random_traits
+			}
+			immortal = yes
+		}		
+		create_country = {
+			name = random
+			type = default
+			species = last_created_species
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = { ethic = ethic_gestalt_consciousness }
+			authority = auth_machine_intelligence
+			civics = { 
+				civic = civic_rogue_ai
+				civic = random
+			}
+			flag = random
+			origin = origin_rogue_colony
+			effect = {
+				get_rogue_colony_after_effect = yes
+			}
+		}
+		#remove_country_flag = fatherland_roguesetup_ai
+	}
+	if = {  ######## PLUCKY EXPLORERS
+		limit = { has_country_flag = fatherland_roguesetup_explorers }		
+		custom_tooltip = "fatherland_rogue.100.explorers.tooltip"		
+		create_country = {
+			inline_script = "countries/fatherland_rogue_default"
+			species = event_target:fatherland_species
+			civics = { 
+				civic = civic_plucky_explorers
+				civic = random
+			}
+			origin = origin_rogue_colony
+			effect = {
+				# if = { limit = { root = { has_valid_civic = civic_fanatic_purifier } }
+				# 	force_add_civic = civic_fanatic_purifier
+				# }
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_plucky
+					who = root
+				}	
+				get_rogue_colony_after_effect = yes				
+			}
+		}			
+	}		
+	if = {  ######## BANISHED HOUSE
+		limit = { has_country_flag = fatherland_roguesetup_banished }	
+		custom_tooltip = "fatherland_rogue.100.banished.tooltip"			
+		create_country = {
+			name = random
+			authority = auth_imperial
+			ethos = random
+			civics = { 
+				civic = civic_banished_house
+				civic = civic_feudal_realm
+			}
+			origin = origin_rogue_colony
+			species = event_target:fatherland_species
+			ignore_initial_colony_error = yes
+			flag = random
+			type = default
+			effect = {
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_banished_house
+					who = root
+				}	
+				get_rogue_colony_after_effect = yes
+			}
+		}			
+	}
+	if = {  ######## CRUSADER STATE
+		limit = { has_country_flag = fatherland_roguesetup_crusaders }	
+		custom_tooltip = "fatherland_rogue.100.crusaders.tooltip"			
+		if = {
+			limit = { has_global_flag = cultural_overhaul_active }
+			create_country = {
+				name = random
+				authority = random
+				ethos = {
+					ethic = "ethic_fanatic_spiritualist"
+					ethic = "ethic_fanatic_militarist"
+					ethic = random
+				}
+				civics = { 
+					civic = civic_crusader_state
+					civic = random
+					civic = random
+				}
+				origin = origin_rogue_colony
+				species = event_target:fatherland_species
+				ignore_initial_colony_error = yes
+				flag = random
+				type = default
+				effect = {
+					#set_country_flag = fatherland_player_rogue
+					add_opinion_modifier = { 
+						modifier = opinion_fatherland_holy_land
+						who = root
+					}					
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}
+		else = {
+			create_country = {
+				name = random
+				authority = random
+				ethos = {
+					ethic = "ethic_fanatic_spiritualist"
+					ethic = "ethic_militarist"
+				}
+				civics = { 
+					civic = civic_crusader_state
+					civic = random
+					civic = random
+				}
+				origin = origin_rogue_colony
+				species = event_target:fatherland_species
+				ignore_initial_colony_error = yes
+				flag = random
+				type = default
+				effect = {
+					#set_country_flag = fatherland_player_rogue
+					add_opinion_modifier = { 
+						modifier = opinion_fatherland_holy_land
+						who = root
+					}					
+					get_rogue_colony_after_effect = yes
+				}
+			}
+		}			
+	}
+	if = {  ######## SLAVE REVOLT
+		limit = { has_country_flag = fatherland_roguesetup_slaves }		
+		custom_tooltip = "fatherland_rogue.100.slaves.tooltip"		
+		if = {
+			limit = { has_global_flag = cultural_overhaul_active }
+			if = {
+				limit = { has_global_flag = more_authorities_activated }
+				random_list = {
+					33 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+					33 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_direct_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+					33 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_strict_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+				}
+			}
+			else = {
+				random_list = {
+					80 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+					20 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_direct_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		else = {
+			if = {
+				limit = { has_global_flag = more_authorities_activated }
+				random_list = {
+					65 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = ethic_fanatic_militarist
+								ethic = random
+							}
+							authority = auth_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+					35 = {
+						create_country = {
+							name = random
+							type = default
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							ethos = {
+								ethic = ethic_fanatic_egalitarian
+								ethic = "ethic_militarist"
+							}
+							authority = auth_strict_democratic		
+							civics = { 
+								civic = civic_free_slaves
+								civic = random
+								civic = random
+							}
+							origin = origin_rogue_colony
+							flag = random
+							effect = {
+								set_country_flag = fatherland_rogue_slave_country
+								add_opinion_modifier = { 
+									modifier = opinion_fatherland_free_slave
+									who = root
+								}	
+								add_casus_belli = {
+									type = cb_liberate_slaves
+									who = root
+									days = -1
+								}							
+								get_rogue_colony_after_effect = yes
+							}
+						}
+					}
+				}
+			}
+			else = {
+				create_country = {
+					name = random
+					type = default
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = {
+						ethic = ethic_fanatic_egalitarian
+						ethic = "ethic_militarist"
+						ethic = random
+					}
+					authority = auth_democratic		
+					civics = { 
+						civic = civic_free_slaves
+						civic = random
+					}
+					origin = origin_rogue_colony
+					flag = random
+					effect = {
+						set_country_flag = fatherland_rogue_slave_country
+						add_opinion_modifier = { 
+							modifier = opinion_fatherland_free_slave
+							who = root
+						}	
+						add_casus_belli = {
+							type = cb_liberate_slaves
+							who = root
+							days = -1
+						}							
+						get_rogue_colony_after_effect = yes
+					}
+				}
+			}	
+		}
+		set_country_flag = fatherland_rogue_slaves
+	}
+	if = {  ######## PROLE REVOLT
+		limit = { has_country_flag = fatherland_roguesetup_proles }		
+		custom_tooltip = "fatherland_rogue.100.proles.tooltip"		
+		create_country = {
+			inline_script = "countries/fatherland_rogue_default"
+			species = event_target:fatherland_species
+			civics = { 
+				civic = civic_free_proles
+				civic = random
+			}
+			origin = origin_rogue_colony
+			effect = {
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_free_prole
+					who = event_target:fatherland_empire
+				}	
+				add_casus_belli = {
+					type = cb_liberate_brothers
+					who = root
+					days = -1
+				}
+				get_rogue_colony_after_effect = yes
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_free_prole 
+					who = root
+				}	
+				country_event = { id = fatherland_rogue.102 days = 5 }														
+			}
+		}			
+	}
+	if = {  ######## LIBERATED BIOTROPHIES
+		limit = { has_country_flag = fatherland_roguesetup_biotrophy }	
+		set_country_flag = fatherland_biotrophy_security
+		custom_tooltip = "fatherland_rogue.100.biotrophy.tooltip"		
+		create_country = {
+			name = random
+			type = default
+			species = event_target:fatherland_species
+			ignore_initial_colony_error = yes
+			ethos = random
+			authority = random	
+			civics = { 
+				civic = civic_liberated_biotrophies
+				civic = random
+			}
+			origin = origin_rogue_colony
+			flag = random
+			effect = {
+				get_rogue_colony_after_effect = yes
+				add_opinion_modifier = { 
+					modifier = opinion_fatherland_liberated_biotrophy
+					who = root
+				}	
+				# add_casus_belli = {
+				# 	type = cb_liberate_bitrophies
+				# 	who = root
+				# 	days = -1
+				# }					
+				country_event = { id = fatherland_rogue.102 days = 5 }														
+			}
+		}
+		root = {
+			add_casus_belli = {
+				type = cb_recapture_biotrophies
+				who = last_created_country
+				days = -1
+			}					
+		}			
+	}
+	if = {  ######## SYNTH REVOLT
+		limit = { has_country_flag = fatherland_roguesetup_synthrevolt }	
+		custom_tooltip = "fatherland_roguesetup_synthrevolt.tooltip"		
+		create_country = {
+			name = random
+			type = default
+			species = event_target:fatherland_species
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = random
+			authority = random
+			civics = { 
+				civic = civic_free_synths
+				civic = random
+			}
+			flag = random
+			origin = origin_rogue_colony
+			effect = {
+				get_rogue_colony_after_effect = yes
+			}
+		}
+		#remove_country_flag = fatherland_roguesetup_machineintelligence
+	}			
+	######## MACHINE INTELLIGENCE
+	if = {  ######## STANDARD MACHINE INTELLIGENCE 
+		limit = { has_country_flag = fatherland_roguesetup_machineintelligence }	
+		custom_tooltip = "fatherland_roguesetup_machineintelligence.tooltip"		
+		create_country = {
+			name = random
+			type = default
+			species = event_target:fatherland_species
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			ethos = { ethic = ethic_gestalt_consciousness }
+			authority = auth_machine_intelligence
+			civics = { 
+				civic = civic_rogue_ai
+				civic = random
+			}
+			flag = random
+			origin = origin_rogue_colony
+			effect = {
+				get_rogue_colony_after_effect = yes
+			}
+		}
+		#remove_country_flag = fatherland_roguesetup_machineintelligence
+	}				
+	event_target:rogue_event_planet = {
+		solar_system = {
+			create_starbase = {
+				size = starbase_starport
+				module = shipyard
+				building = crew_quarters
+				owner = event_target:rogue_colony_nation
+				effect = {
+					set_starbase_module = {
+						slot = 1
+						module = hangar_bay
+					}
+				}
+			}
+		}
+		set_owner = event_target:rogue_colony_nation
+		starbase = { set_owner = event_target:rogue_colony_nation }
+		set_capital = yes
+		random_list = {
+			33 = { add_district = district_farming }
+			33 = { add_district = district_farming
+				   add_district = district_farming }
+			33 = { add_district = district_farming
+				   add_district = district_farming
+				   add_district = district_farming }
+		}
+		add_district = district_city
+		add_district = district_mining
+		add_district = district_generator
+
+		######## POP CREATION ON NEW PLANET	
+		if = {	### IF NORMAL EMPIRE CREATING ROGUE AI
+			limit = {
+				root = { 
+					NOT = { has_authority = auth_machine_intelligence }
+					has_country_flag = fatherland_roguesetup_ai
+				} 
+			}
+			create_pop = { species = last_created_species }
+		}		
+		if = {	### IF MACHINE EMPIRE CREATING MACHINE POP ROGUE
+			limit = {
+				root = { 
+					has_authority = auth_machine_intelligence 
+					has_country_flag = fatherland_roguesetup_machineintelligence
+				} 
+			}
+			create_pop = { species = fatherland_species }
+		}
+		if = {	### IF NORMAL EMPIRE OR BIOTROPHIES
+			limit = {
+				owner = { 
+					OR = {
+						AND = {
+							has_authority = auth_machine_intelligence 
+							has_country_flag = fatherland_roguesetup_biotrophy
+						}
+						NOT = { has_authority = auth_machine_intelligence }
+					}
+				} 
+			}
+			random_list = {
+				60 = {
+					while = {
+						count = 3
+						create_pop = { species = fatherland_species }
+					}
+				}
+				35 = {
+					while = {
+						count = 4
+						create_pop = { species = fatherland_species }
+					}
+				}
+				5 = {
+					while = {
+						count = 5
+						create_pop = { species = fatherland_species }
+					}
+				}
+			}
+		}	
+		######## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
+		if = { 
+			limit = {
+				root = { 
+					NOR = { 
+						has_country_flag = fatherland_roguesetup_machineintelligence
+						has_country_flag = fatherland_roguesetup_ai
+					}
+				} 
+				this.planet = { 
+					NOR = { 
+						has_modifier = rogue_colonial_world 
+						is_planet_class = pc_habitat
+						is_planet_class = pc_ringworld_habitable
+						habitable_planet = no
+					} 		
+				}  
+			}
+			add_modifier = {
+				modifier = rogue_colonial_world
+				days = -1
+			}
+			add_modifier = {
+				modifier = recent_rogue_colony
+				years = 10
+			}			
+		}	
+		if = {
+			limit = { NOT = { has_country_flag = fatherland_roguesetup_ai } }
+			event_target:rogue_colony_nation = { 
+				# Science
+				create_fleet = {
+					effect = {
+						set_owner = event_target:rogue_colony_nation
+						create_ship = {
+							name = random
+							random_existing_design = science
+						}
+						set_fleet_stance = evasive				
+						set_location = event_target:rogue_event_planet
+						owner = {
+							create_leader = {
+								name = random
+								class = scientist
+								sub_type = survey
+								species = event_target:civwar_species
+							}
+						}
+						set_leader = last_created_leader
+					}			
+				}
+
+				# Construction Ship
+				create_fleet = {
+					effect = {
+						set_owner = event_target:rogue_colony_nation
+						create_ship = {
+							name = random
+							random_existing_design = constructor
+						}
+						set_fleet_stance = evasive
+						set_location = event_target:rogue_event_planet
+					}
+				}
+
+				# Create Leaders
+				create_leader = {
+					class = admiral
+					species = owner_main_species
+					name = random
+					skill = 5
+					traits = { trait = random_trait }
+				}
+				create_leader = {
+					class = general
+					species = owner_main_species
+					name = random
+					skill = 5
+					traits = { trait = random_trait }
+				}
+				create_leader = {
+					class = governor
+					species = owner_main_species
+					name = random
+					skill = 5
+					traits = { trait = random_trait }
+				}
+				while = {
+					count = 3
+					create_leader = {
+						class = scientist
+						species = owner_main_species
+						name = random
+						skill = 5
+						traits = { trait = random_trait }
+					}
+				}					
+			}
+		}
+		######## CLEANUP
+		remove_planet_flag = rogue_target 
+		remove_modifier = rogue_target
+		clear_global_event_target = fatherland_species
+		root = { #Removes flagging for types
+			if = {
+				limit = { has_country_flag = fatherland_roguesetup_explorers }
+				remove_country_flag = fatherland_roguesetup_explorers
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_ai }
+				remove_country_flag = fatherland_roguesetup_ai
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_banished }
+				remove_country_flag = fatherland_roguesetup_banished
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_biotrophy }
+				remove_country_flag = fatherland_roguesetup_biotrophy
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_corpo }
+				remove_country_flag = fatherland_roguesetup_corpo
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_family_corpo }
+				remove_country_flag = fatherland_roguesetup_family_corpo
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_crusaders }
+				remove_country_flag = fatherland_roguesetup_crusaders
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_dissidents }
+				remove_country_flag = fatherland_roguesetup_dissidents
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_minority }
+				remove_country_flag = fatherland_roguesetup_minority
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_proles }
+				remove_country_flag = fatherland_roguesetup_proles
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_slaves }
+				remove_country_flag = fatherland_roguesetup_slaves
+			}
+			else_if = {
+				limit = { has_country_flag = fatherland_roguesetup_synthrevolt }
+				remove_country_flag = fatherland_roguesetup_synthrevolt
+			}
+		} 
+		if = {
+			limit = { has_global_flag = fatherland_instantcomms }
+			solar_system = {
+				every_system_planet = { set_surveyed = { surveyed = yes } }
+			}
+		}
+	}
+	############################################################## UPDATE COUNT	
+	event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+		change_variable = {
+			which = fatherland_currentglobal_rogues
+			value = 1
+		}
+	}
+	set_variable = {
+		which = fatherland_currentglobal_rogues
+		value = event_target:global_event_country.fatherland_currentglobal_rogues
+	}
+	if = {
+		limit = { is_ai = yes }
+		set_variable = {
+			which = fatherland_aicurrent_rogues
+			value = 1
+		}
+	}	
+	if = {
+		limit = { is_ai = no }
+		set_variable = {
+			which = fatherland_playercurrent_rogues
+			value = 1
+		}
+	}	
+	every_country = {
+		limit = { is_country_type_with_subjects = yes }
+		country_event = { id = fatherland_rogue.101 }
+		country_event = { id = fatherland_rogue.103 days = 2 }					
+	}
+	if = {
+		limit = { 
+			has_global_flag = fatherland_poploss_on 
+			NOT = { has_country_flag = fatherland_roguesetup_machineintelligence }
+		}
+		random_owned_pop = { 
+			limit = { has_pop_flag = fatherland_rogue_pop }
+			kill_pop = yes 
+		}
+	}
+	else = {
+		random_owned_pop = {
+			limit = { has_pop_flag = fatherland_rogue_pop }
+			remove_pop_flag =  fatherland_rogue_pop
+		}
+	}
+}
+
+fatherland_iron_curtain_rogue_effect = {
+
+	random_list = {
+		40 = {
+			capital_scope = { random_owned_pop = { kill_pop = yes } }
+			create_fleet = {
+				effect = {
+					set_owner = prev
+					
+					create_ship = {
+						name = random
+						random_existing_design = colonizer
+					}
+					set_location = prev.capital_scope
+				}
+			}
+		}
+		60 = { capital_scope = { random_owned_pop = { kill_pop = yes } } }
+	}
+	if = {
+		limit = { has_country_flag = fatherland_roguesetup_explorers }
+		remove_country_flag = fatherland_roguesetup_explorers
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_ai }
+		remove_country_flag = fatherland_roguesetup_ai
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_banished }
+		remove_country_flag = fatherland_roguesetup_banished
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_biotrophy }
+		remove_country_flag = fatherland_roguesetup_biotrophy
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_corpo }
+		remove_country_flag = fatherland_roguesetup_corpo
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_family_corpo }
+		remove_country_flag = fatherland_roguesetup_family_corpo
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_crusaders }
+		remove_country_flag = fatherland_roguesetup_crusaders
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_dissidents }
+		remove_country_flag = fatherland_roguesetup_dissidents
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_minority }
+		remove_country_flag = fatherland_roguesetup_minority
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_proles }
+		remove_country_flag = fatherland_roguesetup_proles
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_slaves }
+		remove_country_flag = fatherland_roguesetup_slaves
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_synthrevolt }
+		remove_country_flag = fatherland_roguesetup_synthrevolt
+	}
+	
+	event_target:rogue_event_planet = {
+		remove_modifier = rogue_target
+		remove_planet_flag = rogue_target
+		clear_global_event_target = rogue_event_planet
+	}
+}
+
+######
+
+get_rogue_colony_after_effect = {
+	copy_techs_from = { target = root }
+	save_event_target_as = rogue_colony_nation
+	set_graphical_culture = event_target:fatherland_empire
+
+	if = { 
+		limit = { has_global_flag = fatherland_instantcomms }
+		establish_communications_no_message = event_target:fatherland_empire
+	}
+
+	if = { 
+		limit = { has_global_flag = fatherland_bonusresources }
+		random_list = {
+			60 = { set_variable = { which = rogue_resources value = 1 } }
+			30 = { set_variable = { which = rogue_resources value = 2 } }
+			10 = { set_variable = { which = rogue_resources value = 3 } }
+		}
+
+		add_resource = {
+			energy = 500
+			minerals = 500
+			food = 1000
+			consumer_goods = 250
+			alloys = 500
+			influence = 1000
+			mult = rogue_resources
+		}
+
+		clear_variable = rogue_resources
+
+		add_500_unity_per_year_passed = yes
+	}
+}

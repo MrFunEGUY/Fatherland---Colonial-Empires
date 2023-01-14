@@ -1,0 +1,1183 @@
+namespace = fatherland_rogue
+
+country_event = { #### Rogue Initializer
+	id = fatherland_rogue.90
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		random_owned_pop = { # Really wish there was a better way to do this
+			limit = {
+				OR = {
+					is_free_robot = yes
+					has_citizenship_type = { type = citizenship_full }
+					has_citizenship_type = { type = citizenship_limited }
+					has_citizenship_type = { type = citizenship_slavery }
+					has_citizenship_type = { type = citizenship_organic_trophy }
+				}				
+			}
+			species = { save_event_target_as = fatherland_species }
+		}
+		
+		if = {	##### DISTANCE LIMITER ENABLED (Technology limited rogue spawning distance)
+			limit = { has_global_flag = fatherland_rogue_distance_limited }
+
+			if = {	# Hyperdrive I
+				limit = {
+					NOT = { has_technology = tech_hyper_drive_2 }
+					NOT = { has_technology = tech_hyper_drive_3 }
+					NOT = { has_technology = tech_jump_drive_1 }
+					NOT = { has_technology = tech_psi_jump_drive_1 }
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+							add_modifier = { modifier = rogue_target }
+							save_event_target_as = rogue_event_planet
+							set_planet_flag = rogue_target
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Hyperdrive II
+				limit = {
+					has_technology = tech_hyper_drive_2
+					NOT = { has_technology = tech_hyper_drive_3 }
+					NOT = { has_technology = tech_jump_drive_1 }
+					NOT = { has_technology = tech_psi_jump_drive_1 }
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+							add_modifier = { modifier = rogue_target }
+							save_event_target_as = rogue_event_planet
+							set_planet_flag = rogue_target
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Hyperdrive III
+				limit = {
+					has_technology = tech_hyper_drive_3
+					NOT = { has_technology = tech_jump_drive_1 }
+					NOT = { has_technology = tech_psi_jump_drive_1 }
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+							add_modifier = { modifier = rogue_target }
+							save_event_target_as = rogue_event_planet
+							set_planet_flag = rogue_target
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Jump Drive
+				limit = {
+					OR = {
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+							add_modifier = { modifier = rogue_target }
+							save_event_target_as = rogue_event_planet
+							set_planet_flag = rogue_target
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+		}
+		else_if = {
+			limit = { any_galaxy_planet = { is_valid_rogue_planet = yes } }
+			random_galaxy_planet = {
+				limit = { is_valid_rogue_planet = yes }
+				add_modifier = { modifier = rogue_target }
+				save_event_target_as = rogue_event_planet
+				set_planet_flag = rogue_target
+			}
+			country_event = { id = fatherland_rogue.100 }
+		}
+	}
+}
+
+country_event = { #### MANY FAILURES EVENT
+	id = fatherland_rogue.95
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = fatherland_rogues_active
+		is_country_type = default
+	}
+
+	immediate = {	
+	}
+}
+
+################################################################# 
+#################   ROGUE COLONY ON-ACTION CALL EVENTS
+#################################################################
+country_event = { #### VERY FAST (Yearly)
+	id = fatherland_rogue.96
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_authority = auth_hive_mind 
+			has_policy_flag =  iron_curtain
+		}
+		has_global_flag = fatherland_rogues_active
+		has_global_flag = fatherland_veryfast_rogues
+		is_country_type = default
+	}
+
+	immediate = {
+		country_event = { id = fatherland_rogue.90 
+			days = 30
+			random = 160
+		}	
+	}
+}
+
+country_event = { #### FASTER (Bi-Yearly)
+    id = fatherland_rogue.97
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_authority = auth_hive_mind 
+			has_policy_flag =  iron_curtain
+		}
+		has_global_flag = fatherland_rogues_active
+		has_global_flag = fatherland_faster_rogues
+		is_country_type = default
+	}
+
+	immediate = {
+		country_event = { id = fatherland_rogue.90 
+			days = 1
+			random = 200
+		}	
+	}
+}
+
+country_event = { #### FAST (Five-Yearly)
+    id = fatherland_rogue.98
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_authority = auth_hive_mind 
+			has_policy_flag =  iron_curtain
+		}
+		has_global_flag = fatherland_rogues_active
+		has_global_flag = fatherland_fast_rogues
+		is_country_type = default
+	}
+
+	immediate = {
+		country_event = { id = fatherland_rogue.90 
+			days = 160
+			random = 365
+		}	
+	}
+}
+
+country_event = { #### DEFAULT (Decade - Default)
+    id = fatherland_rogue.99
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_authority = auth_hive_mind 
+			has_policy_flag =  iron_curtain
+		}
+		has_global_flag = fatherland_rogues_active
+		has_global_flag = fatherland_standard_rogues
+		is_country_type = default
+	}
+
+	immediate = {
+		country_event = { id = fatherland_rogue.90 
+			days = 1
+			random = 600
+		}	
+	}
+}
+
+
+################################################################# 
+#################   MAIN ROGUE COLONY EVENT
+#################################################################
+country_event = {
+    id = fatherland_rogue.100
+    title = "fatherland_rogue.100_name"
+	################################### EXPLORERS
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_explorers }
+		}
+		text = fatherland_rogue.100_explorers_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_explorers }
+		}
+		picture	= GFX_evt_big_landing_ship
+	}	
+	################################### MINORITY
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_minority }
+		}
+		text = fatherland_rogue.100_minority_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_minority }
+		}
+		picture	= GFX_evt_alien_propaganda	
+	}	
+	################################### DISSIDENTS
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_dissidents }
+		}
+		text = fatherland_rogue.100_dissidents_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_dissidents }
+		}
+		picture	= GFX_evt_civil_action
+	}	
+	###################################	CORPO
+	desc = {
+		trigger = {
+			OR = {
+				owner = { has_country_flag = fatherland_roguesetup_corpo }
+				owner = { has_country_flag = fatherland_roguesetup_family_corpo }
+			}
+		}
+		text = fatherland_rogue.100_corpo_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_corpo }
+		}
+		picture	= GFX_evt_board_meeting
+	}
+	###################################	ROGUE AI (Non-Machine INT)
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_ai }
+		}
+		text = fatherland_rogue.100_ai_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_ai }
+		}
+		picture	= GFX_evt_sapient_AI
+	}	
+	###################################	BANISHED HOUSE
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_banished }
+		}
+		text = fatherland_rogue.100_banished_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_banished }
+		}
+		picture	= GFX_evt_arguing_senate
+	}	
+	###################################	SLAVES
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_slaves }
+		}
+		text = fatherland_rogue.100_slaves_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_slaves }
+		}
+		picture	= GFX_evt_night_raid
+	}	
+	###################################	PROLES
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_proles }
+		}
+		text = fatherland_rogue.100_proles_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_proles }
+		}
+		picture	= GFX_evt_alien_segregation
+	}	
+	###################################	BIOTROPHY	
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_biotrophy }
+		}
+		text = fatherland_rogue.100_biotrophies_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_biotrophy }
+		}
+		picture	= GFX_evt_guardians
+	}	
+	###################################	CRUSADERS	
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_crusaders }
+		}
+		text = fatherland_rogue.100_crusaders_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_crusaders }
+		}
+		picture	= GFX_evt_surrender
+	}	
+	###################################	MACHINE INTELLIGENCE ROGUE
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_machineintelligence }
+		}
+		text = fatherland_rogue.100_machineintelligence_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_machineintelligence }
+		}
+		picture	= GFX_evt_glitchy_matrix
+	}	
+	###################################	MACHINE INTELLIGENCE ROGUE
+	desc = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_synthrevolt }
+		}
+		text = fatherland_rogue.100_synthrevolt_desc
+	}
+	picture = {
+		trigger = {
+			owner = { has_country_flag = fatherland_roguesetup_synthrevolt }
+		}
+		picture	= GFX_evt_space_walk
+	}				
+	###################################		
+	show_sound = event_assembly_fight
+	is_triggered_only = yes
+
+	trigger = {
+		############ MOD & FRONTIERS ACTIVATED		
+		has_global_flag = fatherland_active
+		has_global_flag = fatherland_rogues_active
+		is_country_type = default
+		############ NOT HIVE
+		NOT = { has_authority = auth_hive_mind }
+		############ TIME PASSED AND POPS
+		if = { limit = { has_global_flag = fatherland_rogue_timelimit_on }
+			years_passed > 10
+		}
+		if = { limit = { has_global_flag = fatherland_rogue_poplimit }		
+			capital_scope = { num_pops > 20 }
+		}
+		############ MAIN CHECK	
+		OR = {
+			AND = {  ### PLAYER
+				is_ai = no
+				check_variable = {
+					which = fatherland_currentglobal_rogues
+					value < fatherland_globalmax_rogues
+				}
+				check_variable = {
+					which = fatherland_playercurrent_rogues
+					value < fatherland_playermax_rogues
+				}	
+			}
+			AND = { ### AI
+				is_ai = yes
+				check_variable = {
+					which = fatherland_currentglobal_rogues
+					value < fatherland_globalmax_rogues
+				}
+				check_variable = {
+					which = fatherland_aicurrent_rogues
+					value < fatherland_aimax_rogues
+				}
+			}
+		}
+		OR = { ########### CHECKS TO SEE IF HEGIRAS, FRONITER WORLDS OR DOOMSDAY FATHERLANDS CAN PRODUCE ROGUES	
+			AND = {
+				has_origin = origin_rogue_colony
+				has_global_flag = fatherland_roguerogues_on
+			}			
+			AND = {	
+				has_origin = origin_hegira_colony 
+				has_global_flag = fatherland_hegira_rogues_on
+			}
+			AND = {	
+				has_origin = origin_frontier_world #Not an error, needs FW Addon
+				has_global_flag = fatherland_flippedempire_frontiers_on
+			}			
+			AND = {
+				has_origin = origin_doomsday
+				NOT = { has_country_flag = fatherland_the_hegira }
+			}
+			NOR = { 
+				has_origin = origin_hegira_colony 
+				has_origin = origin_doomsday
+				has_origin = origin_frontier_world
+				has_origin = origin_rogue_colony
+			}
+		}
+	}
+
+    immediate = {
+		######################### RANDOMLY SELECTS TYPE OF ROGUE COLONY BASED ON WEIGHTED MODIFIERS			
+		random_list = {	
+			###################################################### NORMAL EMPIRE ROGUES
+			10 = { ### Plucky Explorers
+				modifier = { ### NO ROBO
+					factor = 0
+					has_ethic = ethic_gestalt_consciousness	
+					#has_authority = auth_machine_intelligence
+				}				
+				modifier = {
+					factor = 0.5
+					has_ethic = ethic_authoritarian
+				}
+				modifier = {
+					factor = 0
+					has_ethic = ethic_fanatic_authoritarian
+				}				
+				modifier = {
+					factor = 0
+					has_civic = civic_police_state		
+				}	
+				modifier = {
+					factor = 2.5			
+					has_policy_flag = promote_settlers
+				}	
+				set_country_flag = fatherland_roguesetup_explorers			
+			}
+			15 = { ### Persecuted Minority
+				set_country_flag = fatherland_roguesetup_minority
+				modifier = { ### NO ROBO
+					factor = 0
+					has_ethic = ethic_gestalt_consciousness
+				}			
+				modifier = {
+					factor = 0.5
+					has_ethic = ethic_egalitarian
+				}
+			}
+			20 = { ### Ideological Dissidents
+				set_country_flag = fatherland_roguesetup_dissidents
+				modifier = { ### NO ROBO
+					factor = 0
+					OR = {
+						has_ethic = ethic_gestalt_consciousness	
+						has_authority = auth_machine_intelligence
+					}
+				}			
+			}	
+			2 = { ### Rogue Corporation (not megacorpo)
+				set_country_flag = fatherland_roguesetup_corpo
+				modifier = {
+					factor = 0
+					OR = {
+						has_ethic = ethic_gestalt_consciousness	
+						has_authority = auth_machine_intelligence
+						has_civic = civic_shared_burden
+					}					
+				}
+			}
+			3 = { ### Rogue Family Corporation (not megacorpo)
+				set_country_flag = fatherland_roguesetup_family_corpo
+				modifier = {
+					factor = 0
+					OR = {
+						NOT = { has_global_flag = more_authorities_activated }
+						has_ethic = ethic_gestalt_consciousness	
+						has_authority = auth_machine_intelligence
+						has_civic = civic_shared_burden
+					}					
+				}
+			}
+			5 = { ### Rogue AI (For normal empires)
+				set_country_flag = fatherland_roguesetup_ai			
+				modifier = {  ### DECREASED IF YOU OUTLAW ROBOTS
+					factor = 0.50
+					has_policy_flag = robots_outlawed
+				}
+				modifier = {  ### DECREASED IF YOU OUTLAW AI 
+					factor = 0.50
+					has_policy_flag = ai_outlawed
+				}				
+				modifier = { ## INCREASED IF YOU HAVE DANGEROUS TECHS
+					factor = 1.5
+					OR = {
+						has_technology = tech_combat_computers_3
+						has_technology = tech_synthetic_workers
+					}
+				}
+				modifier = { ## EVEN MORE IF YOU HAVE THE MOST DANGEROUS TECH
+					factor = 2
+					has_technology = tech_sapient_ai
+				}
+				modifier = { ### NO AI FOR THOSE WITHOUT SAPIENT AI TECH(S)
+					factor = 0
+					NOR = {
+						has_technology = tech_positronic_implants
+						has_technology = tech_sapient_ai
+						has_technology = tech_droid_workers
+					}
+					#has_authority = auth_machine_intelligence
+				}	
+				modifier = { ### NO ROBOT EMPIRES (They get their own thing)
+					factor = 0				
+					has_ethic = ethic_gestalt_consciousness	
+				}					
+			}	
+			###################################################### CIVIC SPECIFIC TYPES
+			20 = { ### Banished House // Feudal Society 
+				set_country_flag = fatherland_roguesetup_banished
+				modifier = {
+					factor = 0
+					NOT = { has_civic = civic_feudal_realm }
+				}			
+				modifier = {
+					factor = 1.5
+					has_civic = civic_feudal_realm
+					has_civic = civic_aristocratic_elite
+				}
+			}
+			20 = { ### Crusader State // Fanatic Spiritualist - Militarist
+				set_country_flag = fatherland_roguesetup_crusaders
+				modifier = { ### NO ROBO
+					factor = 0
+					has_ethic = ethic_gestalt_consciousness	
+					#has_authority = auth_machine_intelligence
+				}				
+				modifier = {
+					factor = 0
+					OR = { 
+						has_ethic = ethic_spiritualist
+						has_ethic = ethic_fanatic_spiritualist
+					}
+					NOR = {
+						has_ethic = ethic_pacifist
+						has_ethic = ethic_fanatic_pacifist
+					}
+				}			
+				modifier = {
+					factor = 1.5
+					has_ethic = ethic_militarist
+					has_ethic = ethic_fanatic_spiritualist
+				}			
+			}			
+			20 = { ### Slave Revolt	- Nation with slaves
+				set_country_flag = fatherland_roguesetup_slaves
+				modifier = {
+					factor = 0
+					any_owned_pop = {
+						is_enslaved = no
+					}
+				}	
+				modifier = {
+					factor = 5
+					has_country_flag = slave_revolt_chain_active
+				}
+			}
+			10 = { ### Syncretic Servile Prole Revolt - Syncretic Evolution Origin
+				set_country_flag = fatherland_roguesetup_proles
+				modifier = {
+					factor = 0
+					NOT = { any_owned_pop = { pop_has_trait = trait_syncretic_proles } }					
+				}
+				modifier = {
+					factor = 0.5
+					has_edict = increased_syncretic_prole_repression
+				}
+			}	
+			###################################################### MACHINE INTELLIGENCE	
+			20 = { ### Machine Intelligence 
+				modifier = { ### ROBO ONLY
+					factor = 0
+					NOT = { has_authority = auth_machine_intelligence }
+				}
+				set_country_flag = fatherland_roguesetup_machineintelligence				
+			}
+			5 = { ### Synth Revolt
+				modifier = { ### NO ROBO (can they even have synths?)
+					factor = 0
+					has_authority = auth_machine_intelligence
+				}
+				modifier = { ### Must have synth tech and applicable synth POP
+					factor = 0
+					NAND = {
+						has_technology = tech_synthetic_workers
+						any_owned_pop = { is_robot_pop = yes }
+					}
+				}	
+				# modifier = { ### NO ROBO (can they even have synths?)
+				# 	factor = 0
+				# }				
+				set_country_flag = fatherland_roguesetup_synthrevolt			
+			}						
+			20 = { ### Liberated Biotrophy - Rogue Servitors
+				set_country_flag = fatherland_roguesetup_biotrophy
+				modifier = {
+					factor = 0
+					NOT = { 
+						any_owned_pop = {
+							has_living_standard = { type = living_standard_organic_trophy }
+						}
+					}				
+				}
+				modifier = {
+					factor = 0.5
+					root = {
+						has_edict = increased_biotrophy_security
+					}
+				}
+				modifier = {
+					factor = 0.1
+					root = {
+						has_edict = extreme_biotrophy_security
+					}
+				}				
+			}
+			###################################################### SPECIAL
+			#10 = { ### Old Nations of Earth - UNE or human_1 flagged start. (TBD, not yet implented)
+			#	set_country_flag = fatherland_roguesetup_earth_nation
+			#	modifier = {
+			#		factor = 0
+			#		OR = {
+			#			NOR = { has_country_flag = human_1 
+			#					has_country_flag = fatherland_human_rogues_enabled
+			#			}	
+			#			has_country_flag = fatherland_human_rogues_finished	
+			#		}		
+			#	}
+			#	modifier = { ### Player can force human nations to go first, once setlist is completed 
+			#		factor = 10 
+			#			has_country_flag = fatherland_human_rogues_boost				
+			#	}									
+			#}			
+		}
+		###################################################### HIVE MINDS
+		# Hive Split (New Hive Mind)
+		# Individual in the Collective (Become Normal Empire)
+
+		###################################################### FALLEN EMPIRES AND KHAN
+		# 
+		# Fallen Son (Rogue relavtive of the Khan or similar, spawns close to mauarder empire)
+		
+		###################################################### CRISIS
+		# The Traitor Empire (Interdimensional Empire, joins the galactics to fight against the unbidden and friends, max 1)
+		# Stack Overflow (Contigency Empire, joins the galactics to fight against the contingeny similar to final defensive directive )
+		# Rogue Queen (Preythoryn Empire, joins the galactics to fight against the scourage and try to stand against the hunters they speak of)	
+			
+		######################### SELECTS FATHERLAND SPECIES THAT WILL APPEAR ON NEW ROGUE COLONY
+		save_event_target_as = fatherland_empire
+		if = {	#### Chooses Enslaved POP is that was flagged above
+			limit = { has_country_flag = fatherland_roguesetup_slaves }
+			random_owned_pop = {
+				limit = { is_enslaved = yes }  
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}
+		if = {	#### Chooses Syncretic Prole POP is that was flagged above
+			limit = { has_country_flag = fatherland_roguesetup_proles } 
+			random_owned_pop = {
+				limit = { pop_has_trait = trait_syncretic_proles }  
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}
+		if = {	#### Chooses an organic biotrophy POP that was flagged above
+			limit = { has_country_flag = fatherland_roguesetup_biotrophy } 
+			random_owned_pop = {
+				limit = { has_living_standard = { type = living_standard_organic_trophy } }  
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}
+		if = {	#### Chooses a machine pop if Rogue AI
+			limit = { has_country_flag = fatherland_roguesetup_machineintelligence } 
+			random_owned_pop = {
+				limit = { is_robot_pop = yes }
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}	
+		if = {	#### Chooses a robot POP for free, non-gestalt empire
+			limit = { has_country_flag = fatherland_roguesetup_synthrevolt } 
+			random_owned_pop = {
+				limit = {
+					is_robot_pop = yes
+					is_free_robot = no
+				}
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}					
+		if = {  #### MAIN POP
+			limit = {
+				NOR = { 
+					has_country_flag = fatherland_roguesetup_slaves
+					has_country_flag = fatherland_roguesetup_proles
+					has_country_flag = fatherland_roguesetup_biotrophy
+					has_country_flag = fatherland_roguesetup_machineintelligence
+					has_country_flag = fatherland_roguesetup_synthrevolt
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = { 
+						pop_has_trait = trait_syncretic_proles
+						is_pop_category = pre_sapients
+						is_enslaved = yes
+						is_being_purged = yes
+						has_living_standard = { type = living_standard_organic_trophy }
+					} 
+					OR = {
+						is_free_robot = yes
+						is_robot_pop = no
+					}
+				}  
+				# species = { save_event_target_as = fatherland_species }
+				set_pop_flag = fatherland_rogue_pop
+			}
+		}
+		if = {	#### POTENTIAL EXTRA ROBOT POP
+			limit = {
+				NOR = { 
+					has_country_flag = fatherland_roguesetup_biotrophy
+					has_country_flag = fatherland_roguesetup_machineintelligence
+					has_country_flag = fatherland_roguesetup_synthrevolt
+				}
+				any_owned_pop = {
+					is_free_robot = no
+					is_robot_pop = yes	
+				}
+			}
+			random_owned_pop = {
+				limit = {
+					NOR = { 
+						pop_has_trait = trait_syncretic_proles
+						is_pop_category = pre_sapients
+						is_enslaved = yes
+						is_being_purged = yes
+						has_living_standard = { type = living_standard_organic_trophy }
+					} 
+					is_free_robot = no
+					is_robot_pop = yes
+				}  
+				species = { save_global_event_target_as = fatherland_robot_species }
+				#set_pop_flag = fatherland_rogue_robot_pop
+			}
+			set_country_flag = fatherland_roguesetup_extra_robot
+		}		
+	}
+
+	option = { ####### Iron Curtain alternate event (this may be broken / mess up event flow, may delete later)  
+		name = fatherland_rogue.100.capture
+		custom_tooltip = "fatherland_rogue.100.capture.tooltip"
+		trigger = {
+			has_policy_flag = colonial_restrictions
+		}
+		hidden_effect = {
+			fatherland_iron_curtain_rogue_effect = yes
+		}
+	}		
+	
+	option = { ####### The Main Rogue Colony Event
+		name = fatherland_rogue.100.a
+		trigger = { any_galaxy_planet = { has_planet_flag = rogue_target } }
+		
+		save_event_target_as = fatherland_empire
+
+		hidden_effect = {
+			fatherland_main_rogue_effect = yes
+		}
+	}
+}
+
+country_event = { ###Update total to all nations
+    id = fatherland_rogue.101
+	is_triggered_only = yes	
+	hide_window = yes
+	
+	immediate = {
+		set_variable = {
+			which = fatherland_currentglobal_rogues
+			value = event_target:global_event_country.fatherland_currentglobal_rogues
+		}
+		set_variable = {
+			which = fatherland_globalmax_rogues
+			value = event_target:global_event_country.fatherland_globalmax_rogues
+		}
+		set_variable = {
+			which = fatherland_aimax_rogues
+			value = event_target:global_event_country.fatherland_aimax_rogues
+		}		
+	}	
+}
+
+country_event = { #Alters Liberated Prole Species
+    id = fatherland_rogue.102
+    title = "fatherland_rogue.102_name"
+    desc = "fatherland_rogue.102_desc"
+    picture = GFX_evt_alien_segregation
+	is_triggered_only = yes	
+	hide_window = no
+	
+	trigger = {
+		has_civic = civic_free_proles
+		NOT = { has_country_flag = fatherland_liberated_prole_edit }
+	}
+
+	immediate = {		
+	}
+	option = {
+		name = fatherland_rogue.102.a
+		hidden_effect = {
+			modify_species = {
+				species = root.species
+				remove_trait = trait_syncretic_proles 
+				add_trait = trait_liberated_syncretic_proles 
+				add_traits_at_start_of_list = yes
+			}	
+			set_country_flag = fatherland_liberated_prole_edit	
+		}
+		custom_tooltip = "fatherland_rogue.102.a.tooltip"
+	}	
+}
+
+country_event = { #Rogue Renaming Event
+    id = fatherland_rogue.103
+	is_triggered_only = yes	
+	hide_window = yes
+	
+	trigger = {
+		has_origin = origin_rogue_colony
+		NOT = { has_country_flag = fatherland_rogues_namecheck }
+	}
+
+	immediate = {	
+		capital_scope = { set_name = random }
+		set_name = random
+		set_country_flag = fatherland_rogues_namecheck
+	}
+}
+
+# Remove Fatherland Planet Modifier if planet is decolonized.
+event = {
+	id = fatherland_rogue.900
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		any_galaxy_planet = {
+			OR = {
+				has_owner = no
+				owner = { NOT = { has_origin = origin_rogue_colony } }
+			}
+			has_modifier = rogue_colonial_world
+		}
+	}
+
+	immediate = {
+		every_galaxy_planet = {
+			limit = {
+				OR = {
+					has_owner = no
+					owner = { NOT = { has_origin = origin_rogue_colony } }
+				}
+				has_modifier = rogue_colonial_world
+			}
+			remove_modifier = rogue_colonial_world
+		}
+	}
+}
+
+
+country_event = { #Five Year Census Event - Part One (resets global event total to 0)
+    id = fatherland_rogue.997
+    title = "fatherland_rogue.997_name"
+    desc = "fatherland_rogue.997_desc"
+    picture = GFX_evt_burning_settlement
+	is_triggered_only = yes	
+	hide_window = yes
+	
+	trigger = {
+		has_origin = origin_rogue_colony
+		NOT = { has_global_flag = fatherland_limittomax_rogues }
+	}
+
+	immediate = {
+		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+			set_variable = {
+				which = fatherland_currentglobal_rogues
+				value = 0
+			}	
+		}
+			country_event = { id = fatherland_rogue.998 
+			days = 2
+		}								
+	}
+}
+
+country_event = { #Five Year Census Event - Part Two (For every hegira country, adds one to currentglobal variable for GEC)
+    id = fatherland_rogue.998
+    title = "fatherland_rogue.998_name"
+    desc = "fatherland_rogue.998_desc"
+    picture = GFX_evt_burning_settlement
+	is_triggered_only = yes	
+	hide_window = yes
+	
+	trigger = {
+		has_origin = origin_rogue_colony
+		NOT = { has_global_flag = fatherland_limittomax_rogues }
+	}
+
+	immediate = {
+		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+			change_variable = {
+				which = fatherland_currentglobal_rogues
+				value = 1
+			}	
+		}	
+			country_event = { id = fatherland_rogue.101 
+			days = 2
+			}							
+	}
+}
+
+country_event = { #On rogue colony Destroyed / Annexed 
+    id = fatherland_rogue.999
+    title = "fatherland_rogue.999_name"
+    desc = "fatherland_rogue.999_desc"
+    picture = GFX_evt_burning_settlement
+	is_triggered_only = yes	
+	hide_window = no
+	
+	trigger = {
+		from = { has_origin = origin_rogue_colony }
+	}
+
+	immediate = {
+		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+			if = {
+				limit = { NOT = { has_global_flag = fatherland_limittomax_rogues } }
+				change_variable = {
+					which = fatherland_currentglobal_rogues
+					value = -1
+				}
+			}
+			change_variable = {
+				which = fatherland_destroyed_rogues
+				value = 1
+			}			
+		}	
+		every_country = {
+			limit = { is_country_type_with_subjects = yes }
+			country_event = { id = fatherland_rogue.101 }				
+		}			
+	}
+}
