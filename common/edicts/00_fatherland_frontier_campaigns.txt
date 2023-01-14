@@ -70,10 +70,8 @@ fatherland_options = {
 	}
 
 	allow = { 
-		NOT = { 
+		NOR = {
 			has_modifier = fatherland_recent_census
-		}
-		NOT = {
 			has_global_flag = dmm_installed
 		}		
 	}

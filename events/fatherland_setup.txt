@@ -29,7 +29,7 @@ country_event = { #### MULTIPLAYER SETUP
 	}
 
 	immediate = { 
-		random_country = {
+		random_playable_country = {
 			limit = { is_ai = no }
 			country_event = { id = fatherland_setup.100 }
 		}

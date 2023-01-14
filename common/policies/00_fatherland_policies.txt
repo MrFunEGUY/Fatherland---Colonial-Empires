@@ -21,10 +21,7 @@ colonial_policy = {
 		name = "iron_curtain"
 
 		valid = {
-			OR = {
-				has_ethic = "ethic_authoritarian"
-				has_ethic = "ethic_fanatic_authoritarian"
-			}
+			is_authoritarian = yes
 		}
 
 		policy_flags = {

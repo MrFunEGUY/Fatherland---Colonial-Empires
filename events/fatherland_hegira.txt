@@ -2688,8 +2688,7 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 						has_modifier = rogue_colonial_world 
 						has_modifier = hegira_colonial_world
 						has_modifier = frontier_colonial_world #Not an error, needs FW Addon
-						is_planet_class = pc_habitat
-						is_planet_class = pc_ringworld_habitable
+						is_artificial = yes
 						habitable_planet = no
 					} 		
 				}  
@@ -2956,8 +2955,10 @@ country_event = { #Hegira Renaming Event
 	
 	trigger = {
 		has_origin = origin_hegira_colony
-		NOT = { has_country_flag = fatherland_rogues_namecheck }
-		NOT = { has_country_flag = fatherland_hegiran_from_earth }
+		NOR = {
+			has_country_flag = fatherland_rogues_namecheck
+			has_country_flag = fatherland_hegiran_from_earth
+		}
 	}
 
 	immediate = {	
@@ -3291,8 +3292,7 @@ country_event = { #Great Migrant Fleet
 						has_modifier = rogue_colonial_world 
 						has_modifier = hegira_colonial_world
 						has_modifier = frontier_colonial_world #Not an error, needs FW Addon
-						is_planet_class = pc_habitat
-						is_planet_class = pc_ringworld_habitable
+						is_artificial = yes
 						habitable_planet = no
 					} 		
 				}  

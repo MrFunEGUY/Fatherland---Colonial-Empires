@@ -25,10 +25,14 @@ country_event = { #### Rogue Initializer
 
 			if = {	# Hyperdrive I
 				limit = {
-					NOT = { has_technology = tech_hyper_drive_2 }
-					NOT = { has_technology = tech_hyper_drive_3 }
-					NOT = { has_technology = tech_jump_drive_1 }
-					NOT = { has_technology = tech_psi_jump_drive_1 }
+					NOR = {
+						has_technology = tech_hyper_drive_2
+						has_technology = tech_hyper_drive_3
+					}
+					NOR = {
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
 				}
 				if = {
 					limit = {
@@ -87,8 +91,10 @@ country_event = { #### Rogue Initializer
 			if = {	# Hyperdrive II
 				limit = {
 					has_technology = tech_hyper_drive_2
-					NOT = { has_technology = tech_hyper_drive_3 }
-					NOT = { has_technology = tech_jump_drive_1 }
+					NOR = {
+						has_technology = tech_hyper_drive_3
+						has_technology = tech_jump_drive_1
+					}
 					NOT = { has_technology = tech_psi_jump_drive_1 }
 				}
 				if = {
@@ -148,8 +154,10 @@ country_event = { #### Rogue Initializer
 			if = {	# Hyperdrive III
 				limit = {
 					has_technology = tech_hyper_drive_3
-					NOT = { has_technology = tech_jump_drive_1 }
-					NOT = { has_technology = tech_psi_jump_drive_1 }
+					NOR = {
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
 				}
 				if = {
 					limit = {
@@ -752,15 +760,9 @@ country_event = {
 					#has_authority = auth_machine_intelligence
 				}				
 				modifier = {
-					factor = 0
-					OR = { 
-						has_ethic = ethic_spiritualist
-						has_ethic = ethic_fanatic_spiritualist
-					}
-					NOR = {
-						has_ethic = ethic_pacifist
-						has_ethic = ethic_fanatic_pacifist
-					}
+					factor = 0 
+					is_spiritualist = yes
+					is_pacifist = no
 				}			
 				modifier = {
 					factor = 1.5

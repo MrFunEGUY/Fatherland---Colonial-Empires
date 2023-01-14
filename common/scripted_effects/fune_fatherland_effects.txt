@@ -767,8 +767,7 @@ fatherland_main_rogue_effect = {
 				this.planet = { 
 					NOR = { 
 						has_modifier = rogue_colonial_world 
-						is_planet_class = pc_habitat
-						is_planet_class = pc_ringworld_habitable
+						is_artificial = yes
 						habitable_planet = no
 					} 		
 				}  

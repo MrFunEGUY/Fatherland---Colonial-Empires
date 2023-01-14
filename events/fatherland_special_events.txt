@@ -150,8 +150,8 @@ country_event = {
 		random_owned_pop = {  
 			species = { save_global_event_target_as = fatherland_rand_species }
 		}
-		random_country = {
-			limit = { is_country_type = default is_country_type = awakened_fallen_empire }
+		random_playable_country = {
+			limit = { is_country_type = awakened_fallen_empire }
 		}
 		add_resource = { 
 			energy = 20000  
@@ -172,7 +172,7 @@ country_event = {
 		}
 		add_modifier = { modifier = galactic_bulwark }		
 		if = {
-			limit = { OR = { is_country_type = default is_country_type = awakened_fallen_empire } 
+			limit = { is_country_type_with_subjects = yes 
 				NOT = { has_global_flag = fatherland_last_stand_final }
 			}
 			hidden_effect = {
