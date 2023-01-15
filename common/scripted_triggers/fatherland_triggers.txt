@@ -56,6 +56,9 @@ is_valid_rogue_planet = {
 			solar_system = { has_star_flag = giga_system_one }
 			solar_system = { has_star_flag = giga_system_two }
 			solar_system = { has_star_flag = mil_relic_system }
+			###########
+			solar_system = { has_star_flag = archive_system_notorigin }
+			solar_system = { has_star_flag = precursor_zroni_1 }
 		}
 	}
 }
