@@ -5,10 +5,8 @@
 #
 #	LEADER
 #	leader = scientist
-#	leader = admiral
-#	leader = general
-#	leader = ruler
-#	leader = governor
+#	leader = commander
+#	leader = official
 #	
 #	MILITARY SHIPS
 #	shipclass_military = 1
@@ -63,7 +61,7 @@ special_project = {
 	}
 	
 	on_success = {
-		owner = { country_event = { id = fatherland_hegira.105 } }
+		# owner = { country_event = { id = fatherland_hegira.105 } }
 	}
 	
 	on_fail = {
@@ -87,7 +85,7 @@ special_project = {
 	}
 	
 	on_success = {
-		owner = { country_event = { id = fatherland_hegira.107 } }
+		# owner = { country_event = { id = fatherland_hegira.107 } }
 	}
 	
 	on_fail = {

@@ -2,9 +2,6 @@
 name = random
 ignore_initial_colony_error = yes
 day_zero_contact = no
-civics = { 
-	civic = civic_rogue_corporation
-	civic = random
-}
+civics = random
 flag = random
 type = default

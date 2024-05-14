@@ -1,0 +1,37 @@
+# Irony this is a placeholder file please ignore it
+# Civil Wars
+origin_exile_government = { playable = { always = no } potential = { always = no } }
+origin_restored_government = { playable = { always = no } potential = { always = no } }
+origin_restored_successor_government = { playable = { always = no } potential = { always = no } }
+origin_nationalist_rebellion = { playable = { always = no } potential = { always = no } }
+origin_nationalist_restoration = { playable = { always = no } potential = { always = no } }
+origin_heir_rebellion = { playable = { always = no } potential = { always = no } }
+origin_disinherited_heir = { playable = { always = no } potential = { always = no } }
+origin_isolated_rebellion = { playable = { always = no } potential = { always = no } }
+origin_coup_successor = { playable = { always = no } potential = { always = no } }
+
+# Extra Origins
+origin_next_generation = { playable = { always = no } potential = { always = no } }
+origin_irradiated_evolution = { playable = { always = no } potential = { always = no } }
+origin_starship_graveyard = { playable = { always = no } potential = { always = no } }
+origin_stellar_cornucopia = { playable = { always = no } potential = { always = no } }
+origin_biomedical_renaissance = { playable = { always = no } potential = { always = no } }
+origin_long_sleep = { playable = { always = no } potential = { always = no } }
+origin_reactivated = { playable = { always = no } potential = { always = no } }
+origin_immortal_messiah = { playable = { always = no } potential = { always = no } }
+origin_monster_tamers = { playable = { always = no } potential = { always = no } }
+origin_genius_loci = { playable = { always = no } potential = { always = no } }
+origin_dragon_lair = { playable = { always = no } potential = { always = no } }
+origin_ai_uprising = { playable = { always = no } potential = { always = no } }
+origin_vat_grown = { playable = { always = no } potential = { always = no } }
+origin_cosmic_monument = { playable = { always = no } potential = { always = no } }
+origin_infiltrators = { playable = { always = no } potential = { always = no } }
+origin_survival_of_the_fittest = { playable = { always = no } potential = { always = no } }
+origin_symbiosis = { playable = { always = no } potential = { always = no } }
+origin_exofungus = { playable = { always = no } potential = { always = no } }
+origin_war_of_the_worlds = { playable = { always = no } potential = { always = no } }
+origin_gray_goo = { playable = { always = no } potential = { always = no } }
+origin_living_planet = { playable = { always = no } potential = { always = no } }
+origin_wormhole = { playable = { always = no } potential = { always = no } }
+origin_sibling_rivalry = { playable = { always = no } potential = { always = no } }
+origin_exiles = { playable = { always = no } potential = { always = no } }

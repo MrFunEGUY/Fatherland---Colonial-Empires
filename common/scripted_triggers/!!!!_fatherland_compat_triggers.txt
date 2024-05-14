@@ -1,0 +1,19 @@
+cohesive_system = {
+	always = no
+}
+
+urmazin_system = {
+	always = no
+}
+
+everchanging_system = {
+	always = no
+}
+
+compound_cluster = {
+	always = no
+}
+
+annihilator_system = {
+	always = no
+}

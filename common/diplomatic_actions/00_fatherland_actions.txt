@@ -31,7 +31,7 @@ action_integrate_frontier_world = {
 	action_type = neutral
 
 	potential = {
-		from = { is_subject_type = frontier_world }
+		from = { any_agreement = { agreement_preset = preset_frontier_world } }
 	}
 
 	on_accept = {

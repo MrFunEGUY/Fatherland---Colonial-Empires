@@ -5,5 +5,5 @@ tags={
 }
 name="Fatherland: Colonial Empires"
 picture="thumbnail.png"
-supported_version="3.6.*"
+supported_version="3.12.*"
 remote_file_id="2389164674"

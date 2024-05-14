@@ -18,7 +18,7 @@ rogue_target = {
 rogue_colonial_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
 	pop_environment_tolerance = 0.30
-	pop_growth_speed = 0.20
+	pop_growth_speed = 0.30
 }
 recent_rogue_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"
@@ -124,7 +124,7 @@ land_of_the_free = { #AMERICA
 	damage_vs_country_type_extradimensional_3_mult = 0.5
 	damage_vs_country_type_ai_empire_mult = 0.5
 	damage_vs_country_type_gray_goo_mult = 0.5
-	country_influence_produces_add = 2
+	country_base_influence_produces_add = 2
 }
 
 mandate_of_heaven = { #CHINA
@@ -161,7 +161,7 @@ legacy_of_nippon = { #NIPPON
 britannia_rules_the_stars = { #UK
 	icon = "gfx/interface/icons/planet_modifiers/pm_ship_in_orbit.dds"
 	country_naval_cap_add = 50
-	country_command_limit_add = 10
+	#country_command_limit_add = 10
 	ship_armor_mult = 0.05
 }
 
@@ -289,14 +289,14 @@ galactic_bulwark = { ### IF YOU CANT DRIVE BACK THE CRISIS WITH THIS YOU DESERVE
 	terraform_speed_mult = 1
 	terraforming_cost_mult = -0.5
 	starbase_outpost_cost_mult = -1
-	country_energy_produces_add = 500
+	country_base_energy_produces_add = 500
 	country_energy_produces_mult = 2
 	country_alloys_produces_mult = 2
-	country_alloys_produces_add = 100
+	country_base_alloys_produces_add = 100
 	country_food_produces_mult = 2
-	country_food_produces_add = 500
+	country_base_food_produces_add = 500
 	country_energy_produces_mult = 2
-	country_consumer_goods_produces_add = 200
+	country_base_consumer_goods_produces_add = 200
 	country_naval_cap_add = 500
 	ships_upkeep_mult = -1
 	force_disparity_fire_rate_mult = 1
@@ -324,7 +324,7 @@ death_to_crisis = {
 	ship_speed_mult = -0.9
 	ship_windup_mult = 5
 	ship_disengage_chance_mult = -5
-	country_sr_dark_matter_produces_add = -20000
+	country_base_sr_dark_matter_produces_add = -20000
 	ships_sr_dark_matter_upkeep_mult = 1000
 	country_resource_max_sr_dark_matter_add = -20000
 	shipsize_construction_ship_ai_build_speed_mult = -1000

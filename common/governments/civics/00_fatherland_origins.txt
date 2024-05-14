@@ -23,7 +23,6 @@ origin_fatherland = {
 	description = "origin_tooltip_fatherland"
 	
 	#flags = { custom_start_screen }
-
 }
 #####################
 #### ROGUE COLONY - Formed during game, are independent empires with bonuses to expansion and generally hostile attitude towards Fatherland.
@@ -58,7 +57,6 @@ origin_rogue_colony = {
 	advanced_start = no
 	
 	flags = { custom_start_screen }
-
 }
 
 #####################
@@ -89,5 +87,236 @@ origin_hegira_colony = {
 	advanced_start = no
 	
 	#flags = { custom_start_screen }
+}
 
+origin_banished_house = { #Noble house who flee's into the void to escape death or dishonour.
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = { 
+		pop_factions_influence_produces_mult = 0.2
+		edicts_cost_mult = -0.15
+	}
+}
+origin_crusader_state = { #Fanatic Spiritualist Colony sent by into the depths of space to conquer in the name of the lord
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		planet_army_build_speed_mult = 0.5
+		army_defense_morale_mult = 0.5
+		country_war_exhaustion_mult = -0.15
+		shipclass_military_build_speed_mult = 0.33
+	}
+}
+origin_perscuted_minority = { #Ethnic or religous group fleeing from your empire to settle their own land. Happens if you choose persecute minority during event, or if purging / displacing
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_unity_produces_mult = 0.3
+		shipclass_starbase_hull_mult = 0.15
+		country_starbase_capacity_add = 2
+	}
+}
+origin_ideological_dissidents = { #Those who are ideologically opposed to your ethics
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {	
+		pop_government_ethic_attraction = 0.5
+		country_unity_produces_mult = 0.15
+	}
+}
+origin_plucky_explorers = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		pop_happiness = 0.1	
+	}
+}
+
+origin_rogue_corporation = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		trade_value_mult = 0.1
+	}
+}
+
+origin_rogue_ai = { #AI or group of AI's who flee your empire. 
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {	
+		planet_building_robot_assembly_plant_build_speed_mult = 0.5
+	}
+}
+origin_free_slaves = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_unity_produces_mult = 0.1
+		ship_home_territory_fire_rate_mult = 0.2
+		army_attack_morale_mult = 0.2
+		pop_ethic_egalitarian_attraction_mult = 0.1	
+	}
+}
+origin_free_proles = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_society_tech_research_speed = 0.2
+		leaders_cost_mult = -0.2
+	}
+}
+origin_free_synths = { #Synths who revolt to form a new empire (Non-Gestalt)
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		planet_building_robot_assembly_plant_build_speed_mult = 0.2
+	}
+}
+origin_liberated_biotrophies = { #Biotrophies who mange to escape form their Rogue Servitor overlords. Despise their former captors and gain CBs to liberate their breathern
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = {
+		country_base_unity_produces_add = 0.2
+		country_base_influence_produces_add = 1	
+	}
+}
+origin_fl_disinherited_heir = { #Noble house who flee's into the void to escape death or dishonour.
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	playable = {
+		always = no
+	}
+
+	potential = {
+		always = yes
+	}
+
+	random_weight = {
+		base = 0
+	}
+	modifier = { 
+		edicts_cost_mult = -0.15
+		pop_cat_ruler_political_power = 0.2
+	}
 }

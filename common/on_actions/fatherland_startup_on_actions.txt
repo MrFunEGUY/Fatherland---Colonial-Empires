@@ -14,7 +14,7 @@ on_game_start = {
 
 on_single_player_save_game_load = {
 	events = {
-		fatherland_setup.96 		# Set host flag
+		# fatherland_setup.96 		# Set host flag
 	}
 }
 
@@ -22,6 +22,12 @@ on_single_player_save_game_load = {
 on_yearly_pulse = {
 	events = {
 		fatherland_rogue.900		# Remove rogue colonial modifier.
+	}
+}
+
+on_yearly_pulse_country = {
+	events = {
+		fatherland_fix.1000			# Switch Civics to Origins.
 	}
 }
 

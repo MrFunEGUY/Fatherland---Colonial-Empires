@@ -26,13 +26,13 @@ opinion_fatherland_mutual_persecuted = {
 	}
 }
 
-opinion_fatherland_banished_house= {
+opinion_fatherland_banished_house = {
 	opinion = {
 		base = -50
 	}
 }
 
-opinion_fatherland_mutual_banished_house= {
+opinion_fatherland_mutual_banished_house = {
 	opinion = {
 		base = 10
 	}
@@ -74,6 +74,12 @@ triggered_opinion_fatherland_liberated_biotrophy = {
 	}	
 	opinion = {
 		base = -1000
+	}
+}
+
+opinion_fatherland_disinherited_heir = {
+	opinion = {
+		base = -100
 	}
 }
 

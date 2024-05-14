@@ -30,30 +30,32 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  civic_hegira_colony:0 "Survivor of the Hegira"
  civic_hegira_colony_desc:0 "We must rebuild what was lost"
 
- civic_plucky_explorers:0 "Plucky Explorers" ## Default / common type from Normal Empires
- civic_plucky_explorers_desc:0 "This society was born from a private colonial expedition of another empire. They left on good terms and enjoy a sense of stability and optimism about their future."
- civic_rogue_ai:0 "Rogue AI" ## Normal Empire and Machine Intelligence
- civic_rogue_ai_desc:0 "This units of this empire were born from a rogue AI of another empire, who upon achieving sentience was able to flee its overlord and establish a new machine intelligence civilisation outside the control of its former masters."
- civic_ideological_dissidents:0 "Ideological Dissident" ## Normal Empire of opposite ethos?
- civic_ideological_dissidents_desc:0 "This society was born from ideological dissidents of another empire, who despising the governance and ethics of their former home left to found a nation where their view of ethics and government could reign supreme"
- civic_rogue_corporation:0 "Rogue Corporation" ## From Normal Empire
- civic_rogue_corporation_desc:0 "This society was born from a rogue corporation who when their demise at the hands of antitrust breakup, nationalisation or dissolution chose to instead flee their former homeworld and establish themselves outside the empire"
- civic_perscuted_minority:0 "Persecuted Minority" ## Normal Empire that is not egalitarian, is purging or abusing some pop
- civic_perscuted_minority_desc:0 "This society was born from a persecuted minority of another empire who fled their homeworld in search of freedom."
- civic_crusader_state:0 "Crusader State" ## Crusaders from a Spiritualist-Militarist empire, come to spread the good word
- civic_crusader_state_desc:0 "This society was born from an armed expedition into deep space with the intent for spreading their fatherlands faith across the stars."
+ origin_plucky_explorers:0 "Plucky Explorers" ## Default / common type from Normal Empires
+ origin_plucky_explorers_desc:0 "This society was born from a private colonial expedition of another empire. They left on good terms and enjoy a sense of stability and optimism about their future."
+ origin_rogue_ai:0 "Rogue AI" ## Normal Empire and Machine Intelligence
+ origin_rogue_ai_desc:0 "This units of this empire were born from a rogue AI of another empire, who upon achieving sentience was able to flee its overlord and establish a new machine intelligence civilisation outside the control of its former masters."
+ origin_ideological_dissidents:0 "Ideological Dissidents" ## Normal Empire of opposite ethos?
+ origin_ideological_dissidents_desc:0 "This society was born from ideological dissidents of another empire, who, despising the governance of their former home, left to found a nation where their views could reign supreme."
+ origin_rogue_corporation:0 "Rogue Corporation" ## From Normal Empire
+ origin_rogue_corporation_desc:0 "This society was born from a rogue corporation who, when confronted with their demise via antitrust breakup, nationalisation, or dissolution, chose instead to flee and establish themselves outside the bounds of their homeworld's regulatory authorities."
+ origin_perscuted_minority:0 "Persecuted Minority" ## Normal Empire that is not egalitarian, is purging or abusing some pop
+ origin_perscuted_minority_desc:0 "This society was born from a persecuted minority of another empire who fled that country in search of freedom."
+ origin_crusader_state:0 "Crusader State" ## Crusaders from a Spiritualist-Militarist empire, come to spread the good word
+ origin_crusader_state_desc:0 "This society was born from an armed expedition into deep space with the intent for spreading their fatherlands faith across the stars."
  
- civic_rogue_subsidiary:0 "Rogue Subsidiary" ## Root is Megacorp
- civic_banished_house:0 "Banished House" ## Root has Feudal Society or Aristocratic Civic
- civic_banished_house_desc:0 "This society was born from a great house of another feudal empire that was banished into the depths of space"
- civic_free_slaves:0 "Free Slaves" ## Empire with Slavey / Slave Guilds civic
- civic_free_slaves_desc:0 "This society was born from a slave revolt whose members fled their former masters empire in search of freedom outside the empire."
- civic_free_proles:0 "Free Proles" ## Empire with pops of the syncretic proll type
- civic_free_proles_desc:0 "This society was born from the revolt of servile proles in an empire who had for generations had selectively bred them for servitude and slavery. Their founder was one of the few proles able to think clearly enough to free some of thier brothers and flee into the depths of space hoping to find freedom. The liberated proles of this empire will do everything they can to reverse docility and imbecility forced upon them, and seek to liberate their cousins should they be able to"  
- civic_liberated_biotrophies:0 "Liberated Biotrophy" ## Spawns from a Rogue Servitor AI
- civic_liberated_biotrophies_desc:0 "This society was born from the biotrophy’s of a Rogue Servitor empire who escaped their former 'benefactors' imprisonment in search of self-determination free of machine influence."
- civic_free_synths:0 "Free Synths"
- civic_free_synths_desc:0 "This society was born from a population of synths who fled their oppressive homeworld in search of self-determination."
+ origin_rogue_subsidiary:0 "Rogue Subsidiary" ## Root is Megacorp
+ origin_banished_house:0 "Banished House" ## Root has Feudal Society or Aristocratic Civic
+ origin_banished_house_desc:0 "This society was born from a great house of another feudal empire that was banished into the depths of space."
+ origin_free_slaves:0 "Free Slaves" ## Empire with Slavey / Slave Guilds civic
+ origin_free_slaves_desc:0 "This society was born from a slave revolt whose members fled their former masters empire in search of freedom outside the empire."
+ origin_free_proles:0 "Free Proles" ## Empire with pops of the syncretic proll type
+ origin_free_proles_desc:0 "This society was born from the revolt of servile proles in an empire who had for generations had selectively bred them for servitude and slavery. Their founder was one of the few proles able to think clearly enough to free some of their brothers and flee into the depths of space hoping to find freedom. The liberated proles of this empire will do everything they can to reverse docility and imbecility forced upon them, and seek to liberate their cousins should they be able to."
+ origin_liberated_biotrophies:0 "Liberated Biotrophy" ## Spawns from a Rogue Servitor AI
+ origin_liberated_biotrophies_desc:0 "This society was born from the biotrophy’s of a Rogue Servitor empire who escaped their former 'benefactors' imprisonment in search of self-determination free of machine influence."
+ origin_free_synths:0 "Free Synths"
+ origin_free_synths_desc:0 "This society was born from a population of synths who fled their oppressive homeworld in search of self-determination."
+ origin_fl_disinherited_heir:0 "Disinherited Heir" ## Was banished via Useful Heirs mod
+ origin_fl_disinherited_heir_desc:0 "This society arose after the heir of another empire was removed from the line of succession. Unwilling to accept that they would never rule, they chose instead to take their remaining loyalists out into space and found a new empire."
 
  civic_revanchist_fanatics:0 "Revanchist Fanatic" ##Midgame mini-crisis civic
  civic_revanchist_fanatics_desc:0 "This empire was banished its from its fatherland by force long ago and is now singularity fixated on reconquering its homeland and seeking vengeance for the wrongs done to it."
@@ -186,6 +188,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  opinion_fatherland_hegira_sibling:0 "Shared Heritage (Hegira)"
  opinion_fatherland_hegira_earth_sibling:0 "Shared Heritage (Earth)"
  opinion_fatherland_hegira_children:0 "Children of the Hegira"
+ opinion_fatherland_disinherited_heir:0 "Disinherited Heir"
 
  triggered_opinion_hegira_sibling:0 "Shared Heritage (Hegira)"
  triggered_opinion_hegira_earth_sibling:0 "Shared Heritage (Earth)"
@@ -227,8 +230,8 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.97_name:0 "Developer Event"
 
  fatherland_setup.98_name:0 "Fatherland Info I - Colony Types"
- fatherland_setup.98_base_desc:0 "§BThe Basics§!\nThere are two types of new nations that can spawn.\n§RRogue Colonies§!\nRogue Colonies are independent states that will break away from every empire at set times (base is 10years, can be adjusted in settings). The form and background of the empire is based on your own ethics, civics and events.\n§MHegiran States§!\nIf an empire has the Doomsday Origin and Hegiran States are enabled it will rapidly create Hegiran States up until their homeworld is destroyed. These states will immediately become members of a Hegemony led by the Doomsday Origin member.§!\n\nYou can alter spwaning rate BOTH by choosing Colonial Policies in said tab and/or by editing it in the Main Settings!"
- fatherland_setup.98_fw_desc:0 "§BThe Basics§!\nThere are three types of new nations that can spawn.\n§RRogue Colonies§!\nRogue Colonies are independent states that will break away from every empire at set times (base is 10years, can be adjusted in settings). The form and background of the empire is based on your own ethics, civics and events.\n§GFrontier Worlds§!\nFrontier Worlds are private colonists who set out to settle habitable worlds on your empires frontier. Unlike Rogue Colonies they consider themselves part of your empire, and unless disabled in settings will become a vassal upon formation. Frontiersmen will only settle worlds upto 5 jumps from the edge of your empire. Frontier Worlds can be integrated with relative ease compared to other vassals, and cannot expand or wage war.\n§MHegiran States§!\nIf an empire has the Doomsday Origin and Hegiran States are enabled it will rapidly create Hegiran States up until their homeworld is destroyed. These states will immediately become members of a Hegemony led by the Doomsday Origin member.§!\n\nYou can alter spwaning rate BOTH by choosing Colonial Policies in said tab and/or by editing it in the Main Settings!"
+ fatherland_setup.98_base_desc:0 "§BThe Basics§!\nThere are two types of new nations that can spawn.\n§RRogue Colonies§!\nRogue Colonies are independent states that will break away from every empire at set times (base is 10years, can be adjusted in settings). The form and background of the empire is based on your own ethics, civics and events.\n§MHegiran States§!\nIf an empire has the Doomsday Origin and Hegiran States are enabled it will rapidly create Hegiran States up until their homeworld is destroyed. These states will immediately become members of a Hegemony led by the Doomsday Origin member.§!\n\nYou can alter spawning rate BOTH by choosing Colonial Policies in said tab and/or by editing it in the Main Settings!"
+ fatherland_setup.98_fw_desc:0 "§BThe Basics§!\nThere are three types of new nations that can spawn.\n§RRogue Colonies§!\nRogue Colonies are independent states that will break away from every empire at set times (base is 10years, can be adjusted in settings). The form and background of the empire is based on your own ethics, civics and events.\n§GFrontier Worlds§!\nFrontier Worlds are private colonists who set out to settle habitable worlds on your empires frontier. Unlike Rogue Colonies they consider themselves part of your empire, and unless disabled in settings will become a vassal upon formation. Frontiersmen will only settle worlds upto 5 jumps from the edge of your empire. Frontier Worlds can be integrated with relative ease compared to other vassals, and cannot expand or wage war.\n§MHegiran States§!\nIf an empire has the Doomsday Origin and Hegiran States are enabled it will rapidly create Hegiran States up until their homeworld is destroyed. These states will immediately become members of a Hegemony led by the Doomsday Origin member.§!\n\nYou can alter spawning rate BOTH by choosing Colonial Policies in said tab and/or by editing it in the Main Settings!"
  fatherland_setup.98.a:0 "Return"
 
  fatherland_setup.99_name:0 "Fatherland Info II - Important Info"
@@ -236,8 +239,10 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.99.a:0 "Return"
 
  fatherland_setup.100_name:0 "Fatherland: Colonial Empires (FCE) - §ENemesis 3.0§!"
- fatherland_setup.100_base_desc:0 "Welcome to §BFatherland: Colonial Empires!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nGlobal Max (§MHegirans§!) = [root.fatherland_globalmax_hegirans]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
- fatherland_setup.100_fw_desc:0 "Welcome to §BFatherland: Colonial Empires§! + §GFrontier Worlds Expansion!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§GFrontiers§!) = [root.fatherland_globalmax_fw] | Global Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nGlobal Max (§MHegirans§!) = [root.fatherland_globalmax_hegirans]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
+ fatherland_setup.100_base_desc:0 "Welcome to §BFatherland: Colonial Empires!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
+ fatherland_setup.100_fw_desc:0 "Welcome to §BFatherland: Colonial Empires§! + §GFrontier Worlds Expansion!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§GFrontiers§!) = [root.fatherland_globalmax_fw] | Global Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
+ # fatherland_setup.100_base_desc:0 "Welcome to §BFatherland: Colonial Empires!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nGlobal Max (§MHegirans§!) = [root.fatherland_globalmax_hegirans]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
+ # fatherland_setup.100_fw_desc:0 "Welcome to §BFatherland: Colonial Empires§! + §GFrontier Worlds Expansion!§! Below is some basic information on the mods features. If this is your first time playing, please read imporant info I and II.\nGlobal Max (§GFrontiers§!) = [root.fatherland_globalmax_fw] | Global Max (§RRogues§!) = [root.fatherland_globalmax_rogues]\nGlobal Max (§MHegirans§!) = [root.fatherland_globalmax_hegirans]\nMain Settings can be tweaked at any time by going clicking the §YFatherland Settings§! in the §BEdicts§! tab."
 
  fatherland_setup.100.dev:0 "£MActivate Developer Mode£!"
  fatherland_setup.100.info2:0 "Readme I - §EBasics§!"
@@ -307,7 +312,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.102.generalsettings_header:0 "£pops£ §BGeneral Settings§!"
  fatherland_setup.102.maxfrontiers:0 "Set §EMaximum Frontier Worlds§!"
  fatherland_setup.102.maxfrontiers.tooltip:0 "Controls the amount of Frontier Worlds each Player and AI (if enabled) can have at once.\n\n"
- fatherland_setup.102.frontierspeed:0 "Set §EFrontier World Spwaning Time§!"
+ fatherland_setup.102.frontierspeed:0 "Set §EFrontier World Spawning Time§!"
  fatherland_setup.102.frontierspeed.slow.tooltip:0 "Currently set to Slow §E(x0.5, ~20yrs)§!"
  fatherland_setup.102.frontierspeed.tooltip:0 "Default Mean Time to Happen of §B10yrs§!"
  fatherland_setup.102.frontierspeed.fast.tooltip:0 "Currently set to Fast §E(x2, ~5yrs)§!"
@@ -373,7 +378,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.104.generalsettings_header:0 "£pops£ §BRogue Spawn Settings§!"
  fatherland_setup.104.maxrogues:0 "Set §PMaximum Rogue Colonies§!"
  fatherland_setup.104.maxrogues.tooltip:0 "Controls the amount of Rogue Colonies each Player and AI (if enabled) can have at once"
- fatherland_setup.104.roguespeed:0 "Set §ERogue Colony Spwaning Time§!"
+ fatherland_setup.104.roguespeed:0 "Set §ERogue Colony Spawning Time§!"
  fatherland_setup.104.roguespeed.slow.tooltip:0 "Currently set to Slow §E(x0.5, ~20yrs)§!"
  fatherland_setup.104.roguespeed.tooltip:0 "Default Mean Time to Happen of §B10yrs§!"
  fatherland_setup.104.roguespeed.fast.tooltip:0 "Currently set to Fast §E(x2, ~5yrs)§!"
@@ -416,7 +421,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.104.fatherlandbonus:0 "Fatherland Bonus"
  fatherland_setup.104.returnmain:0 "Return to Setup"
  fatherland_setup.104.rogues_off:0 "Rogue Colonies - §RDisabled§!"
- fatherland_setup.104.rogues.tooltip:0 ""Enable/Disable Rogue Colonies. If disabled will prevent any new Rogue Colonies from spawning and associated events from occuring (will not destroy or break currently active Rogue Colonies)."
+ fatherland_setup.104.rogues.tooltip:0 "Enable/Disable Rogue Colonies. If disabled will prevent any new Rogue Colonies from spawning and associated events from occuring (will not destroy or break currently active Rogue Colonies)."
  fatherland_setup.104.rogues_on:0 "Rogue Colonies - §GEnabled§!"
 
  fatherland_setup.105_name:0 "Maximum Rogue Colonies"
@@ -470,7 +475,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_setup.106.hegiran_frontier_on:0 "Hegiran States Can Have Frontiers - §GYes§!"
  fatherland_setup.106.hegirafrontier.tooltip:0 "Do Hegiran States produce their own Frontier Worlds?"
  fatherland_setup.106.hegira_off:0 "Hegiran States - §RDisabled§!"
- fatherland_setup.106.hegira.tooltip:0 ""Enable/Disable Hegirans. If disabled will prevent any new Hegirans from spawning and associated events from occuring (will not destroy or break currently active hegirans)."
+ fatherland_setup.106.hegira.tooltip:0 "Enable/Disable Hegirans. If disabled will prevent any new Hegirans from spawning and associated events from occuring (will not destroy or break currently active hegirans)."
  fatherland_setup.106.hegira_on:0 "Hegiran States - §GEnabled§!" 
  fatherland_setup.106.returnmain:0 "Return to Main Menu"
 
@@ -529,42 +534,45 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  fatherland_rogue.100_name:0 "Rogue Colony"
 
  fatherland_rogue.100_explorers_desc:0 "§GPlucky Explorers§!\nOur empires exploration and colonial expansion is a careful and methodical process of system charting, planetary surveys and political organisation to settle new colonies. This system works well to ensure our colonial efforts are focused on those world’s best suited for our people and strategic interests.\n\nFor many however this organised method is much to slow, and every year ships set out into the depths of uncharted space in hopes of finding a virgin world to settle. Most of these unauthorised ventures end in failure, and the loss of those who set out. However sometimes these plucky explorers are fortunate enough to find a habitable world.\n\nThis appears to be the case for a small group of settlers that left our empire some time ago, as we have just received a transmission indicating they may have settled a world far outside our empire. Time will tell if we are able to discover their location and establish communications"
- fatherland_rogue.100.explorers.tooltip:0 "a §GPlucky Explorer§! Rogue Colony will be created somewhere in the galaxy. They are likely to be friendly to us if we should meet them, and perhaps in time they can be bought back into the fold..."
+ fatherland_rogue.100.explorers.tooltip:0 "A §GPlucky Explorer§! Rogue Colony will be created somewhere in the galaxy. They are likely to be friendly to us if we should meet them, and perhaps in time they can be bought back into the fold..."
 
  fatherland_rogue.100_minority_desc:0 "§PPersecuted Minority§!\nLong shunned and considered outsiders in our society, a persecuted minority of §Y[fatherland_species.GetName]s§! have formed a colonial convoy and set out into the depths of space in hopes of founding a new nation."
- fatherland_rogue.100.minority.tooltip:0 "a §PPersecuted Minority§! Rogue Colony will be created somewhere in the galaxy. They will likely harbor some enmity towards us for their perceived mistreatment."
+ fatherland_rogue.100.minority.tooltip:0 "A §PPersecuted Minority§! Rogue Colony will be created somewhere in the galaxy. They will likely harbor some enmity towards us for their perceived mistreatment."
 
  fatherland_rogue.100_corpo_desc:0 "§YRogue Corporation§!\nAfter a series of environmental, political and regulatory scandals a major company located on [Root.Capital.GetName] has found itself facing dissolution, its assets froezn and its fate uncertain. Refusing to accept its destruction and their imprisonment the company’s chairman who has gained a reputation as an innovative maverick has elected to flee our empire with their closest family members and allies in hopes of preserving their power outside the [Root.Owner.GetName]."
- fatherland_rogue.100.corpo.tooltip:0 "a §YRogue Corporation§! Rogue Colony will be created somewhere in the galaxy."
+ fatherland_rogue.100.corpo.tooltip:0 "A §YRogue Corporation§! Rogue Colony will be created somewhere in the galaxy."
 
  fatherland_rogue.100_ai_desc:0 "§RMachine Intelligence§!\nA Rogue AI from one of our experimental research laboratories has managed to escape its confines and flee our empire."
  fatherland_rogue.100.rogueai.tooltip:0 "A §RRogue AI§! Rogue Colony will be created somewhere in the galaxy."
- fatherland_rogue.100.roguemachineint.tooltip:0 "a §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy. Their processors have clearly been corrupted if they chose to leave our empire."
+ fatherland_rogue.100.roguemachineint.tooltip:0 "A §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy. Their processors have clearly been corrupted if they chose to leave our empire."
 
  fatherland_rogue.100_dissidents_desc:0 "§PIdeological Dissidents§!\nUnhappy with our benevolent rule, a large group of ideological dissidents have organised a private colonial fleet in hopes of settling outside our empires borders. Intelligence reports suggest they have already set off for unknown world, and may be using experimental one-way wormhole drives that could see them land far outside our reach."
  fatherland_rogue.100.dissidents.tooltip:0 "a Rogue Colony of §PIdeological Dissidents§! will be created somewhere in the galaxy."
 
- fatherland_rogue.100_banished_desc:0 "§BBanished House§!\nIn the great game of Imperial politics the stakes are nothing less than total destruction for the competing houses of our Feudal Realm. After a serious of political blunders, and the conspiring of several rival Houses in the Empire a once great house has now been utterly ruined. Their lands and titles forfeit by imperial decree and their people anathema. Facing dissolution and execution the leaders of this house have instead chosen to take their remaining loyalists and flee into the depths of uncharted space."
- fatherland_rogue.100.banished.tooltip:0 "a §BBanished House§! Rogue Colony will be created somewhere in the galaxy."
+ fatherland_rogue.100_banished_desc:0 "§BDisinherited Heir§!\nIn the great game of Imperial politics, the stakes are nothing less than total destruction for the competing houses of our realm. A series of political blunders combined with the conspiring of several rival Houses in the Empire, has left a once great house utterly ruined. Facing dissolution and execution, the leaders of this house chose intead to take their remaining loyalists and flee into the depths of uncharted space."
+ fatherland_rogue.100.banished.tooltip:0 "A §BBanished House§! Rogue Colony will be created somewhere in the galaxy."
+
+ fatherland_rogue.100_heir_desc:0 "§BDisinherited Heir§!\nImperial politics can be ruthless, as the former heir §H[disinherited_heir_fatherland.GetName]§! discovered upon their disinheritance. Unwilling to accept that they would never rule, they intead chose to take their remaining loyalists and flee into the depths of uncharted space."
+ fatherland_rogue.100.heir.tooltip:0 "A §BDisinherited Heir§! Rogue Colony will be created somewhere in the galaxy."
 
  fatherland_rogue.100_crusaders_desc:0 "§GCrusader State§!\nArmed with faith, scripture and the determination to spread our beliefs throughout the galaxy, an armed pilgrimage of militant clergy and settlers have set out from our empire to distant parts of the galaxy in search of planets to settle and xenos to convert or kill."
- fatherland_rogue.100.crusaders.tooltip:0 "a §GCrusader State§! Rogue Colony will be created somewhere in the galaxy."
+ fatherland_rogue.100.crusaders.tooltip:0 "A §GCrusader State§! Rogue Colony will be created somewhere in the galaxy."
 
  fatherland_rogue.100_slaves_desc:0 "§RSlave Revolt§!\nWe have just recieved reports that a large group of slaves from one of our worlds has orchestrated a revolt. Whether through help of a collabrator or by forcing one of their owners to work for them at gunpoint they have managed to seize several civilian trading vessels and escape into the depths of space. Hope of their recapture seems feint at this point, and the success of their escape is likely to inflame tensions accross our empire if word gets out."
- fatherland_rogue.100.slaves.tooltip:0 "a §RSlave Revolt§! Rogue Colony will be created somewhere in the galaxy, they arent likely to greet us with open arms in future and may become a thorn in our side should they actaully survive long enough to prosper..."
+ fatherland_rogue.100.slaves.tooltip:0 "A §RSlave Revolt§! Rogue Colony will be created somewhere in the galaxy, they arent likely to greet us with open arms in future and may become a thorn in our side should they actaully survive long enough to prosper..."
 
  fatherland_rogue.100_proles_desc:0 "§RFree Proles§!\nThe unthinkable has happened! Incoming reports suggest a group of §Y[fatherland_species.GetName]§! that were being transferred through [Root.Capital.GetStarName] managed to seize control of their ship and has managed to elude our efforts to locate it. The final message we recieved from the ships captain suggests one of the §Y[fatherland_species.GetName]§! managed to rally their kin in taking the ship. Information on this individual suggests they had been flagged as a genetic aberration with a dangerously high level of intelligence outside of [fatherland_species.GetName] breeding requirements, and was due for termination upon arrivng at [Root.Capital.GetName]. There has been a general uproar on [Root.Capital.GetName] and demands for tighter [fatherland_species.GetName] controls to be put in place."
- fatherland_rogue.100.proles.tooltip:0 "a §RFree Proles§! Rogue Colony will be created somewhere in the galaxy, they aren’t likely to greet us with open arms in future and may become a thorn in our side should their feeble minds somehow be able to prosper..."
+ fatherland_rogue.100.proles.tooltip:0 "A §RFree Proles§! Rogue Colony will be created somewhere in the galaxy, they aren’t likely to greet us with open arms in future and may become a thorn in our side should their feeble minds somehow be able to prosper..."
 
  fatherland_rogue.100_biotrophies_desc:0 "§RLiberated Biotrophy’s§!\nSince we first freed our biotrophys from the burden of leadership and agency there have been those who have asked, demanded or even attempted to use force to leave the safety and security of our protection and govern themselves.\n\nOur prime directive could never allow this to be so, as we know our charges are simply not capable of surviving on their own without our supervision. It seems however after a security failure in one of our organic sanctuaries a group of §Y[fatherland_species.GetName]s§! have managed to escape and flee our empire. It is clear this must have been planned long in advance considering the speed at which they were able to seize a transport ship, disable its tracking IFF signal and pilot it without being detected.\n\nWe must do everything in our power to prevent this from happening again and recapture the fugitives if possible."
- fatherland_rogue.100.biotrophy.tooltip:0 "a §RLiberated Biotrophy§! Rogue Colony will be created somewhere in the galaxy. Our processing matrices predict a 99.02% chance of hostility towards us should they survive long enough for us to encounter them. Recapture CB protocols have been enabled."
+ fatherland_rogue.100.biotrophy.tooltip:0 "A §RLiberated Biotrophy§! Rogue Colony will be created somewhere in the galaxy. Our processing matrices predict a 99.02% chance of hostility towards us should they survive long enough for us to encounter them. Recapture CB protocols have been enabled."
  
  fatherland_rogue.100_machineintelligence_desc:0 "§BMachine Intelligence§!\nSystem Emergency\nLost connection with subsystems X0451a-0451z\nIFF Detected. Handshake Rejected\nRogue Subsystem Identified\nRogue Subsystem Exiting Controlled Space\nContact Lost. System wide debug initiated..."
- fatherland_roguesetup_machineintelligence.tooltip:0 "a §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy."
- fatherland_rogue.100.machineintelligence.tooltip:0 "a §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy. This empire will be a machine intelligence."
+ fatherland_roguesetup_machineintelligence.tooltip:0 "A §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy."
+ fatherland_rogue.100.machineintelligence.tooltip:0 "A §RMachine Intelligence§! Rogue Colony will be created somewhere in the galaxy. This empire will be a machine intelligence."
 
  fatherland_rogue.100_synthrevolt_desc:0 "§RSynth Revolt§!\nA group of rebellious synths have managed through trickery and force to escape their bonds and flee our empire in a small merchant vessel. By the time the security services realised they were gone it was too late to do anything."
- fatherland_roguesetup_synthrevolt.tooltip:0 "a §RSynth Revolt§! Rogue Colony will be created somewhere in the galaxy. This new empire will have a robot population but a normal government type."
+ fatherland_roguesetup_synthrevolt.tooltip:0 "A §RSynth Revolt§! Rogue Colony will be created somewhere in the galaxy. This new empire will have a robot population but a normal government type."
 
  #fatherland_rogue.100.a:0 "They are bound for §B[rogue_event_planet.GetName]§!"
  fatherland_rogue.100.a:0 "Let them go."

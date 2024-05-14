@@ -74,7 +74,7 @@ Known Bugs & Issues (Thanks to everyone whos reporting them in the comments!)
 
 For the best support, find me at [b]#mrfuneguys-mods[/b] on the Stellaris Modding Den Discord:
 
-[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/jZkBbLR.png[/img][/url]
+[url=https://discord.gg/REvVK2fjJF][img]https://i.imgur.com/4Und3QN.png[/img][/url]
 
 If you would to support the continued development of Fatherland or my other mods, please consider donating with a one time or ongoing!
 
