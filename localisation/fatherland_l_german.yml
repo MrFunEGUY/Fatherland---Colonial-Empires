@@ -45,7 +45,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  
  origin_rogue_subsidiary:0 "Rogue Subsidiary" ## Root is Megacorp
  origin_banished_house:0 "Banished House" ## Root has Feudal Society or Aristocratic Civic
- origin_banished_house_desc:0 "This society was born from a great house of another feudal empire that was banished into the depths of space."
+ origin_banished_house_desc:0 "This society was founded by a noble house from another empire after they were banished into the depths of space."
  origin_free_slaves:0 "Free Slaves" ## Empire with Slavey / Slave Guilds civic
  origin_free_slaves_desc:0 "This society was born from a slave revolt whose members fled their former masters empire in search of freedom outside the empire."
  origin_free_proles:0 "Free Proles" ## Empire with pops of the syncretic proll type
@@ -98,6 +98,8 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
 
  rogue_colonial_world:0 "Rogue Colonial Homeworld"
  rogue_colonial_world_desc:0 "This planet was settled by a group of rogue colonists looking to achieve self determination outside their fatherland. Struggling against all odds they've managed to survive and thrive on this unknown and hostile world."
+ rogue_nation_boost: "Defense Subsidization"
+ rogue_nation_boost_desc: "Understanding the need for adequate defense of their new nation, weapons manufacturers are being greatly subsidized by the state."
  recent_rogue_colony:0 "Recent Rogue Colony"
  recent_rogue_colony_desc:0 "A Rogue Colony has recently attempted to settle this planet.\n§YThis will prevent any new Rogues from settling this planet for 10 years§!"
  recent_hegiran_state:0 "Recent Hegiran State"

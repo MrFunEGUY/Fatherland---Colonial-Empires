@@ -60,7 +60,7 @@ origin_rogue_colony = {
 }
 
 #####################
-#### HEGIRA COLONY - Formed during the Doomsday Origin. Indepdent Empires made of refugee's from dying fatherland. Friendlier than Rogue Colonies, without expansion bonuses (due to Fatherland Empire also loosing their fatherland).
+#### HEGIRA COLONY - Formed during the Doomsday Origin. Independent Empires made of refugee's from dying fatherland. Friendlier than Rogue Colonies, without expansion bonuses (due to Fatherland Empire also loosing their fatherland).
 #####################
 origin_hegira_colony = {
 	is_origin = yes
@@ -89,7 +89,7 @@ origin_hegira_colony = {
 	#flags = { custom_start_screen }
 }
 
-origin_banished_house = { #Noble house who flee's into the void to escape death or dishonour.
+origin_banished_house = { #Noble house who flees into the void to escape death or dishonour.
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
 	playable = {
@@ -103,8 +103,8 @@ origin_banished_house = { #Noble house who flee's into the void to escape death 
 	random_weight = {
 		base = 0
 	}
-	modifier = { 
-		pop_factions_influence_produces_mult = 0.2
+	modifier = {
+		pop_cat_ruler_political_power = 0.3
 		edicts_cost_mult = -0.15
 	}
 }
@@ -163,9 +163,9 @@ origin_ideological_dissidents = { #Those who are ideologically opposed to your e
 	random_weight = {
 		base = 0
 	}
-	modifier = {	
+	modifier = {
+		country_unity_produces_mult = 0.2
 		pop_government_ethic_attraction = 0.5
-		country_unity_produces_mult = 0.15
 	}
 }
 origin_plucky_explorers = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
@@ -183,7 +183,8 @@ origin_plucky_explorers = { #Adventureres who leave with your blessing to seed t
 		base = 0
 	}
 	modifier = {
-		pop_happiness = 0.1	
+		country_unity_produces_mult = 0.15
+		pop_happiness = 0.1
 	}
 }
 
@@ -202,7 +203,7 @@ origin_rogue_corporation = { #Adventureres who leave with your blessing to seed 
 		base = 0
 	}
 	modifier = {
-		trade_value_mult = 0.1
+		trade_value_mult = 0.15
 	}
 }
 

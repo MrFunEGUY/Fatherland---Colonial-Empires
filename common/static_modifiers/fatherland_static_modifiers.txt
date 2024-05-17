@@ -14,11 +14,14 @@ rogue_target = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
 	pop_growth_speed = 0.01
 }
+rogue_nation_boost = {
+	ship_military_cost_mult = -0.4
+}
 ##################################################### COLONIAL HOMEWORLD 
 rogue_colonial_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
-	pop_environment_tolerance = 0.30
-	pop_growth_speed = 0.30
+	pop_environment_tolerance = 0.15
+	pop_growth_speed = 0.3
 }
 recent_rogue_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"

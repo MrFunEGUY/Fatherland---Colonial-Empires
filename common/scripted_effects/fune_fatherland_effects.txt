@@ -96,19 +96,20 @@ get_rogue_colony_after_effect = {
 	if = { 
 		limit = { has_global_flag = fatherland_bonusresources }
 		random_list = {
-			60 = { set_variable = { which = rogue_resources value = 1 } }
+			50 = { set_variable = { which = rogue_resources value = 1 } }
 			30 = { set_variable = { which = rogue_resources value = 2 } }
-			10 = { set_variable = { which = rogue_resources value = 3 } }
+			15 = { set_variable = { which = rogue_resources value = 3 } }
+			5 = { set_variable = { which = rogue_resources value = 4 } }
 		}
 
 		add_resource = {
-			energy = 500
-			minerals = 500
-			food = 1000
-			consumer_goods = 250
-			alloys = 250
+			energy = 1000
+			minerals = 1000
+			food = 2000
+			consumer_goods = 500
+			alloys = 500
 			influence = 150
-			minor_artifacts = 100
+			minor_artifacts = 200
 			mult = rogue_resources
 		}
 

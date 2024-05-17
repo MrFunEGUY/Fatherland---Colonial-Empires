@@ -1325,6 +1325,27 @@ country_event = {
 							modifier = opinion_fatherland_banished_house
 							who = root
 						}
+						if = {
+							limit = { root = { has_civic = civic_feudal_realm } }
+							while = {
+								limit = { is_socialism = yes }
+								shift_ethic = ethic_capitalism
+							}
+							change_government = {
+								remove_invalid_civics = yes
+								civics = { civic = civic_feudal_realm civic = random civic = random }
+							}
+						}
+						else = {
+							while = {
+								limit = { is_socialism = yes }
+								shift_ethic = ethic_capitalism
+							}
+							change_government = {
+								remove_invalid_civics = yes
+								civics = { civic = civic_aristocratic_elite civic = random civic = random }
+							}
+						}
 						get_rogue_colony_after_effect = yes
 					}
 				}
@@ -1719,11 +1740,15 @@ country_event = {
 
 				random_list = {
 					33 = { add_district = district_farming }
-					33 = { add_district = district_farming
-						add_district = district_farming }
-					33 = { add_district = district_farming
+					33 = {
 						add_district = district_farming
-						add_district = district_farming }
+						add_district = district_farming
+					}
+					33 = {
+						add_district = district_farming
+						add_district = district_farming
+						add_district = district_farming
+					}
 				}
 				add_district = district_city
 				add_district = district_mining
@@ -1803,6 +1828,12 @@ country_event = {
 					add_modifier = {
 						modifier = recent_rogue_colony
 						years = 10
+					}
+					owner = {
+						add_modifier = {
+							modifier = rogue_nation_boost
+							years = 15
+						}
 					}
 				}
 				if = {

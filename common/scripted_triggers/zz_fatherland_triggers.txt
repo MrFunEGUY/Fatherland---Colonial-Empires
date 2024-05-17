@@ -8,7 +8,10 @@ is_valid_rogue_planet = {
 	solar_system = {
 		NOR = {
 			exists = space_owner
-			any_fleet_in_system = { owner = { is_hostile = root } }
+			any_fleet_in_system = {
+				exists = owner
+				owner = { is_hostile = root }
+			}
 			closest_system = { # Not next to Iso FE's
 				limit = {
 					exists = space_owner
@@ -23,7 +26,7 @@ is_valid_rogue_planet = {
 		}
 	}
 	OR = {
-		habitability = { who = event_target:fatherland_species value > 0.45 }
+		habitability = { who = event_target:fatherland_species value > 0.4 }
 		habitable_structure = yes
 	}
 	NOT = { has_modifier = recent_rogue_colony }
