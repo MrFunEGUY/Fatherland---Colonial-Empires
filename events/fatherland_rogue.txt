@@ -12,7 +12,7 @@ country_event = { #### Rogue Initializer
 	immediate = {
 
 		random = {
-			chance = 75
+			chance = 65
 			random_owned_pop = { # Really wish there was a better way to do this
 				limit = {
 					OR = {
