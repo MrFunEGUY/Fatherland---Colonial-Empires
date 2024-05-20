@@ -721,7 +721,7 @@ country_event = {
 						has_civic = civic_police_state
 					}
     			}
-    			2 = { ### Rogue Corporation (not megacorpo)
+    			1 = { ### Rogue Corporation (not megacorpo)
     				set_country_flag = fatherland_roguesetup_corpo
     				modifier = {
     					factor = 0
@@ -739,7 +739,7 @@ country_event = {
 						has_ethic = ethic_fanatic_socialism
 					}
     			}
-    			3 = { ### Rogue Family Corporation (not megacorpo)
+    			1 = { ### Rogue Family Corporation (not megacorpo)
     				set_country_flag = fatherland_roguesetup_family_corpo
     				modifier = {
     					factor = 0
@@ -2040,22 +2040,6 @@ country_event = {
 				set_timed_country_flag = { flag = no_rogue_timer years = 25 }
 
 				country_event = { id = action.502 }
-
-				if = {
-					limit = {
-						any_owned_leader = {
-							is_ruler = no
-							has_trait = trait_imperial_heir
-						}
-					}
-					every_owned_leader = {
-						limit = {
-							is_ruler = no
-							has_trait = trait_imperial_heir
-						}
-						remove_trait = trait_imperial_heir
-					}
-				}
 			}
 			############################################################## UPDATE COUNT
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country.

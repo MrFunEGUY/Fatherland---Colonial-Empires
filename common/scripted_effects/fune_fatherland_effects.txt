@@ -82,7 +82,7 @@ fatherland_iron_curtain_rogue_effect = {
 
 get_rogue_colony_after_effect = {
 	copy_techs_from = { target = root }
-	save_global_event_target_as = rogue_colony_nation
+	save_event_target_as = rogue_colony_nation
 	set_graphical_culture = event_target:fatherland_empire
 
 	give_technology = { tech = tech_starbase_3 message = no }
@@ -111,6 +111,11 @@ get_rogue_colony_after_effect = {
 			influence = 150
 			minor_artifacts = 200
 			mult = rogue_resources
+		}
+
+		if = {
+			limit = { has_global_flag = cultural_overhaul_funefork_active }
+			add_resource = { ecaf_crew = 1000 }
 		}
 
 		clear_variable = rogue_resources
