@@ -115,7 +115,7 @@ get_rogue_colony_after_effect = {
 
 		if = {
 			limit = { has_global_flag = cultural_overhaul_funefork_active }
-			add_resource = { ecaf_crew = 1000 }
+			add_resource = { ecaf_crew = 500 }
 		}
 
 		clear_variable = rogue_resources

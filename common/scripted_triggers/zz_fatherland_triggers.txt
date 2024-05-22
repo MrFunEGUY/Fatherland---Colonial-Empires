@@ -109,3 +109,21 @@ is_valid_rogue_planet = {
 	}
 }
 
+is_rogue_colony = {
+	OR = {
+		has_origin = origin_rogue_colony
+		has_origin = origin_hegira_colony
+		has_origin = origin_rogue_ai
+		has_origin = origin_rogue_corporation
+		has_origin = origin_free_proles
+		has_origin = origin_free_slaves
+		has_origin = origin_free_synths
+		has_origin = origin_liberated_biotrophies
+		has_origin = origin_perscuted_minority
+		has_origin = origin_banished_house
+		has_origin = origin_ideological_dissidents
+		has_origin = origin_crusader_state
+		has_origin = origin_plucky_explorers
+		has_origin = origin_fl_disinherited_heir
+	}
+}
