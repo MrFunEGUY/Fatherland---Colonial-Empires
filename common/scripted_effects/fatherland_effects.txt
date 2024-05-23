@@ -1,0 +1,125 @@
+
+###################################
+### Fatherland Fix by MrFunEGUY ###
+###################################
+
+fatherland_iron_curtain_rogue_effect = {
+
+	random_list = {
+		40 = {
+			capital_scope = { random_owned_pop = { kill_pop = yes } }
+			create_fleet = {
+				effect = {
+					set_owner = prev
+					
+					create_ship = {
+						name = random
+						random_existing_design = colonizer
+					}
+					set_location = prev.capital_scope
+				}
+			}
+		}
+		60 = { capital_scope = { random_owned_pop = { kill_pop = yes } } }
+	}
+	if = {
+		limit = { has_country_flag = fatherland_roguesetup_explorers }
+		remove_country_flag = fatherland_roguesetup_explorers
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_ai }
+		remove_country_flag = fatherland_roguesetup_ai
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_banished }
+		remove_country_flag = fatherland_roguesetup_banished
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_biotrophy }
+		remove_country_flag = fatherland_roguesetup_biotrophy
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_corpo }
+		remove_country_flag = fatherland_roguesetup_corpo
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_family_corpo }
+		remove_country_flag = fatherland_roguesetup_family_corpo
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_crusaders }
+		remove_country_flag = fatherland_roguesetup_crusaders
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_dissidents }
+		remove_country_flag = fatherland_roguesetup_dissidents
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_minority }
+		remove_country_flag = fatherland_roguesetup_minority
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_proles }
+		remove_country_flag = fatherland_roguesetup_proles
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_slaves }
+		remove_country_flag = fatherland_roguesetup_slaves
+	}
+	else_if = {
+		limit = { has_country_flag = fatherland_roguesetup_synthrevolt }
+		remove_country_flag = fatherland_roguesetup_synthrevolt
+	}
+	
+	event_target:rogue_event_planet = {
+		remove_modifier = rogue_target
+		remove_planet_flag = rogue_target
+		clear_global_event_target = rogue_event_planet
+	}
+}
+
+######
+
+get_rogue_colony_after_effect = {
+	copy_techs_from = { target = root }
+	save_event_target_as = rogue_colony_nation
+	set_graphical_culture = event_target:fatherland_empire
+
+	give_technology = { tech = tech_starbase_3 message = no }
+	give_technology = { tech = tech_strike_craft_1 message = no }
+
+	if = { 
+		limit = { has_global_flag = fatherland_instantcomms }
+		establish_communications_no_message = event_target:fatherland_empire
+	}
+
+	if = { 
+		limit = { has_global_flag = fatherland_bonusresources }
+		random_list = {
+			50 = { set_variable = { which = rogue_resources value = 1 } }
+			30 = { set_variable = { which = rogue_resources value = 2 } }
+			15 = { set_variable = { which = rogue_resources value = 3 } }
+			5 = { set_variable = { which = rogue_resources value = 4 } }
+		}
+
+		add_resource = {
+			energy = 1000
+			minerals = 1000
+			food = 2000
+			consumer_goods = 500
+			alloys = 500
+			influence = 150
+			minor_artifacts = 200
+			mult = rogue_resources
+		}
+
+		if = {
+			limit = { has_global_flag = cultural_overhaul_funefork_active }
+			add_resource = { ecaf_crew = 500 }
+		}
+
+		clear_variable = rogue_resources
+
+		add_500_unity_per_year_passed = yes
+	}
+}

@@ -25,12 +25,6 @@ on_yearly_pulse = {
 	}
 }
 
-on_yearly_pulse_country = {
-	events = {
-		fatherland_fix.1000			# Switch Civics to Origins.
-	}
-}
-
 #This = destroyed country
 #From = optional, destroyer (country)
 on_country_destroyed = {
