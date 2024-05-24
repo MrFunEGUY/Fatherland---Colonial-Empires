@@ -1,0 +1,10 @@
+fatherland_num_proles = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_pops
+		parameters = {
+			limit = { has_trait = trait_syncretic_proles }
+		}
+		mode = add
+	}
+}

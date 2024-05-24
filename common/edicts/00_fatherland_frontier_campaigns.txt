@@ -244,7 +244,8 @@ liberate_our_servile_brothers = {
 	resources = {
 		category = campaigns
 		cost = {
-			influence = 10
+			unity = 10
+			multiplier = value:fatherland_num_proles
 		}
 	}
 	modifier = {
@@ -255,18 +256,17 @@ liberate_our_servile_brothers = {
 	}
 	allow = { 
 		has_global_flag = fatherland_active
-		any_owned_pop = {
-			has_trait = trait_syncretic_proles
-		}		
+		any_owned_pop = { has_trait = trait_syncretic_proles }
 	}
 	effect = {
-	every_owned_pop = { limit = { has_trait = trait_syncretic_proles }
-		modify_species = {
-			species = this
-			remove_trait = trait_syncretic_proles 
-			add_trait = trait_liberated_syncretic_proles 
-			add_traits_at_start_of_list = yes
-			}	
+		every_owned_pop = {
+			limit = { has_trait = trait_syncretic_proles }
+			modify_species = {
+				species = this
+				remove_trait = trait_syncretic_proles
+				add_trait = trait_liberated_syncretic_proles
+				add_traits_at_start_of_list = yes
+			}
 		}
 	}
 	ai_weight = {
