@@ -1595,6 +1595,12 @@ country_event = {
 							who = root
 						}
 						country_event = { id = fatherland_rogue.102 days = 5 }
+						founder_species = {
+							modify_species = {
+								remove_trait = trait_syncretic_proles
+								add_trait = trait_liberated_syncretic_proles
+							}
+						}
 					}
 				}
 			}
