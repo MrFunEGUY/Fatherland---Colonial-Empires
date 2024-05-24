@@ -153,7 +153,7 @@ fatherland_menu_name:0 "Fatherland: Colonial Empires"
  syncretic_prole_repression_desc:0 "We are taking measures to more closely track our syncretic prole population. This should decrease the chance that any of our proles will be able to rise up or flee our empire in hopes of forming a rogue colony."
 
  trait_liberated_syncretic_proles:0 "Liberated Serviles"
- trait_liberated_syncretic_proles_desc:0 "This species evolved alongside a second, more advanced species. Never particularly intelligent to begin with, selective breeding for physical prowess and docility has reduced them to servile proles. Now the species has been liberated from their former overlords, they can fill leadership positions if poorly"
+ trait_liberated_syncretic_proles_desc:0 "This species evolved alongside a second, more advanced species. Never particularly intelligent to begin with, selective breeding for physical prowess and docility had reduced them to servile proles. However, now that the species has been liberated from their former overlords and genetic conditioning, they can fill leadership positions, if poorly."
  TRAIT_LIBERATED_SYNCRETIC_PROLES_EFFECT:0 ""
 
  rogue_target:0 "Rogue Target"
