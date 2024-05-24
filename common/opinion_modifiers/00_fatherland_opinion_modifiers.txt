@@ -64,7 +64,7 @@ opinion_fatherland_liberated_biotrophy = {
 
 triggered_opinion_fatherland_liberated_biotrophy = {
 	trigger = {
-		has_valid_civic = civic_liberated_biotrophies
+		has_origin = origin_liberated_biotrophies
 		from = { 
 			has_valid_civic = civic_machine_servitor
 			any_owned_pop = {

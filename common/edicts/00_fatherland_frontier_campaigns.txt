@@ -251,7 +251,7 @@ liberate_our_servile_brothers = {
 	}
 	potential = {
 		has_global_flag = fatherland_active
-		has_valid_civic = civic_free_proles
+		has_origin = origin_free_proles
 	}
 	allow = { 
 		has_global_flag = fatherland_active

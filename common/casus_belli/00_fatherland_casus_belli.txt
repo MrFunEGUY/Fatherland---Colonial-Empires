@@ -12,8 +12,8 @@ cb_liberate_brothers = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-			has_valid_civic = civic_free_proles
-		}
+		has_origin = origin_free_proles
+	}
 	is_valid = {
 		#has_total_war_cb = yes
 		NOT = { is_overlord_to = FROM }
@@ -59,7 +59,7 @@ cb_liberate_slaves = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-		has_valid_civic = civic_free_slaves
+		has_origin = origin_free_slaves
 	}
 	is_valid = {
 		#has_total_war_cb = yes
@@ -99,8 +99,8 @@ cb_liberate_biotrophies = {
 	show_in_diplomacy = yes
 	show_notification = yes
 	potential = {
-			has_valid_civic = civic_liberated_biotrophies
-		}
+		has_origin = origin_liberated_biotrophies
+	}
 	is_valid = {
 		#has_total_war_cb = yes
 		NOT = { is_overlord_to = FROM }
@@ -121,7 +121,7 @@ cb_recapture_biotrophies = {
 	is_valid = {
 		#has_total_war_cb = yes
 		NOT = { is_overlord_to = FROM }
-		FROM = { has_valid_civic = civic_liberated_biotrophies }
+		FROM = { has_origin = origin_liberated_biotrophies }
 		OR = {
 			is_subject = no
 			overlord = { NOT = { is_same_value = from } }

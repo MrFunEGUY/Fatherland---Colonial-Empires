@@ -1204,9 +1204,9 @@ country_event = {
 						inline_script = "countries/fatherland_rogue_corpo"
 						species = event_target:fatherland_species
 						authority = auth_corporate
+						randomize_ethos = yes
 						ethos = {
 							ethic = ethic_capitalism
-							ethic = random
 						}
 						origin = origin_rogue_corporation
 						effect = {
@@ -1358,10 +1358,10 @@ country_event = {
 					create_country = {
 						name = random
 						authority = random
+						randomize_ethos = yes
 						ethos = {
 							ethic = ethic_fanatic_spiritualist
 							ethic = ethic_fanatic_militarist
-							ethic = random
 						}
 						civics = random
 						origin = origin_crusader_state
@@ -1418,10 +1418,10 @@ country_event = {
 									type = default
 									species = event_target:fatherland_species
 									ignore_initial_colony_error = yes
+									randomize_ethos = yes
 									ethos = {
 										ethic = ethic_fanatic_egalitarian
 										ethic = ethic_fanatic_militarist
-										ethic = random
 									}
 									authority = auth_democratic
 									civics = random
@@ -1448,10 +1448,10 @@ country_event = {
 									type = default
 									species = event_target:fatherland_species
 									ignore_initial_colony_error = yes
+									randomize_ethos = yes
 									ethos = {
 										ethic = ethic_fanatic_egalitarian
 										ethic = ethic_fanatic_militarist
-										ethic = random
 									}
 									authority = auth_strict_democratic
 									civics = random
@@ -1478,10 +1478,10 @@ country_event = {
 									type = default
 									species = event_target:fatherland_species
 									ignore_initial_colony_error = yes
+									randomize_ethos = yes
 									ethos = {
 										ethic = ethic_fanatic_egalitarian
 										ethic = ethic_fanatic_militarist
-										ethic = random
 									}
 									authority = auth_dict_democratic
 									civics = random
@@ -1512,10 +1512,10 @@ country_event = {
 									type = default
 									species = event_target:fatherland_species
 									ignore_initial_colony_error = yes
+									randomize_ethos = yes
 									ethos = {
 										ethic = ethic_fanatic_egalitarian
 										ethic = ethic_fanatic_militarist
-										ethic = random
 									}
 									authority = auth_democratic
 									civics = random
@@ -1594,11 +1594,12 @@ country_event = {
 							modifier = opinion_fatherland_free_prole
 							who = root
 						}
-						country_event = { id = fatherland_rogue.102 days = 5 }
+						# country_event = { id = fatherland_rogue.102 days = 5 }
 						founder_species = {
 							change_species_characteristics = {
 								remove_trait = trait_syncretic_proles
 								add_trait = trait_liberated_syncretic_proles
+								add_traits_at_start_of_list = yes
 							}
 						}
 					}
@@ -1629,7 +1630,7 @@ country_event = {
 						# 	who = root
 						# 	days = -1
 						# }
-						country_event = { id = fatherland_rogue.102 days = 5 }
+						# country_event = { id = fatherland_rogue.102 days = 5 }
 					}
 				}
 				root = {
@@ -1701,10 +1702,7 @@ country_event = {
 					day_zero_contact = no
 					ethos = { ethic = ethic_gestalt_consciousness }
 					authority = auth_machine_intelligence
-					civics = {
-						civic = civic_rogue_ai
-						civic = random
-					}
+					civics = random
 					flag = random
 					origin = origin_rogue_ai
 					effect = {
@@ -2122,29 +2120,29 @@ country_event = { #Alters Liberated Prole Species
     title = "fatherland_rogue.102_name"
     desc = "fatherland_rogue.102_desc"
     picture = GFX_evt_alien_segregation
-	is_triggered_only = yes	
+	is_triggered_only = yes
 	hide_window = no
-	
+
 	trigger = {
-		has_civic = civic_free_proles
+		has_origin = origin_free_proles
 		NOT = { has_country_flag = fatherland_liberated_prole_edit }
 	}
 
-	immediate = {		
+	immediate = {
 	}
 	option = {
 		name = fatherland_rogue.102.a
 		hidden_effect = {
 			modify_species = {
 				species = root.species
-				remove_trait = trait_syncretic_proles 
-				add_trait = trait_liberated_syncretic_proles 
+				remove_trait = trait_syncretic_proles
+				add_trait = trait_liberated_syncretic_proles
 				add_traits_at_start_of_list = yes
-			}	
-			set_country_flag = fatherland_liberated_prole_edit	
+			}
+			set_country_flag = fatherland_liberated_prole_edit
 		}
 		custom_tooltip = "fatherland_rogue.102.a.tooltip"
-	}	
+	}
 }
 
 country_event = { #Rogue Renaming Event
