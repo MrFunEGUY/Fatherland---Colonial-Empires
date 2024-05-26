@@ -834,7 +834,7 @@ country_event = {
     					factor = 5
     					has_country_flag = slave_revolt_chain_active
     				}
-					modifier = {
+					modifier = { ## Civil Wars Mod
 						factor = 5
 						OR = {
 							any_owned_planet = { has_planet_flag = plan_slave_sep_active }
