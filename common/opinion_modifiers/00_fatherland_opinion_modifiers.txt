@@ -4,37 +4,37 @@
 
 opinion_fatherland_plucky = {
 	opinion = {
-		base = 20
+		base = 50
 	}
 }
 
 opinion_fatherland_dissident = {
 	opinion = {
-		base = -10
+		base = -50
 	}
 }
 
 opinion_fatherland_persecuted = {
 	opinion = {
-		base = -40
+		base = -100
 	}
 }
 
 opinion_fatherland_mutual_persecuted = {
 	opinion = {
-		base = 20
+		base = 50
 	}
 }
 
 opinion_fatherland_banished_house = {
 	opinion = {
-		base = -50
+		base = -150
 	}
 }
 
 opinion_fatherland_mutual_banished_house = {
 	opinion = {
-		base = 10
+		base = 25
 	}
 }
 
@@ -79,7 +79,7 @@ triggered_opinion_fatherland_liberated_biotrophy = {
 
 opinion_fatherland_disinherited_heir = {
 	opinion = {
-		base = -100
+		base = -150
 	}
 }
 
@@ -95,7 +95,7 @@ triggered_opinion_fatherland_hegira_children = { #If you have multiple doomsday 
 		}
 	}
 	opinion = {
-		base = 10
+		base = 25
 	}
 }
 
@@ -106,7 +106,7 @@ triggered_opinion_hegira_sibling = {
 	}
 
 	opinion = {
-		base = 10
+		base = 25
 	}
 }
 
@@ -121,7 +121,7 @@ triggered_opinion_hegira_earth_sibling = {
 	}
 
 	opinion = {
-		base = 10
+		base = 25
 	}
 }
 
