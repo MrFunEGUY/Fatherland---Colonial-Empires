@@ -1310,44 +1310,86 @@ country_event = {
 			if = {  ######## BANISHED HOUSE
 				limit = { has_country_flag = fatherland_roguesetup_banished }
 				custom_tooltip = "fatherland_rogue.100.banished.tooltip"
-				create_country = {
-					name = random
-					authority = auth_imperial
-					ethos = random
-					civics = random
-					origin = origin_banished_house
-					species = event_target:fatherland_species
-					ignore_initial_colony_error = yes
-					flag = random
-					type = default
-					effect = {
-						add_opinion_modifier = {
-							modifier = opinion_fatherland_banished_house
-							who = root
-						}
-						if = {
-							limit = { root = { has_civic = civic_feudal_realm } }
-							while = {
-								limit = { is_socialism = yes }
-								shift_ethic = ethic_capitalism
+				if = {
+					limit = { has_global_flag = cultural_overhaul_funefork_active }
+					random_list = {
+						50 = {
+							create_country = {
+								name = random
+								authority = auth_imperial
+								ethos = random
+								civics = random
+								origin = origin_banished_house
+								species = event_target:fatherland_species
+								ignore_initial_colony_error = yes
+								flag = random
+								type = default
 							}
-							change_government = {
-								remove_invalid_civics = yes
-								civics = { civic = civic_feudal_realm civic = random civic = random }
+							modifier = {
+								factor = 1.5
+								root = { is_imperial = yes }
 							}
 						}
-						else = {
-							while = {
-								limit = { is_socialism = yes }
-								shift_ethic = ethic_capitalism
+						50 = {
+							create_country = {
+								name = random
+								authority = auth_dictatorial
+								ethos = random
+								civics = random
+								origin = origin_banished_house
+								species = event_target:fatherland_species
+								ignore_initial_colony_error = yes
+								flag = random
+								type = default
 							}
-							change_government = {
-								remove_invalid_civics = yes
-								civics = { civic = civic_aristocratic_elite civic = random civic = random }
+							modifier = {
+								factor = 1.5
+								root = { is_dictatorial = yes }
 							}
 						}
-						get_rogue_colony_after_effect = yes
 					}
+				}
+				else = {
+					create_country = {
+						name = random
+						authority = auth_imperial
+						ethos = random
+						civics = random
+						origin = origin_banished_house
+						species = event_target:fatherland_species
+						ignore_initial_colony_error = yes
+						flag = random
+						type = default
+					}
+				}
+
+				last_created_country = {
+					add_opinion_modifier = {
+						modifier = opinion_fatherland_banished_house
+						who = root
+					}
+					if = {
+						limit = { root = { has_civic = civic_feudal_realm } }
+						while = {
+							limit = { is_socialism = yes }
+							shift_ethic = ethic_capitalism
+						}
+						change_government = {
+							remove_invalid_civics = yes
+							civics = { civic = civic_feudal_realm civic = random civic = random }
+						}
+					}
+					else = {
+						while = {
+							limit = { is_socialism = yes }
+							shift_ethic = ethic_capitalism
+						}
+						change_government = {
+							remove_invalid_civics = yes
+							civics = { civic = civic_aristocratic_elite civic = random civic = random }
+						}
+					}
+					get_rogue_colony_after_effect = yes
 				}
 			}
 			if = {  ######## CRUSADER STATE
@@ -1427,19 +1469,6 @@ country_event = {
 									civics = random
 									origin = origin_free_slaves
 									flag = random
-									effect = {
-										set_country_flag = fatherland_rogue_slave_country
-										add_opinion_modifier = {
-											modifier = opinion_fatherland_free_slave
-											who = root
-										}
-										add_casus_belli = {
-											type = cb_liberate_slaves
-											who = root
-											days = -1
-										}
-										get_rogue_colony_after_effect = yes
-									}
 								}
 							}
 							49 = {
@@ -1457,19 +1486,6 @@ country_event = {
 									civics = random
 									origin = origin_free_slaves
 									flag = random
-									effect = {
-										set_country_flag = fatherland_rogue_slave_country
-										add_opinion_modifier = {
-											modifier = opinion_fatherland_free_slave
-											who = root
-										}
-										add_casus_belli = {
-											type = cb_liberate_slaves
-											who = root
-											days = -1
-										}
-										get_rogue_colony_after_effect = yes
-									}
 								}
 							}
 							2 = {
@@ -1487,19 +1503,6 @@ country_event = {
 									civics = random
 									origin = origin_free_slaves
 									flag = random
-									effect = {
-										set_country_flag = fatherland_rogue_slave_country
-										add_opinion_modifier = {
-											modifier = opinion_fatherland_free_slave
-											who = root
-										}
-										add_casus_belli = {
-											type = cb_liberate_slaves
-											who = root
-											days = -1
-										}
-										get_rogue_colony_after_effect = yes
-									}
 								}
 							}
 						}
@@ -1521,19 +1524,6 @@ country_event = {
 									civics = random
 									origin = origin_free_slaves
 									flag = random
-									effect = {
-										set_country_flag = fatherland_rogue_slave_country
-										add_opinion_modifier = {
-											modifier = opinion_fatherland_free_slave
-											who = root
-										}
-										add_casus_belli = {
-											type = cb_liberate_slaves
-											who = root
-											days = -1
-										}
-										get_rogue_colony_after_effect = yes
-									}
 								}
 							}
 							20 = {
@@ -1551,23 +1541,39 @@ country_event = {
 									civics = random
 									origin = origin_free_slaves
 									flag = random
-									effect = {
-										set_country_flag = fatherland_rogue_slave_country
-										add_opinion_modifier = {
-											modifier = opinion_fatherland_free_slave
-											who = root
-										}
-										add_casus_belli = {
-											type = cb_liberate_slaves
-											who = root
-											days = -1
-										}
-										get_rogue_colony_after_effect = yes
-									}
 								}
 							}
 						}
 					}
+				}
+				else = {
+					create_country = {
+						name = random
+						type = default
+						species = event_target:fatherland_species
+						ignore_initial_colony_error = yes
+						ethos = {
+							ethic = ethic_fanatic_egalitarian
+							ethic = ethic_militarist
+						}
+						authority = auth_democratic
+						civics = random
+						origin = origin_free_slaves
+						flag = random
+					}
+				}
+				last_created_country = {
+					set_country_flag = fatherland_rogue_slave_country
+					add_opinion_modifier = {
+						modifier = opinion_fatherland_free_slave
+						who = root
+					}
+					add_casus_belli = {
+						type = cb_liberate_slaves
+						who = root
+						days = -1
+					}
+					get_rogue_colony_after_effect = yes
 				}
 				set_country_flag = fatherland_rogue_slaves
 			}
@@ -1652,10 +1658,7 @@ country_event = {
 					day_zero_contact = no
 					ethos = random
 					authority = random
-					civics = {
-						civic = civic_free_synths
-						civic = random
-					}
+					civics = random
 					flag = random
 					origin = origin_free_synths
 					effect = {
