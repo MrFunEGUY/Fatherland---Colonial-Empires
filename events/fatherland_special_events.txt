@@ -319,11 +319,13 @@ country_event = {
 							set_location = prev.capital_star
 						}
 					}
-					create_army = {
-						owner = THIS
-						type = assault_army
-						species = root
-					}																									
+					prev = {
+						create_army = {
+							owner = THIS
+							type = assault_army
+							species = root
+						}
+					}
 					spawn_megastructure = {
 						type = mega_shipyard_3
 						random_pos = no
@@ -337,17 +339,17 @@ country_event = {
 						owner = root
 					}
 					spawn_megastructure = {
-						type = habitat_0
+						type = habitat_central_complex
 						random_pos = yes
 						orbit_angle = 60
 						owner = root
-					}					
-					spawn_megastructure = {
-						type = habitat_0
-						random_pos = yes
-						orbit_angle = 30
-						owner = root
-					}										
+					}
+					# spawn_megastructure = {
+					# 	type = habitat_0
+					# 	random_pos = yes
+					# 	orbit_angle = 30
+					# 	owner = root
+					# }
 				}													
 			}
 		}	
