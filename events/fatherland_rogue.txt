@@ -1887,7 +1887,6 @@ country_event = {
 							species = owner_main_species
 							name = random
 							skill = 5
-							traits = { trait = random_trait }
 						}
 						while = {
 							count = 2
@@ -1896,7 +1895,6 @@ country_event = {
 								species = owner_main_species
 								name = random
 								skill = 5
-								traits = { trait = random_trait }
 							}
 						}
 						while = {
@@ -1906,7 +1904,6 @@ country_event = {
 								species = owner_main_species
 								name = random
 								skill = 5
-								traits = { trait = random_trait }
 							}
 						}
 					}
