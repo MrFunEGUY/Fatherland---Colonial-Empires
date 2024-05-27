@@ -2244,16 +2244,20 @@ country_event = { #Five Year Census Event - Part Two (For every hegira country, 
 
 country_event = { #On rogue colony Destroyed / Annexed 
     id = fatherland_rogue.999
-    title = "fatherland_rogue.999_name"
-    desc = "fatherland_rogue.999_desc"
-    picture = GFX_evt_burning_settlement
+    # title = "fatherland_rogue.999_name"
+    # desc = "fatherland_rogue.999_desc"
+    # picture = GFX_evt_burning_settlement
 	is_triggered_only = yes	
-	hide_window = no
+	hide_window = yes
 	
 	trigger = {
 		has_origin = origin_rogue_colony
 		# from = { has_origin = origin_rogue_colony }
 	}
+
+	# option = {
+	# 	name = INTERESTING
+	# }
 
 	immediate = {
 		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
