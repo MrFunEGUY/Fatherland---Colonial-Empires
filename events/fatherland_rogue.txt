@@ -1326,7 +1326,7 @@ country_event = {
 								type = default
 							}
 							modifier = {
-								factor = 1.5
+								factor = 2
 								root = { is_imperial = yes }
 							}
 						}
@@ -1343,7 +1343,7 @@ country_event = {
 								type = default
 							}
 							modifier = {
-								factor = 1.5
+								factor = 2
 								root = { is_dictatorial = yes }
 							}
 						}
