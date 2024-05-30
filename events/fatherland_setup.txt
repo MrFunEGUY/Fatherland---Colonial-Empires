@@ -202,41 +202,41 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 			set_country_flag = fatherland_startup_config
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
 			###### ROGUES
-				change_variable = {
+				set_variable = {
 					which = fatherland_globalmax_rogues
 					value = 20
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_aimax_rogues
 					value = 5
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_playermax_rogues
 					value = 6
 				}
 			###### FRONTIERS
-				change_variable = {
+				set_variable = {
 					which = fatherland_globalmax_fw
 					value = 12
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_aimax_fw
 					value = 3
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_playermax_fw
 					value = 3
 				}				
 			###### HEGIRANS				
-				change_variable = {
+				set_variable = {
 					which = fatherland_globalmax_hegirans
 					value = 10
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_aimax_hegirans
 					value = 10
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_playermax_hegirans
 					value = 10
 				}				
@@ -684,27 +684,27 @@ country_event = { #### PRESET GALAXY SETTINGS (Event 100a)
 
 		hidden_effect = {
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-				change_variable = {
+				set_variable = {
 					which = fatherland_globalmax_rogues
 					value = 25
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_globalmax_fw
 					value = 8
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_aimax_rogues
 					value = 25
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_aimax_fw
 					value = 2
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_playermax_rogues
 					value = 25
 				}
-				change_variable = {
+				set_variable = {
 					which = fatherland_playermax_fw
 					value = 3
 				}
@@ -756,27 +756,27 @@ country_event = { #### PRESET GALAXY SETTINGS (Event 100a)
 		set_country_flag = fatherland_first_time #### First Time set, disables settings on savegameload
 
 		event_target:global_event_country = {
-			change_variable = {
+			set_variable = {
 				which = fatherland_globalmax_hegirans
 				value = 5
 			}
-			change_variable = {
+			set_variable = {
 				which = fatherland_aimax_hegirans
 				value = 15
 			}
-			change_variable = {
+			set_variable = {
 				which = fatherland_playermax_hegirans
 				value = 15
 			}
-			change_variable = {
+			set_variable = {
 				which = fatherland_globalmax_rogues
 				value = 20
 			}
-			change_variable = {
+			set_variable = {
 				which = fatherland_aimax_rogues
 				value = 20
 			}
-			change_variable = {
+			set_variable = {
 				which = fatherland_playermax_rogues
 				value = 20
 			}			
@@ -1996,10 +1996,7 @@ country_event = { #### ROGUE COLONY MAX
 		name = fatherland_setup.105.plusone
 		hidden_effect = {
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_aimax_rogues
-				value = 1
-				}
+				change_variable = { which = fatherland_aimax_rogues value = 1 }
 			}
 			root = {
 				set_variable = {
@@ -2014,10 +2011,7 @@ country_event = { #### ROGUE COLONY MAX
 		name = fatherland_setup.105.plusfive
 		hidden_effect = {
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_aimax_rogues
-				value = 5
-				}
+				change_variable = { which = fatherland_aimax_rogues value = 5 }
 			}
 			root = {
 				set_variable = {
@@ -2032,10 +2026,7 @@ country_event = { #### ROGUE COLONY MAX
 		name = fatherland_setup.105.minusone
 		hidden_effect = {
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_aimax_rogues
-				value = -1
-				}
+				change_variable = { which = fatherland_aimax_rogues value = -1 }
 			}
 			root = {
 				set_variable = {
@@ -2050,10 +2041,7 @@ country_event = { #### ROGUE COLONY MAX
 		name = fatherland_setup.105.minusfive
 		hidden_effect = {
 			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_aimax_rogues
-				value = -5
-				}
+				change_variable = { which = fatherland_aimax_rogues value = -5 }
 			}
 			root = {
 				set_variable = {

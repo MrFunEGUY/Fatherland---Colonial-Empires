@@ -77,9 +77,7 @@ country_event = { #Five Year Census Event - Part Two (For every hegira country, 
 				value = 1
 			}	
 		}	
-			country_event = { id = fatherland_normalempires.100 
-			days = 2
-			}							
+		country_event = { id = fatherland_normalempires.100 days = 2 }
 	}
 }
 
