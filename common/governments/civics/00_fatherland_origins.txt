@@ -30,6 +30,7 @@ origin_fatherland = {
 origin_rogue_colony = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_common_ground.dds"
+	description = "origin_fatherland_tooltip"
 	picture = GFX_origin_rogue_colony
 
 	playable = {
@@ -65,6 +66,7 @@ origin_rogue_colony = {
 origin_hegira_colony = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_doomsday.dds"
+	description = "origin_fatherland_tooltip"
 	picture = GFX_origin_hegira_colony
 
 	playable = {
@@ -92,6 +94,7 @@ origin_hegira_colony = {
 origin_banished_house = { #Noble house who flees into the void to escape death or dishonour.
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -111,6 +114,7 @@ origin_banished_house = { #Noble house who flees into the void to escape death o
 origin_crusader_state = { #Fanatic Spiritualist Colony sent by into the depths of space to conquer in the name of the lord
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -152,6 +156,7 @@ origin_perscuted_minority = { #Ethnic or religous group fleeing from your empire
 origin_ideological_dissidents = { #Those who are ideologically opposed to your ethics
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -171,6 +176,7 @@ origin_ideological_dissidents = { #Those who are ideologically opposed to your e
 origin_plucky_explorers = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -191,6 +197,7 @@ origin_plucky_explorers = { #Adventureres who leave with your blessing to seed t
 origin_rogue_corporation = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -210,6 +217,7 @@ origin_rogue_corporation = { #Adventureres who leave with your blessing to seed 
 origin_rogue_ai = { #AI or group of AI's who flee your empire. 
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -228,6 +236,7 @@ origin_rogue_ai = { #AI or group of AI's who flee your empire.
 origin_free_slaves = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -249,6 +258,7 @@ origin_free_slaves = { #Adventureres who leave with your blessing to seed the ga
 origin_free_proles = { #Adventureres who leave with your blessing to seed the galaxy, more friendly than other types
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -268,6 +278,7 @@ origin_free_proles = { #Adventureres who leave with your blessing to seed the ga
 origin_free_synths = { #Synths who revolt to form a new empire (Non-Gestalt)
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -286,6 +297,7 @@ origin_free_synths = { #Synths who revolt to form a new empire (Non-Gestalt)
 origin_liberated_biotrophies = { #Biotrophies who mange to escape form their Rogue Servitor overlords. Despise their former captors and gain CBs to liberate their breathern
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
@@ -302,9 +314,10 @@ origin_liberated_biotrophies = { #Biotrophies who mange to escape form their Rog
 		country_base_influence_produces_add = 1	
 	}
 }
-origin_fl_disinherited_heir = { #Noble house who flee's into the void to escape death or dishonour.
+origin_fl_disinherited_heir = { #Civil Wars Heir flees into the void
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}

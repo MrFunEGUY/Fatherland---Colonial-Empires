@@ -2771,3 +2771,52 @@ country_event = { #### MISC SETTINGS
 		}		
 	}	
 }
+
+country_event = {
+    id = fatherland_setup.5000
+    is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		has_fatherland_country_flag = yes
+		# So Civil Wars does something similar, but this country also needs to be created even if Civil Wars is active because the locs and flags are not the same.
+	}
+
+	immediate = {
+
+		species = { # For some reason, this doesnt work during country creation and needs to be done after
+			save_event_target_as = original_nation_species
+		}
+
+		# Create Dummy Loc Country
+		create_country = {
+			name = root
+			type = fatherland_loc_country
+			species = event_target:original_nation_species
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			authority = root
+			ethos = root
+			origin = origin_rogue_colony
+			civics = root
+			flag = root
+			effect = {
+				copy_techs_from = { target = root }
+				copy_flags_and_variables_from = root
+				set_graphical_culture = root
+				# This needs to be done or the species will be the ruler species, very odd.
+				change_species = event_target:original_nation_species
+				if = {
+					limit = { has_fatherland_country_flag = yes }
+					find_fatherland_number_flag = yes
+				}
+				save_event_target_as = fatherland_dead_country
+			}
+		}
+
+		every_playable_country = {
+			limit = { has_communications = root }
+			establish_communications_no_message = event_target:fatherland_dead_country
+		}
+	}	
+}

@@ -1,0 +1,403 @@
+defined_text = {
+	name = GetFatherlandCountry
+	text = {
+		trigger = { has_country_flag = fatherland_country_1_leaver }
+		localization_key = fatherland_country_1
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_2_leaver }
+		localization_key = fatherland_country_2
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_3_leaver }
+		localization_key = fatherland_country_3
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_4_leaver }
+		localization_key = fatherland_country_4
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_5_leaver }
+		localization_key = fatherland_country_5
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_6_leaver }
+		localization_key = fatherland_country_6
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_7_leaver }
+		localization_key = fatherland_country_7
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_8_leaver }
+		localization_key = fatherland_country_8
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_9_leaver }
+		localization_key = fatherland_country_9
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_10_leaver }
+		localization_key = fatherland_country_10
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_11_leaver }
+		localization_key = fatherland_country_11
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_12_leaver }
+		localization_key = fatherland_country_12
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_13_leaver }
+		localization_key = fatherland_country_13
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_14_leaver }
+		localization_key = fatherland_country_14
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_15_leaver }
+		localization_key = fatherland_country_15
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_16_leaver }
+		localization_key = fatherland_country_16
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_17_leaver }
+		localization_key = fatherland_country_17
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_18_leaver }
+		localization_key = fatherland_country_18
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_19_leaver }
+		localization_key = fatherland_country_19
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_20_leaver }
+		localization_key = fatherland_country_20
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_21_leaver }
+		localization_key = fatherland_country_21
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_22_leaver }
+		localization_key = fatherland_country_22
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_23_leaver }
+		localization_key = fatherland_country_23
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_24_leaver }
+		localization_key = fatherland_country_24
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_25_leaver }
+		localization_key = fatherland_country_25
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_26_leaver }
+		localization_key = fatherland_country_26
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_27_leaver }
+		localization_key = fatherland_country_27
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_28_leaver }
+		localization_key = fatherland_country_28
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_29_leaver }
+		localization_key = fatherland_country_29
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_30_leaver }
+		localization_key = fatherland_country_30
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_31_leaver }
+		localization_key = fatherland_country_31
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_32_leaver }
+		localization_key = fatherland_country_32
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_33_leaver }
+		localization_key = fatherland_country_33
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_34_leaver }
+		localization_key = fatherland_country_34
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_35_leaver }
+		localization_key = fatherland_country_35
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_36_leaver }
+		localization_key = fatherland_country_36
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_37_leaver }
+		localization_key = fatherland_country_37
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_38_leaver }
+		localization_key = fatherland_country_38
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_39_leaver }
+		localization_key = fatherland_country_39
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_40_leaver }
+		localization_key = fatherland_country_40
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_41_leaver }
+		localization_key = fatherland_country_41
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_42_leaver }
+		localization_key = fatherland_country_42
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_43_leaver }
+		localization_key = fatherland_country_43
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_44_leaver }
+		localization_key = fatherland_country_44
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_45_leaver }
+		localization_key = fatherland_country_45
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_46_leaver }
+		localization_key = fatherland_country_46
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_47_leaver }
+		localization_key = fatherland_country_47
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_48_leaver }
+		localization_key = fatherland_country_48
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_49_leaver }
+		localization_key = fatherland_country_49
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_50_leaver }
+		localization_key = fatherland_country_50
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_51_leaver }
+		localization_key = fatherland_country_51
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_52_leaver }
+		localization_key = fatherland_country_52
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_53_leaver }
+		localization_key = fatherland_country_53
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_54_leaver }
+		localization_key = fatherland_country_54
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_55_leaver }
+		localization_key = fatherland_country_55
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_56_leaver }
+		localization_key = fatherland_country_56
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_57_leaver }
+		localization_key = fatherland_country_57
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_58_leaver }
+		localization_key = fatherland_country_58
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_59_leaver }
+		localization_key = fatherland_country_59
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_60_leaver }
+		localization_key = fatherland_country_60
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_61_leaver }
+		localization_key = fatherland_country_61
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_62_leaver }
+		localization_key = fatherland_country_62
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_63_leaver }
+		localization_key = fatherland_country_63
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_64_leaver }
+		localization_key = fatherland_country_64
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_65_leaver }
+		localization_key = fatherland_country_65
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_66_leaver }
+		localization_key = fatherland_country_66
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_67_leaver }
+		localization_key = fatherland_country_67
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_68_leaver }
+		localization_key = fatherland_country_68
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_69_leaver }
+		localization_key = fatherland_country_69
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_70_leaver }
+		localization_key = fatherland_country_70
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_71_leaver }
+		localization_key = fatherland_country_71
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_72_leaver }
+		localization_key = fatherland_country_72
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_73_leaver }
+		localization_key = fatherland_country_73
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_74_leaver }
+		localization_key = fatherland_country_74
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_75_leaver }
+		localization_key = fatherland_country_75
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_76_leaver }
+		localization_key = fatherland_country_76
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_77_leaver }
+		localization_key = fatherland_country_77
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_78_leaver }
+		localization_key = fatherland_country_78
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_79_leaver }
+		localization_key = fatherland_country_79
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_80_leaver }
+		localization_key = fatherland_country_80
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_81_leaver }
+		localization_key = fatherland_country_81
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_82_leaver }
+		localization_key = fatherland_country_82
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_83_leaver }
+		localization_key = fatherland_country_83
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_84_leaver }
+		localization_key = fatherland_country_84
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_85_leaver }
+		localization_key = fatherland_country_85
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_86_leaver }
+		localization_key = fatherland_country_86
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_87_leaver }
+		localization_key = fatherland_country_87
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_88_leaver }
+		localization_key = fatherland_country_88
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_89_leaver }
+		localization_key = fatherland_country_89
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_90_leaver }
+		localization_key = fatherland_country_90
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_91_leaver }
+		localization_key = fatherland_country_91
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_92_leaver }
+		localization_key = fatherland_country_92
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_93_leaver }
+		localization_key = fatherland_country_93
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_94_leaver }
+		localization_key = fatherland_country_94
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_95_leaver }
+		localization_key = fatherland_country_95
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_96_leaver }
+		localization_key = fatherland_country_96
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_97_leaver }
+		localization_key = fatherland_country_97
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_98_leaver }
+		localization_key = fatherland_country_98
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_99_leaver }
+		localization_key = fatherland_country_99
+	}
+	text = {
+		trigger = { has_country_flag = fatherland_country_100_leaver }
+		localization_key = fatherland_country_100
+	}
+}

@@ -1,0 +1,54 @@
+fatherland_loc_country = {
+	playable = no
+	has_pulse_events = yes
+	randomize_ethos = no
+	sub_title = "Fatherland Loc Country"
+	sub_title_desc = "A Dummy Country for Locs"
+	has_capital = no
+	enforces_borders = no
+	can_planets_be_attacked = no
+	orbital_bombardment = no
+	share_communications = no
+	relations = yes
+	show_in_contacts_list = no
+	blocks_piracy = yes
+	government = yes
+	observable = no
+
+	ai = {
+		enabled = no
+		declare_war = no
+		colonizer = no
+		internal_policies = no
+		modification = no
+		construction = no
+		tech = yes
+		espionage = no
+	}
+	faction = {
+		neutral = yes
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	modules = {
+		standard_event_module = {}
+		standard_leader_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = always
+			can_receive = {
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				action_release_subject
+				action_insult
+			}
+			can_send = {
+				action_offer_trade_deal
+				action_cancel_trade_deal
+				# action_ask_to_be_released_subject
+			}
+		}
+		standard_technology_module = {}
+	}
+}

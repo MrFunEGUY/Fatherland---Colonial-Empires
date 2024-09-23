@@ -627,7 +627,7 @@ country_event = {
 		}
 		OR = { ########### CHECKS TO SEE IF HEGIRAS, FRONITER WORLDS OR DOOMSDAY FATHERLANDS CAN PRODUCE ROGUES	
 			AND = {
-				has_origin = origin_rogue_colony
+				is_rogue_colony = yes
 				has_global_flag = fatherland_roguerogues_on
 			}			
 			AND = {	
@@ -646,7 +646,7 @@ country_event = {
 				has_origin = origin_hegira_colony 
 				has_origin = origin_doomsday
 				has_origin = origin_frontier_world
-				has_origin = origin_rogue_colony
+				is_rogue_colony = yes
 			}
 		}
 	}
@@ -1327,7 +1327,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 2
-								root = { is_imperial = yes }
+								root = { is_imperial_authority =yes }
 							}
 						}
 						50 = {
@@ -1344,7 +1344,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 2
-								root = { is_dictatorial = yes }
+								root = { is_dictatorial_authority =yes }
 							}
 						}
 					}
@@ -1857,11 +1857,13 @@ country_event = {
 								set_fleet_stance = evasive
 								set_location = event_target:rogue_event_planet
 								owner = {
+									get_fatherland_leader_homeworld = yes
 									create_leader = {
 										name = random
 										class = scientist
 										sub_type = survey
 										species = owner_main_species
+										background_planet = event_target:leader_homeworld
 									}
 								}
 								set_leader = last_created_leader
@@ -1882,28 +1884,34 @@ country_event = {
 						}
 
 						# Create Leaders
+						get_fatherland_leader_homeworld = yes
 						create_leader = {
 							class = official
 							species = owner_main_species
 							name = random
 							skill = 5
+							background_planet = event_target:leader_homeworld
 						}
 						while = {
 							count = 2
+							get_fatherland_leader_homeworld = yes
 							create_leader = {
 								class = commander
 								species = owner_main_species
 								name = random
 								skill = 5
+								background_planet = event_target:leader_homeworld
 							}
 						}
 						while = {
 							count = 3
+							get_fatherland_leader_homeworld = yes
 							create_leader = {
 								class = scientist
 								species = owner_main_species
 								name = random
 								skill = 5
+								background_planet = event_target:leader_homeworld
 							}
 						}
 					}
@@ -2151,7 +2159,6 @@ country_event = { #Rogue Renaming Event
 	hide_window = yes
 	
 	trigger = {
-		# has_origin = origin_rogue_colony
 		NOT = { has_country_flag = fatherland_rogues_namecheck }
 	}
 
@@ -2172,7 +2179,7 @@ event = {
 		any_galaxy_planet = {
 			OR = {
 				has_owner = no
-				owner = { NOT = { has_origin = origin_rogue_colony } }
+				owner = { is_rogue_colony = no }
 			}
 			has_modifier = rogue_colonial_world
 		}
@@ -2183,7 +2190,7 @@ event = {
 			limit = {
 				OR = {
 					has_owner = no
-					owner = { NOT = { has_origin = origin_rogue_colony } }
+					owner = { is_rogue_colony = no }
 				}
 				has_modifier = rogue_colonial_world
 			}
@@ -2199,7 +2206,7 @@ country_event = { #Five Year Census Event - Part One (resets global event total 
 	hide_window = yes
 	
 	trigger = {
-		has_origin = origin_rogue_colony
+		is_rogue_colony = yes
 		NOT = { has_global_flag = fatherland_limittomax_rogues }
 	}
 
@@ -2222,7 +2229,7 @@ country_event = { #Five Year Census Event - Part Two (For every hegira country, 
 	hide_window = yes
 	
 	trigger = {
-		has_origin = origin_rogue_colony
+		is_rogue_colony = yes
 		NOT = { has_global_flag = fatherland_limittomax_rogues }
 	}
 
@@ -2248,13 +2255,8 @@ country_event = { #On rogue colony Destroyed / Annexed
 	hide_window = yes
 	
 	trigger = {
-		has_origin = origin_rogue_colony
-		# from = { has_origin = origin_rogue_colony }
+		is_rogue_colony = yes
 	}
-
-	# option = {
-	# 	name = INTERESTING
-	# }
 
 	immediate = {
 		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
