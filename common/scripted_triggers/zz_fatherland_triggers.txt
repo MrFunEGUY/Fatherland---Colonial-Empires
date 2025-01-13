@@ -111,7 +111,7 @@ is_valid_rogue_planet = {
 
 is_rogue_colony = {
 	OR = {
-		has_origin = origin_rogue_colony
+		has_origin = origin_rogue_colony_fl
 		has_origin = origin_hegira_colony
 		has_origin = origin_rogue_ai
 		has_origin = origin_rogue_corporation

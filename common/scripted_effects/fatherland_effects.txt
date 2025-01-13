@@ -1084,7 +1084,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_1
 		}
 		else_if = {
@@ -1102,7 +1102,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_2
 		}
 		else_if = {
@@ -1120,7 +1120,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_3
 		}
 		else_if = {
@@ -1138,7 +1138,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_4
 		}
 		else_if = {
@@ -1156,7 +1156,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_5
 		}
 		else_if = {
@@ -1174,7 +1174,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_6
 		}
 		else_if = {
@@ -1192,7 +1192,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_7
 		}
 		else_if = {
@@ -1210,7 +1210,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_8
 		}
 		else_if = {
@@ -1228,7 +1228,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_9
 		}
 		else_if = {
@@ -1246,7 +1246,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_10
 		}
 		else_if = {
@@ -1264,7 +1264,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_11
 		}
 		else_if = {
@@ -1282,7 +1282,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_12
 		}
 		else_if = {
@@ -1300,7 +1300,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_13
 		}
 		else_if = {
@@ -1318,7 +1318,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_14
 		}
 		else_if = {
@@ -1336,7 +1336,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_15
 		}
 		else_if = {
@@ -1354,7 +1354,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_16
 		}
 		else_if = {
@@ -1372,7 +1372,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_17
 		}
 		else_if = {
@@ -1390,7 +1390,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_18
 		}
 		else_if = {
@@ -1408,7 +1408,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_19
 		}
 		else_if = {
@@ -1426,7 +1426,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_20
 		}
 		else_if = {
@@ -1444,7 +1444,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_21
 		}
 		else_if = {
@@ -1462,7 +1462,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_22
 		}
 		else_if = {
@@ -1480,7 +1480,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_23
 		}
 		else_if = {
@@ -1498,7 +1498,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_24
 		}
 		else_if = {
@@ -1516,7 +1516,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_25
 		}
 		else_if = {
@@ -1534,7 +1534,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_26
 		}
 		else_if = {
@@ -1552,7 +1552,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_27
 		}
 		else_if = {
@@ -1570,7 +1570,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_28
 		}
 		else_if = {
@@ -1588,7 +1588,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_29
 		}
 		else_if = {
@@ -1606,7 +1606,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_30
 		}
 		else_if = {
@@ -1624,7 +1624,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_31
 		}
 		else_if = {
@@ -1642,7 +1642,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_32
 		}
 		else_if = {
@@ -1660,7 +1660,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_33
 		}
 		else_if = {
@@ -1678,7 +1678,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_34
 		}
 		else_if = {
@@ -1696,7 +1696,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_35
 		}
 		else_if = {
@@ -1714,7 +1714,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_36
 		}
 		else_if = {
@@ -1732,7 +1732,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_37
 		}
 		else_if = {
@@ -1750,7 +1750,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_38
 		}
 		else_if = {
@@ -1768,7 +1768,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_39
 		}
 		else_if = {
@@ -1786,7 +1786,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_40
 		}
 		else_if = {
@@ -1804,7 +1804,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_41
 		}
 		else_if = {
@@ -1822,7 +1822,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_42
 		}
 		else_if = {
@@ -1840,7 +1840,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_43
 		}
 		else_if = {
@@ -1858,7 +1858,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_44
 		}
 		else_if = {
@@ -1876,7 +1876,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_45
 		}
 		else_if = {
@@ -1894,7 +1894,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_46
 		}
 		else_if = {
@@ -1912,7 +1912,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_47
 		}
 		else_if = {
@@ -1930,7 +1930,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_48
 		}
 		else_if = {
@@ -1948,7 +1948,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_49
 		}
 		else_if = {
@@ -1966,7 +1966,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_50
 		}
 		else_if = {
@@ -1984,7 +1984,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_51
 		}
 		else_if = {
@@ -2002,7 +2002,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_52
 		}
 		else_if = {
@@ -2020,7 +2020,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_53
 		}
 		else_if = {
@@ -2038,7 +2038,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_54
 		}
 		else_if = {
@@ -2056,7 +2056,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_55
 		}
 		else_if = {
@@ -2074,7 +2074,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_56
 		}
 		else_if = {
@@ -2092,7 +2092,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_57
 		}
 		else_if = {
@@ -2110,7 +2110,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_58
 		}
 		else_if = {
@@ -2128,7 +2128,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_59
 		}
 		else_if = {
@@ -2146,7 +2146,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_60
 		}
 		else_if = {
@@ -2164,7 +2164,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_61
 		}
 		else_if = {
@@ -2182,7 +2182,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_62
 		}
 		else_if = {
@@ -2200,7 +2200,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_63
 		}
 		else_if = {
@@ -2218,7 +2218,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_64
 		}
 		else_if = {
@@ -2236,7 +2236,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_65
 		}
 		else_if = {
@@ -2254,7 +2254,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_66
 		}
 		else_if = {
@@ -2272,7 +2272,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_67
 		}
 		else_if = {
@@ -2290,7 +2290,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_68
 		}
 		else_if = {
@@ -2308,7 +2308,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_69
 		}
 		else_if = {
@@ -2326,7 +2326,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_70
 		}
 		else_if = {
@@ -2344,7 +2344,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_71
 		}
 		else_if = {
@@ -2362,7 +2362,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_72
 		}
 		else_if = {
@@ -2380,7 +2380,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_73
 		}
 		else_if = {
@@ -2398,7 +2398,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_74
 		}
 		else_if = {
@@ -2416,7 +2416,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_75
 		}
 		else_if = {
@@ -2434,7 +2434,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_76
 		}
 		else_if = {
@@ -2452,7 +2452,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_77
 		}
 		else_if = {
@@ -2470,7 +2470,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_78
 		}
 		else_if = {
@@ -2488,7 +2488,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_79
 		}
 		else_if = {
@@ -2506,7 +2506,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_80
 		}
 		else_if = {
@@ -2524,7 +2524,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_81
 		}
 		else_if = {
@@ -2542,7 +2542,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_82
 		}
 		else_if = {
@@ -2560,7 +2560,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_83
 		}
 		else_if = {
@@ -2578,7 +2578,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_84
 		}
 		else_if = {
@@ -2596,7 +2596,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_85
 		}
 		else_if = {
@@ -2614,7 +2614,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_86
 		}
 		else_if = {
@@ -2632,7 +2632,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_87
 		}
 		else_if = {
@@ -2650,7 +2650,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_88
 		}
 		else_if = {
@@ -2668,7 +2668,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_89
 		}
 		else_if = {
@@ -2686,7 +2686,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_90
 		}
 		else_if = {
@@ -2704,7 +2704,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_91
 		}
 		else_if = {
@@ -2722,7 +2722,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_92
 		}
 		else_if = {
@@ -2740,7 +2740,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_93
 		}
 		else_if = {
@@ -2758,7 +2758,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_94
 		}
 		else_if = {
@@ -2776,7 +2776,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_95
 		}
 		else_if = {
@@ -2794,7 +2794,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_96
 		}
 		else_if = {
@@ -2812,7 +2812,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_97
 		}
 		else_if = {
@@ -2830,7 +2830,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_98
 		}
 		else_if = {
@@ -2848,7 +2848,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_99
 		}
 		else_if = {
@@ -2866,7 +2866,7 @@ find_fatherland_number_flag = {
 			}
 		}
 		else_if = {
-			limit = { has_origin = origin_rogue_colony }
+			limit = { has_origin = origin_rogue_colony_fl }
 			save_global_event_target_as = fatherland_country_100
 		}
 		else_if = {

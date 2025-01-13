@@ -27,7 +27,7 @@ origin_fatherland = {
 #####################
 #### ROGUE COLONY - Formed during game, are independent empires with bonuses to expansion and generally hostile attitude towards Fatherland.
 #####################
-origin_rogue_colony = {
+origin_rogue_colony_fl = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_common_ground.dds"
 	description = "origin_fatherland_tooltip"
