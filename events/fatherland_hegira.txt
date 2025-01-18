@@ -161,8 +161,8 @@
 # 		has_origin = origin_doomsday
 # 		############ NOT GESTALT, MACHINE OR SUBJECT		
 # 		NOR = { 
-# 			has_authority = auth_hive_mind
-# 			has_authority = auth_machine_intelligence 
+# 			is_hive_empire = yes
+# 			is_machine_empire = yes 
 # 		}
 # 		############ MAIN CHECK	
 # 		OR = { ######## 1 - MAIN VARIABLES CHECK
@@ -1461,10 +1461,10 @@
 # 		add_district = district_city
 # 		add_district = district_mining
 # 		add_district = district_generator
-# 		if = { limit = { owner = { has_authority = auth_machine_intelligence } }
+# 		if = { limit = { owner = { is_machine_empire = yes } }
 # 			create_pop = { species = last_created_species }
 # 		}
-# 		if = { limit = { NOT = { owner = { has_authority = auth_machine_intelligence } } }
+# 		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
 # 			create_pop = { species = fatherland_hegira_species }
 # 		}	
 # 		add_modifier = {
@@ -2661,14 +2661,14 @@
 # 		add_district = district_mining
 # 		add_district = district_generator
 # 		############################################################## GET POPS
-# 		if = { limit = { owner = { has_authority = auth_machine_intelligence } }
+# 		if = { limit = { owner = { is_machine_empire = yes } }
 # 			create_pop = { species = last_created_species }
 # 			create_pop = { species = last_created_species }
 # 			create_pop = { species = last_created_species }
 # 			create_pop = { species = last_created_species }
 # 			create_pop = { species = last_created_species }
 # 		}
-# 		if = { limit = { NOT = { owner = { has_authority = auth_machine_intelligence } } }
+# 		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
 # 			create_pop = { species = fatherland_hegira_species }
 # 			create_pop = { species = fatherland_hegira_species }
 # 			create_pop = { species = fatherland_hegira_species }
@@ -2680,7 +2680,7 @@
 # 			limit = {
 # 				root = { 
 # 					NOT = { 
-# 						has_authority = auth_machine_intelligence
+# 						is_machine_empire = yes
 # 					}
 # 				} 
 # 				this.planet = { 
@@ -3286,7 +3286,7 @@
 # 			limit = {
 # 				root = { 
 # 					NOT = { 
-# 						has_authority = auth_machine_intelligence
+# 						is_machine_empire = yes
 # 					}
 # 				} 
 # 				this.planet = { 

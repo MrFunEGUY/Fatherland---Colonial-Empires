@@ -318,7 +318,7 @@ country_event = { #### VERY FAST (Yearly)
 
 	trigger = {
 		NOT = {
-			has_authority = auth_hive_mind 
+			is_hive_empire = yes 
 			has_policy_flag =  iron_curtain
 		}
 		has_global_flag = fatherland_rogues_active
@@ -341,7 +341,7 @@ country_event = { #### FASTER (Bi-Yearly)
 
 	trigger = {
 		NOT = {
-			has_authority = auth_hive_mind 
+			is_hive_empire = yes 
 			has_policy_flag =  iron_curtain
 		}
 		has_global_flag = fatherland_rogues_active
@@ -364,7 +364,7 @@ country_event = { #### FAST (Five-Yearly)
 
 	trigger = {
 		NOT = {
-			has_authority = auth_hive_mind 
+			is_hive_empire = yes 
 			has_policy_flag =  iron_curtain
 		}
 		has_global_flag = fatherland_rogues_active
@@ -387,7 +387,7 @@ country_event = { #### DEFAULT (Decade - Default)
 
 	trigger = {
 		NOT = {
-			has_authority = auth_hive_mind 
+			is_hive_empire = yes 
 			has_policy_flag =  iron_curtain
 		}
 		has_global_flag = fatherland_rogues_active
@@ -592,7 +592,7 @@ country_event = {
 		has_global_flag = fatherland_rogues_active
 		is_country_type = default
 		############ NOT HIVE
-		NOT = { has_authority = auth_hive_mind }
+		NOT = { is_hive_empire = yes }
 		############ TIME PASSED AND POPS
 		if = { limit = { has_global_flag = fatherland_rogue_timelimit_on }
 			years_passed > 10
@@ -857,7 +857,7 @@ country_event = {
     			20 = { ### Machine Intelligence
     				modifier = { ### ROBO ONLY
     					factor = 0
-    					NOT = { has_authority = auth_machine_intelligence }
+    					NOT = { is_machine_empire = yes }
     				}
     				set_country_flag = fatherland_roguesetup_machineintelligence
     			}
@@ -865,7 +865,7 @@ country_event = {
     				modifier = {
     					factor = 0
 						OR = {
-							has_authority = auth_machine_intelligence ### NO ROBO (can they even have synths?)
+							is_machine_empire = yes ### NO ROBO (can they even have synths?)
 							NAND = { ### Must have synth tech and applicable synth POP
 								has_technology = tech_synthetic_workers
 								any_owned_pop = { is_robot_pop = yes }
@@ -1765,7 +1765,7 @@ country_event = {
 				if = {	### IF NORMAL EMPIRE CREATING ROGUE AI
 					limit = {
 						root = {
-							NOT = { has_authority = auth_machine_intelligence }
+							NOT = { is_machine_empire = yes }
 							has_country_flag = fatherland_roguesetup_ai
 						}
 					}
@@ -1774,7 +1774,7 @@ country_event = {
 				else_if = {	### IF MACHINE EMPIRE CREATING MACHINE POP ROGUE
 					limit = {
 						root = {
-							has_authority = auth_machine_intelligence
+							is_machine_empire = yes
 							has_country_flag = fatherland_roguesetup_machineintelligence
 						}
 					}
@@ -1785,10 +1785,10 @@ country_event = {
 					# 	owner = {
 					# 		OR = {
 					# 			AND = {
-					# 				has_authority = auth_machine_intelligence
+					# 				is_machine_empire = yes
 					# 				has_country_flag = fatherland_roguesetup_biotrophy
 					# 			}
-					# 			NOT = { has_authority = auth_machine_intelligence }
+					# 			NOT = { is_machine_empire = yes }
 					# 		}
 					# 	}
 					# }
