@@ -8,6 +8,7 @@ country_event = { #### SETUP, only host will recieve in MP due to fire_only_once
 	fire_only_once = yes
 
 	trigger = { # In case I use this flag elsewhere
+		is_ai = no
 		NOT = { has_country_flag = multiplayer_host_country }
 	}
 
