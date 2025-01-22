@@ -136,6 +136,7 @@ origin_crusader_state = { #Fanatic Spiritualist Colony sent by into the depths o
 origin_perscuted_minority = { #Ethnic or religous group fleeing from your empire to settle their own land. Happens if you choose persecute minority during event, or if purging / displacing
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_rogue_colony.dds"
+	description = "origin_fatherland_tooltip"
 	playable = {
 		always = no
 	}
