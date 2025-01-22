@@ -1093,7 +1093,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_authoritarian }
 							}
 							while = {
-								limit = { is_authoritarian = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } }
 								shift_ethic = ethic_egalitarian
 							}
 						}
@@ -1103,7 +1103,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_egalitarian }
 							}
 							while = {
-								limit = { is_egalitarian = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_authoritarian } }
 								shift_ethic = ethic_authoritarian
 							}
 						}
@@ -1113,7 +1113,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_militarist }
 							}
 							while = {
-								limit = { is_militarist = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_pacifist } }
 								shift_ethic = ethic_pacifist
 							}
 						}
@@ -1123,7 +1123,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_pacifist }
 							}
 							while = {
-								limit = { is_pacifist = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_militarist } }
 								shift_ethic = ethic_militarist
 							}
 						}
@@ -1133,7 +1133,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_materialist }
 							}
 							while = {
-								limit = { is_materialist = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
 								shift_ethic = ethic_spiritualist
 							}
 						}
@@ -1143,7 +1143,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_spiritualist }
 							}
 							while = {
-								limit = { is_spiritualist = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_materialist } }
 								shift_ethic = ethic_materialist
 							}
 						}
@@ -1153,7 +1153,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_xenophile }
 							}
 							while = {
-								limit = { is_xenophile = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
 								shift_ethic = ethic_xenophobe
 							}
 						}
@@ -1163,7 +1163,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_xenophobe }
 							}
 							while = {
-								limit = { is_xenophobe = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_xenophile } }
 								shift_ethic = ethic_xenophile
 							}
 						}
@@ -1173,7 +1173,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_socialism }
 							}
 							while = {
-								limit = { is_socialist = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_capitalism } }
 								shift_ethic = ethic_capitalism
 							}
 						}
@@ -1183,7 +1183,7 @@ country_event = {
 								root = { has_ethic = ethic_fanatic_capitalism }
 							}
 							while = {
-								limit = { is_capitalism = yes }
+								limit = { NOT = { has_ethic = ethic_fanatic_socialism } }
 								shift_ethic = ethic_socialism
 							}
 						}
@@ -1327,7 +1327,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 2
-								root = { is_imperial_authority =yes }
+								root = { is_imperial_authority = yes }
 							}
 						}
 						50 = {
@@ -1344,7 +1344,7 @@ country_event = {
 							}
 							modifier = {
 								factor = 2
-								root = { is_dictatorial_authority =yes }
+								root = { is_dictatorial_authority = yes }
 							}
 						}
 					}
