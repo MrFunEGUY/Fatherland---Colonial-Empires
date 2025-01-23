@@ -66,7 +66,7 @@ origin_rogue_colony_fl = {
 origin_hegira_colony = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_doomsday.dds"
-	description = "origin_fatherland_tooltip"
+	description = "origin_tooltip_hegira_colony"
 	picture = GFX_origin_hegira_colony
 
 	playable = {
@@ -81,10 +81,14 @@ origin_hegira_colony = {
 		always = yes
 	}
 
+	modifier = {
+		envoys_add = 1
+		country_unity_produces_mult = 0.10
+	}
+
 	random_weight = {
 		base = 0
 	}
-	description = "origin_tooltip_hegira_colony"
 
 	advanced_start = no
 	

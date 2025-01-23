@@ -205,7 +205,7 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 			###### ROGUES
 				set_variable = {
 					which = fatherland_globalmax_rogues
-					value = 20
+					value = 25
 				}
 				set_variable = {
 					which = fatherland_aimax_rogues
@@ -292,7 +292,7 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 		if = { limit = { NOT = { has_modifier = fatherland_recent_census } }
 			every_country = { ### INITIAL CENSUS EVENTS TO TRACK PREMADE EMPIRES AND SUCH
 				country_event = { id = fatherland_rogue.997 }	#Rogue Census
-				# country_event = { id = fatherland_hegira.997 }	#Hegira Census
+				country_event = { id = fatherland_hegira.997 }	#Hegira Census
 				country_event = { id = fatherland_normalempires.101 }	#Normal Empire Census				
 			}	
 			if = { limit = { has_global_flag = fatherland_frontiers_installed }
@@ -2577,7 +2577,7 @@ country_event = { #### HIGERIA SPEED
 			remove_global_flag = fatherland_fast_hegira
 			remove_global_flag = fatherland_faster_hegira
 	}
-	option = { ##### FAST x2
+	option = { ##### FAST x2 Bi-Yearly
 		name = fatherland_setup.108.hegira.fast
 		country_event = { id = fatherland_setup.106 }
 			remove_global_flag = fatherland_slow_hegirans
@@ -2585,7 +2585,7 @@ country_event = { #### HIGERIA SPEED
 			set_global_flag = fatherland_fast_hegira
 			remove_global_flag = fatherland_faster_hegira
 	}
-	option = { ##### FASTER x10
+	option = { ##### FASTER x10 Yearly
 		name = fatherland_setup.108.hegira.faster
 		country_event = { id = fatherland_setup.106 }
 			remove_global_flag = fatherland_slow_hegirans

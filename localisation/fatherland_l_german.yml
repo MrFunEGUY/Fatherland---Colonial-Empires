@@ -21,7 +21,7 @@ fatherland_menu_name: "Fatherland: Colonial Empires"
  
  origin_hegira_colony: "Higiran State"
  origin_hegira_colony_desc: "This civilization came into being during The Hegira, when their former homeworld underwent a §BDoomsday§! event that forced the people of the world to flee in search of a new world to call home. The people of this empire see themselves as part of a larger diaspora of those who fled the Doomsday, and consider others of the same diaspora including their former empire if it still exists to be one people. This will significantly improve diplomatic relations with all aforementioned parties and make it easier for the Doomsday empire to re-integrate these worlds back into the fold."
- origin_tooltip_hegira_colony: "Wander Free"
+ origin_tooltip_hegira_colony: "$origin_fatherland_tooltip$"
 
  origin_fatherland: "Colonial Fatherland"
  origin_fatherland_desc: "This empire has seen many of citizens strike out to establish their own independent nations far away from the fatherland."
