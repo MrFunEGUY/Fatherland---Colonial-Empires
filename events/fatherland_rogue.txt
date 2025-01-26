@@ -1795,19 +1795,22 @@ country_event = {
 					random_list = {
 						60 = {
 							while = {
-								count = 3
+								# count = 3
+								count = 6
 								create_pop = { species = event_target:fatherland_species }
 							}
 						}
 						35 = {
 							while = {
-								count = 4
+								# count = 4
+								count = 8
 								create_pop = { species = event_target:fatherland_species }
 							}
 						}
 						5 = {
 							while = {
-								count = 5
+								# count = 5
+								count = 10
 								create_pop = { species = event_target:fatherland_species }
 							}
 						}
