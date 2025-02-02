@@ -828,19 +828,16 @@ country_event = {
     				set_country_flag = fatherland_roguesetup_slaves
     				modifier = {
     					factor = 0
-    					any_owned_pop = { is_enslaved = no }
+    					NOT = { any_owned_pop = { is_enslaved = yes } }
     				}
     				modifier = {
     					factor = 5
-    					has_country_flag = slave_revolt_chain_active
+						any_situation = { has_situation_flag = slave_revolt }
     				}
 					modifier = { ## Civil Wars Mod
-						factor = 5
-						OR = {
-							any_owned_planet = { has_planet_flag = plan_slave_sep_active }
-							any_owned_sector = { has_sector_flag = sec_slave_sep_active }
-						}
-					}
+    					factor = 7
+						any_situation = { has_situation_flag = slave_revolt_sec }
+    				}
     			}
     			10 = { ### Syncretic Servile Prole Revolt - Syncretic Evolution Origin
     				set_country_flag = fatherland_roguesetup_proles
@@ -927,11 +924,40 @@ country_event = {
 		save_event_target_as = fatherland_empire
 		if = {	#### Chooses Enslaved POP is that was flagged above
 			limit = { has_country_flag = fatherland_roguesetup_slaves }
-			random_owned_pop = {
-				limit = { is_enslaved = yes }  
-				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+			if = { # Prefer actively rebelling slaves
+				limit = { any_situation = { has_situation_flag = slave_revolt_sec } }
+				random_situation = {
+					limit = { has_situation_flag = slave_revolt_sec }
+					target = {
+						random_owned_pop = {
+							limit = { is_enslaved = yes }  
+							species = { save_event_target_as = fatherland_species }
+							set_pop_flag = fatherland_rogue_pop
+						}
+					}
+				}
 			}
+			else_if = {
+				limit = { any_situation = { has_situation_flag = slave_revolt } }
+				random_situation = {
+					limit = { has_situation_flag = slave_revolt }
+					target = {
+						random_owned_pop = {
+							limit = { is_enslaved = yes }  
+							species = { save_event_target_as = fatherland_species }
+							set_pop_flag = fatherland_rogue_pop
+						}
+					}
+				}
+			}
+			else = {
+				random_owned_pop = {
+					limit = { is_enslaved = yes }  
+					species = { save_event_target_as = fatherland_species }
+					set_pop_flag = fatherland_rogue_pop
+				}
+			}
+			
 		}
 		else_if = {	#### Chooses Syncretic Prole POP is that was flagged above
 			limit = { has_country_flag = fatherland_roguesetup_proles } 
@@ -1417,6 +1443,7 @@ country_event = {
 								modifier = opinion_fatherland_holy_land
 								who = root
 							}
+							fire_on_action = { on_action = uncivic_exalted_priesthood_on_forced_follower_created }
 							get_rogue_colony_after_effect = yes
 						}
 					}
@@ -1441,6 +1468,7 @@ country_event = {
 								modifier = opinion_fatherland_holy_land
 								who = root
 							}
+							fire_on_action = { on_action = uncivic_exalted_priesthood_on_forced_follower_created }
 							get_rogue_colony_after_effect = yes
 						}
 					}
