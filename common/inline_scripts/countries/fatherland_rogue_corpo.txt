@@ -5,3 +5,6 @@ day_zero_contact = no
 civics = random
 flag = random
 type = default
+species = event_target:fatherland_species
+authority = auth_corporate
+origin = origin_rogue_corporation

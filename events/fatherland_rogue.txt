@@ -814,7 +814,6 @@ country_event = {
     					factor = 0
 						OR = {
 							is_gestalt = yes
-							is_pacifist = no
 							NOT = { has_ethic = ethic_fanatic_spiritualist }
 						}
     				}
@@ -1086,10 +1085,7 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_minority }
 				custom_tooltip = "fatherland_rogue.100.minority.tooltip"
 				create_country = {
-					inline_script = "countries/fatherland_rogue_default"
-					species = event_target:fatherland_species
-					civics = random
-					origin = origin_perscuted_minority
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_perscuted_minority }
 					effect = {
 						add_opinion_modifier = {
 							modifier = opinion_fatherland_persecuted
@@ -1104,114 +1100,82 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_dissidents }
 				custom_tooltip = "fatherland_rogue.100.dissidents.tooltip"
 				create_country = {
-					inline_script = "countries/fatherland_rogue_default"
-					species = event_target:fatherland_species
-					civics = random
-					origin = origin_ideological_dissidents
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_ideological_dissidents }
 					effect = {
 						add_opinion_modifier = {
 							modifier = opinion_fatherland_dissident
 							who = root
 						}
+						# Dont wanna be fanatic in same thing as fatherland
 						if = {
 							limit = {
-								is_authoritarian = yes
+								has_ethic = ethic_fanatic_authoritarian
 								root = { has_ethic = ethic_fanatic_authoritarian }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_egalitarian } }
-								shift_ethic = ethic_egalitarian
-							}
+							shift_ethic = ethic_egalitarian
 						}
 						else_if = {
 							limit = {
-								is_egalitarian = yes
+								has_ethic = ethic_fanatic_egalitarian
 								root = { has_ethic = ethic_fanatic_egalitarian }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_authoritarian } }
-								shift_ethic = ethic_authoritarian
-							}
+							shift_ethic = ethic_authoritarian
 						}
 						if = {
 							limit = {
-								is_militarist = yes
+								has_ethic = ethic_fanatic_militarist
 								root = { has_ethic = ethic_fanatic_militarist }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_pacifist } }
-								shift_ethic = ethic_pacifist
-							}
+							shift_ethic = ethic_pacifist
 						}
 						else_if = {
 							limit = {
-								is_pacifist = yes
+								has_ethic = ethic_fanatic_pacifist
 								root = { has_ethic = ethic_fanatic_pacifist }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_militarist } }
-								shift_ethic = ethic_militarist
-							}
+							shift_ethic = ethic_militarist
 						}
 						if = {
 							limit = {
-								is_materialist = yes
+								has_ethic = ethic_fanatic_materialist
 								root = { has_ethic = ethic_fanatic_materialist }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_spiritualist } }
-								shift_ethic = ethic_spiritualist
-							}
+							shift_ethic = ethic_spiritualist
 						}
 						else_if = {
 							limit = {
-								is_spiritualist = yes
+								has_ethic = ethic_fanatic_spiritualist
 								root = { has_ethic = ethic_fanatic_spiritualist }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_materialist } }
-								shift_ethic = ethic_materialist
-							}
+							shift_ethic = ethic_materialist
 						}
 						if = {
 							limit = {
-								is_xenophile = yes
+								has_ethic = ethic_fanatic_xenophile
 								root = { has_ethic = ethic_fanatic_xenophile }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_xenophobe } }
-								shift_ethic = ethic_xenophobe
-							}
+							shift_ethic = ethic_xenophobe
 						}
 						else_if = {
 							limit = {
-								is_xenophobe = yes
+								has_ethic = ethic_fanatic_xenophobe
 								root = { has_ethic = ethic_fanatic_xenophobe }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_xenophile } }
-								shift_ethic = ethic_xenophile
-							}
+							shift_ethic = ethic_xenophile
 						}
 						if = {
 							limit = {
-								is_socialist = yes
+								has_ethic = ethic_fanatic_socialism
 								root = { has_ethic = ethic_fanatic_socialism }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_capitalism } }
-								shift_ethic = ethic_capitalism
-							}
+							shift_ethic = ethic_capitalism
 						}
 						else_if = {
 							limit = {
-								is_capitalism = yes
+								has_ethic = ethic_fanatic_capitalism
 								root = { has_ethic = ethic_fanatic_capitalism }
 							}
-							while = {
-								limit = { NOT = { has_ethic = ethic_fanatic_socialism } }
-								shift_ethic = ethic_socialism
-							}
+							shift_ethic = ethic_socialism
 						}
 						change_government = {
 							authority = random
@@ -1227,14 +1191,11 @@ country_event = {
 				if = {
 					limit = { has_global_flag = cultural_overhaul_active }
 					create_country = {
-						inline_script = "countries/fatherland_rogue_corpo"
-						species = event_target:fatherland_species
-						authority = auth_corporate
+						inline_script = { script = countries/fatherland_rogue_corpo }
 						randomize_ethos = yes
 						ethos = {
 							ethic = ethic_capitalism
 						}
-						origin = origin_rogue_corporation
 						effect = {
 							get_rogue_colony_after_effect = yes
 						}
@@ -1242,11 +1203,8 @@ country_event = {
 				}
 				else = {
 					create_country = {
-						inline_script = "countries/fatherland_rogue_corpo"
-						species = event_target:fatherland_species
-						authority = auth_corporate
+						inline_script = { script = countries/fatherland_rogue_corpo }
 						ethos = random
-						origin = origin_rogue_corporation
 						effect = {
 							get_rogue_colony_after_effect = yes
 						}
@@ -1257,14 +1215,11 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_family_corpo }
 				custom_tooltip = "fatherland_rogue.100.corpo.tooltip"
 				create_country = {
-					inline_script = "countries/fatherland_rogue_corpo"
-					species = event_target:fatherland_species
-					#authority = auth_corporate_imperial
-					authority = auth_corporate
+					inline_script = { script = countries/fatherland_rogue_corpo }
 					ethos = random
-					origin = origin_rogue_corporation
 					effect = {
 						get_rogue_colony_after_effect = yes
+						## This needs to be done this way or else it was breaking for some reason
 						while = {
 							limit = { is_authoritarian = no }
 							shift_ethic = ethic_authoritarian
@@ -1317,10 +1272,7 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_explorers }
 				custom_tooltip = "fatherland_rogue.100.explorers.tooltip"
 				create_country = {
-					inline_script = "countries/fatherland_rogue_default"
-					species = event_target:fatherland_species
-					civics = random
-					origin = origin_plucky_explorers
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_plucky_explorers }
 					effect = {
 						# if = { limit = { root = { has_valid_civic = civic_fanatic_purifier } }
 						# 	force_add_civic = civic_fanatic_purifier
@@ -1339,7 +1291,7 @@ country_event = {
 				if = {
 					limit = { has_global_flag = cultural_overhaul_funefork_active }
 					random_list = {
-						50 = {
+						65 = {
 							create_country = {
 								name = random
 								authority = auth_imperial
@@ -1356,7 +1308,7 @@ country_event = {
 								root = { is_imperial_authority = yes }
 							}
 						}
-						50 = {
+						35 = {
 							create_country = {
 								name = random
 								authority = auth_dictatorial
@@ -1395,7 +1347,13 @@ country_event = {
 						who = root
 					}
 					if = {
-						limit = { root = { has_civic = civic_feudal_realm } }
+						limit = {
+							root = { has_civic = civic_feudal_realm }
+							OR = {
+								has_ecaf_mod = yes
+								is_imperial_authority = yes
+							}
+						}
 						while = {
 							limit = { is_socialist = yes }
 							shift_ethic = ethic_capitalism
@@ -1405,7 +1363,13 @@ country_event = {
 							civics = { civic = civic_feudal_realm civic = random civic = random }
 						}
 					}
-					else = {
+					else_if = {
+						limit = {
+							OR = {
+								has_ecaf_mod = yes
+								is_dictatorial_authority = no
+							}
+						}
 						while = {
 							limit = { is_socialist = yes }
 							shift_ethic = ethic_capitalism
@@ -1424,19 +1388,11 @@ country_event = {
 				if = {
 					limit = { has_global_flag = cultural_overhaul_active }
 					create_country = {
-						name = random
-						authority = random
-						randomize_ethos = yes
+						inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_crusader_state }
 						ethos = {
 							ethic = ethic_fanatic_spiritualist
 							ethic = ethic_fanatic_militarist
 						}
-						civics = random
-						origin = origin_crusader_state
-						species = event_target:fatherland_species
-						ignore_initial_colony_error = yes
-						flag = random
-						type = default
 						effect = {
 							#set_country_flag = fatherland_player_rogue
 							add_opinion_modifier = {
@@ -1450,18 +1406,11 @@ country_event = {
 				}
 				else = {
 					create_country = {
-						name = random
-						authority = random
+						inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_crusader_state }
 						ethos = {
 							ethic = ethic_fanatic_spiritualist
 							ethic = ethic_militarist
 						}
-						civics = random
-						origin = origin_crusader_state
-						species = event_target:fatherland_species
-						ignore_initial_colony_error = yes
-						flag = random
-						type = default
 						effect = {
 							#set_country_flag = fatherland_player_rogue
 							add_opinion_modifier = {
@@ -1609,10 +1558,7 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_proles }
 				custom_tooltip = "fatherland_rogue.100.proles.tooltip"
 				create_country = {
-					inline_script = "countries/fatherland_rogue_default"
-					species = event_target:fatherland_species
-					civics = random
-					origin = origin_free_proles
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_free_proles }
 					effect = {
 						add_opinion_modifier = {
 							modifier = opinion_fatherland_free_prole
@@ -1644,15 +1590,7 @@ country_event = {
 				set_country_flag = fatherland_biotrophy_security
 				custom_tooltip = "fatherland_rogue.100.biotrophy.tooltip"
 				create_country = {
-					name = random
-					type = default
-					species = event_target:fatherland_species
-					ignore_initial_colony_error = yes
-					ethos = random
-					authority = random
-					civics = random
-					origin = origin_liberated_biotrophies
-					flag = random
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_liberated_biotrophies }
 					effect = {
 						get_rogue_colony_after_effect = yes
 						add_opinion_modifier = {
@@ -1679,16 +1617,7 @@ country_event = {
 				limit = { has_country_flag = fatherland_roguesetup_synthrevolt }
 				custom_tooltip = "fatherland_roguesetup_synthrevolt.tooltip"
 				create_country = {
-					name = random
-					type = default
-					species = event_target:fatherland_species
-					ignore_initial_colony_error = yes
-					day_zero_contact = no
-					ethos = random
-					authority = random
-					civics = random
-					flag = random
-					origin = origin_free_synths
+					inline_script = { script = countries/fatherland_rogue_default ORIGIN = origin_free_synths }
 					effect = {
 						get_rogue_colony_after_effect = yes
 					}

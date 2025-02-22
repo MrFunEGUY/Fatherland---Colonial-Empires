@@ -6,3 +6,7 @@ day_zero_contact = no
 ethos = random
 flag = random
 type = default
+species = event_target:fatherland_species
+civics = random
+origin = $ORIGIN$
+randomize_ethos = yes

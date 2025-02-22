@@ -19,6 +19,7 @@ annihilator_system = {
 }
 
 ######
+has_ecaf_mod = { always = no }
 
 is_socialist = { is_socialism = yes }
 
