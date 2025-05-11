@@ -355,17 +355,17 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		}			
 ######################### SELECTS FATHERLAND SPECIES THAT WILL APPEAR ON NEW HEGIRA
 		save_global_event_target_as = fatherland_empire
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			limit = {
 			NOR = { 
-				pop_has_trait = trait_syncretic_proles
+				pop_group_has_trait = trait_syncretic_proles
 				is_pop_category = pre_sapients
 				is_enslaved = yes
 				is_being_purged = yes
 				}  
 			}  
-		species = { save_global_event_target_as = fatherland_hegira_species }
-		set_pop_flag = fatherland_hegira_pop
+			species = { save_global_event_target_as = fatherland_hegira_species }
+			set_pop_group_flag = fatherland_hegira_pop
 		}
 ######################### FINDS A RANDOM HABITABAL WORLD FOR Hegira COLONY
 		random_system = {
@@ -447,9 +447,9 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		}
 		if = { limit = { has_global_flag = fatherland_poploss_on }
 		capital_scope = {
-			random_owned_pop = { 
-				limit = { has_pop_flag = fatherland_hegira_pop }
-				kill_pop = yes 
+			weighted_random_owned_pop_group = { 
+				limit = { has_pop_group_flag = fatherland_hegira_pop }
+					kill_pop_group = { pop_group = this amount = 10% } 
 				}			
 			}
 		}
@@ -1450,10 +1450,10 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		add_district = district_mining
 		add_district = district_generator
 		if = { limit = { owner = { is_machine_empire = yes } }
-			create_pop = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
 		}
 		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
-			create_pop = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
 		}	
 		add_modifier = {
 			modifier = hegira_colonial_world
@@ -1616,9 +1616,9 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		}		
 		if = { limit = { has_global_flag = fatherland_poploss_on }
 		capital_scope = {
-			random_owned_pop = { 
-				limit = { has_pop_flag = fatherland_hegira_pop }
-				kill_pop = yes 
+			weighted_random_owned_pop_group = { 
+				limit = { has_pop_group_flag = fatherland_hegira_pop }
+					kill_pop_group = { pop_group = this amount = 10% } 
 				}			
 			}
 		}
@@ -2628,18 +2628,18 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		add_district = district_generator
 		############################################################## GET POPS
 		if = { limit = { owner = { is_machine_empire = yes } }
-			create_pop = { species = last_created_species }
-			create_pop = { species = last_created_species }
-			create_pop = { species = last_created_species }
-			create_pop = { species = last_created_species }
-			create_pop = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
+			create_pop_group = { species = last_created_species }
 		}
 		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
-			create_pop = { species = fatherland_hegira_species }
-			create_pop = { species = fatherland_hegira_species }
-			create_pop = { species = fatherland_hegira_species }
-			create_pop = { species = fatherland_hegira_species }
-			create_pop = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
 		}	
 		############################################################## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
 		if = { 
@@ -2816,12 +2816,12 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 			remove_country_flag = fatherland_hegiran_state
 		}
 		clear_global_event_target = fatherland_hegira_species
-		random_owned_pop = { limit = { has_pop_flag = fatherland_hegira_pop } 
-			remove_pop_flag = fatherland_hegira_pop 
+		weighted_random_owned_pop_group = { limit = { has_pop_group_flag = fatherland_hegira_pop } 
+			remove_pop_group_flag = fatherland_hegira_pop 
 		}
 		event_target:fatherland_hegira_species = { 
 			clear_global_event_target = fatherland_hegira_species 
-			remove_pop_flag = fatherland_hegira_pop 	
+			remove_pop_group_flag = fatherland_hegira_pop 	
 		}	
 		event_target:global_event_country = { #Sets variable tracking failures, if this gets too high will ask players if they want to disable hegirans  (to avoid spam)
 			change_variable = {
@@ -3070,17 +3070,17 @@ country_event = { #Great Migrant Fleet
 	immediate = {	
 ######################### SELECTS FATHERLAND SPECIES THAT WILL APPEAR ON NEW WORLD
 		save_global_event_target_as = hegira_fleet_nation
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			limit = {
 			NOR = { 
-				pop_has_trait = trait_syncretic_proles
+				pop_group_has_trait = trait_syncretic_proles
 				is_pop_category = pre_sapients
 				is_enslaved = yes
 				is_being_purged = yes
 				}  
 			}  
 		species = { save_global_event_target_as = fatherland_hegira_species }
-		set_pop_flag = fatherland_hegira_pop
+		set_pop_group_flag = fatherland_hegira_pop
 		}
 ######################### FINDS A RANDOM HABITABAL WORLD FOR Hegira COLONY
 		random_system = {
@@ -3199,7 +3199,7 @@ country_event = { #Great Migrant Fleet
 		add_planet_devastation = 100
 		while = {
 			limit = { 
-				num_pops > 0
+				pop_amount > 0
 			}
 			owner = {
 				change_variable = {
@@ -3207,7 +3207,7 @@ country_event = { #Great Migrant Fleet
 					value = 1
 				}
 			}			
-			random_owned_pop = { kill_pop = yes }
+			weighted_random_owned_pop_group = { kill_pop_group = { pop_group = this amount = 75% } }
 		}		
 	}
 	####################### SET NEW PLANET AS CAPITAL	
@@ -3229,7 +3229,7 @@ country_event = { #Great Migrant Fleet
 		set_owner = event_target:hegira_fleet_nation
 		set_capital = yes
 		############################################################## GET POPS
-		create_pop = { species = fatherland_hegira_species }
+		create_pop_group = { species = fatherland_hegira_species }
 		while = {
 			limit = { 
 				root = {
@@ -3245,7 +3245,7 @@ country_event = { #Great Migrant Fleet
 					value = -1
 				}
 			}			
-			create_pop = { species = fatherland_hegira_species }
+			create_pop_group = { species = fatherland_hegira_species }
 		}
 		############################################################## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
 		if = { 

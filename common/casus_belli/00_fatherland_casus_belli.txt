@@ -18,10 +18,10 @@ cb_liberate_brothers = {
 		#has_total_war_cb = yes
 		NOT = { is_overlord_to = FROM }
 		FROM = {
-			any_owned_pop = {
+			any_owned_pop_group = {
 				OR = {
-				has_trait = trait_syncretic_proles
-				has_trait = trait_liberated_syncretic_proles
+					has_trait = trait_syncretic_proles
+					has_trait = trait_liberated_syncretic_proles
 				}
 			}
 		}
@@ -41,10 +41,10 @@ cb_recapture_proles = {
 		#has_total_war_cb = yes
 		NOT = { is_overlord_to = FROM }
 		FROM = {
-			any_owned_pop = {
+			any_owned_pop_group = {
 				OR = {
-				has_trait = trait_syncretic_proles
-				has_trait = trait_liberated_syncretic_proles
+					has_trait = trait_syncretic_proles
+					has_trait = trait_liberated_syncretic_proles
 				}
 			}
 		}		
@@ -66,7 +66,7 @@ cb_liberate_slaves = {
 		NOT = { is_overlord_to = FROM }
 		FROM = {
 			has_policy_flag = slavery_allowed
-			any_owned_pop = {
+			any_owned_pop_group = {
 				is_enslaved = yes
 			}
 			has_country_flag = fatherland_rogue_slaves

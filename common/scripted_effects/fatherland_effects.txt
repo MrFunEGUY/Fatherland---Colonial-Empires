@@ -7,7 +7,7 @@ fatherland_iron_curtain_rogue_effect = {
 
 	random_list = {
 		40 = {
-			capital_scope = { random_owned_pop = { kill_pop = yes } }
+			capital_scope = { weighted_random_owned_pop_group = { kill_pop_group = { pop_group = this amount = 10% } } }
 			create_fleet = {
 				effect = {
 					set_owner = prev
@@ -20,7 +20,7 @@ fatherland_iron_curtain_rogue_effect = {
 				}
 			}
 		}
-		60 = { capital_scope = { random_owned_pop = { kill_pop = yes } } }
+		60 = { capital_scope = { weighted_random_owned_pop_group = { kill_pop_group = { pop_group = this amount = 10% } } } }
 	}
 	if = {
 		limit = { has_country_flag = fatherland_roguesetup_explorers }

@@ -4,24 +4,25 @@ fatherland_recent_census = {
 
 hegira_target = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
-	pop_growth_speed = 0.01
+	logistic_growth_mult = 0.01
 }
 hegira_fleet_target = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
-	pop_growth_speed = 0.01
+	logistic_growth_mult = 0.01
 }
 rogue_target = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
-	pop_growth_speed = 0.01
+	logistic_growth_mult = 0.01
 }
 rogue_nation_boost = {
+	logistic_growth_mult = 0.35
 	ship_military_cost_mult = -0.4
 }
 ##################################################### COLONIAL HOMEWORLD 
 rogue_colonial_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
 	pop_environment_tolerance = 0.15
-	pop_growth_speed = 0.3
+	logistic_growth_mult = 0.15
 }
 recent_rogue_colony = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"
@@ -29,7 +30,7 @@ recent_rogue_colony = {
 hegira_colonial_world = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_expel_population.dds"
 	pop_environment_tolerance = 0.20
-	pop_growth_speed = 0.10
+	logistic_growth_mult = 0.10
 }
 recent_hegiran_state = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_archaeology.dds"
@@ -225,7 +226,7 @@ last_stand_1 = {
 	ship_home_territory_fire_rate_mult = 0.5
 	#shipclass_starbase_hull_mult = 0.5
 	#shipclass_starbase_damage_mult = 0.5
-	pop_growth_speed = 0.25
+	logistic_growth_mult = 0.25
 	#ship_fire_rate_mult = 0.25
 	all_technology_research_speed = 0.5
 	starbase_outpost_cost_mult = -0.25
@@ -241,7 +242,7 @@ last_stand_2 = {
 	ship_home_territory_fire_rate_mult = 1
 	#shipclass_starbase_hull_mult = 1
 	#shipclass_starbase_damage_mult = 1
-	pop_growth_speed = 0.5
+	logistic_growth_mult = 0.5
 	#ship_fire_rate_mult = 0.5
 	all_technology_research_speed = 0.75
 	starbase_outpost_cost_mult = -0.33
@@ -257,7 +258,7 @@ last_stand_3 = {
 	ship_home_territory_fire_rate_mult = 2
 	#shipclass_starbase_hull_mult = 2
 	#shipclass_starbase_damage_mult = 2
-	pop_growth_speed = 1
+	logistic_growth_mult = 1
 	#ship_fire_rate_mult = 1
 	all_technology_research_speed = 1
 	starbase_outpost_cost_mult = -0.5
@@ -284,7 +285,7 @@ galactic_bulwark = { ### IF YOU CANT DRIVE BACK THE CRISIS WITH THIS YOU DESERVE
 	starbase_shipyard_build_time_mult = -2
 	starbase_defense_platform_capacity_add = 10
 	ship_home_territory_fire_rate_mult = 2
-	pop_growth_speed = 1
+	logistic_growth_mult = 1
 	ship_fire_rate_mult = 1
 	ship_orbital_bombardment_mult = 5
 	planet_orbital_bombardment_damage = -0.5

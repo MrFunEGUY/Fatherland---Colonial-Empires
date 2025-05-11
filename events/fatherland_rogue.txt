@@ -13,7 +13,7 @@ country_event = { #### Rogue Initializer
 
 		random = {
 			chance = 65
-			random_owned_pop = { # Really wish there was a better way to do this
+			weighted_random_owned_pop_group = { # Really wish there was a better way to do this
 				limit = {
 					OR = {
 						is_free_robot = yes
@@ -598,7 +598,7 @@ country_event = {
 			years_passed > 10
 		}
 		if = { limit = { has_global_flag = fatherland_rogue_poplimit }		
-			capital_scope = { num_pops > 20 }
+			capital_scope = { pop_amount > 2000 }
 		}
 		############ MAIN CHECK	
 		OR = {
@@ -688,14 +688,14 @@ country_event = {
 						OR = {
 							is_gestalt = yes ### NO ROBO
 							NOR = {  ## Only residents can do this
-								any_owned_pop = { has_citizenship_type = { type = citizenship_purge } }
-								any_owned_pop = { has_citizenship_type = { type = citizenship_limited } }
+								any_owned_pop_group = { has_citizenship_type = { type = citizenship_purge } }
+								any_owned_pop_group = { has_citizenship_type = { type = citizenship_limited } }
 							}
 						}
     				}
 					modifier = {
 						factor = 1.75
-						any_owned_pop = { has_citizenship_type = { type = citizenship_purge } }
+						any_owned_pop_group = { has_citizenship_type = { type = citizenship_purge } }
 					}
 					modifier = {
 						factor = 1.25
@@ -827,7 +827,7 @@ country_event = {
     				set_country_flag = fatherland_roguesetup_slaves
     				modifier = {
     					factor = 0
-    					NOT = { any_owned_pop = { is_enslaved = yes } }
+    					NOT = { any_owned_pop_group = { is_enslaved = yes } }
     				}
     				modifier = {
     					factor = 5
@@ -842,7 +842,7 @@ country_event = {
     				set_country_flag = fatherland_roguesetup_proles
     				modifier = {
     					factor = 0
-    					NOT = { any_owned_pop = { pop_has_trait = trait_syncretic_proles } }
+    					NOT = { any_owned_pop_group = { pop_group_has_trait = trait_syncretic_proles } }
     				}
     				modifier = {
     					factor = 0.5
@@ -864,7 +864,7 @@ country_event = {
 							is_machine_empire = yes ### NO ROBO (can they even have synths?)
 							NAND = { ### Must have synth tech and applicable synth POP
 								has_technology = tech_synthetic_workers
-								any_owned_pop = { is_robot_pop = yes }
+								any_owned_pop_group = { is_robot_pop = yes }
 							}
 						}
     				}
@@ -874,7 +874,7 @@ country_event = {
     				set_country_flag = fatherland_roguesetup_biotrophy
     				modifier = {
     					factor = 0
-    					NOT = { any_owned_pop = { has_living_standard = { type = living_standard_organic_trophy } } }
+    					NOT = { any_owned_pop_group = { has_living_standard = { type = living_standard_organic_trophy } } }
     				}
     				modifier = {
     					factor = 0.5
@@ -928,10 +928,10 @@ country_event = {
 				random_situation = {
 					limit = { has_situation_flag = slave_revolt_sec }
 					target = {
-						random_owned_pop = {
+						weighted_random_owned_pop_group = {
 							limit = { is_enslaved = yes }  
 							species = { save_event_target_as = fatherland_species }
-							set_pop_flag = fatherland_rogue_pop
+							set_pop_group_flag = fatherland_rogue_pop
 						}
 					}
 				}
@@ -941,61 +941,61 @@ country_event = {
 				random_situation = {
 					limit = { has_situation_flag = slave_revolt }
 					target = {
-						random_owned_pop = {
+						weighted_random_owned_pop_group = {
 							limit = { is_enslaved = yes }  
 							species = { save_event_target_as = fatherland_species }
-							set_pop_flag = fatherland_rogue_pop
+							set_pop_group_flag = fatherland_rogue_pop
 						}
 					}
 				}
 			}
 			else = {
-				random_owned_pop = {
+				weighted_random_owned_pop_group = {
 					limit = { is_enslaved = yes }  
 					species = { save_event_target_as = fatherland_species }
-					set_pop_flag = fatherland_rogue_pop
+					set_pop_group_flag = fatherland_rogue_pop
 				}
 			}
 			
 		}
 		else_if = {	#### Chooses Syncretic Prole POP is that was flagged above
 			limit = { has_country_flag = fatherland_roguesetup_proles } 
-			random_owned_pop = {
-				limit = { pop_has_trait = trait_syncretic_proles }  
+			weighted_random_owned_pop_group = {
+				limit = { pop_group_has_trait = trait_syncretic_proles }  
 				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		else_if = {	#### Chooses an organic biotrophy POP that was flagged above
 			limit = { has_country_flag = fatherland_roguesetup_biotrophy } 
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = { has_living_standard = { type = living_standard_organic_trophy } }  
 				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		else_if = {	#### Chooses a machine pop if Rogue AI
 			limit = { has_country_flag = fatherland_roguesetup_machineintelligence } 
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = { is_robot_pop = yes }
 				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		else_if = {	#### Chooses a robot POP for free, non-gestalt empire
 			limit = { has_country_flag = fatherland_roguesetup_synthrevolt } 
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = {
 					is_robot_pop = yes
 					is_free_robot = no
 				}
 				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		else_if = {	#### Chooses a Purge or Resident for Persecuted Minority
 			limit = { has_country_flag = fatherland_roguesetup_minority }
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = {
 					OR = {
 						has_citizenship_type = { type = citizenship_purge }
@@ -1003,7 +1003,7 @@ country_event = {
 					}
 				}
 				species = { save_event_target_as = fatherland_species }
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		if = {  #### MAIN POP
@@ -1017,11 +1017,11 @@ country_event = {
 					has_country_flag = fatherland_roguesetup_synthrevolt
 				}
 			}
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = {
 					has_citizenship_rights = yes
 					NOR = {
-						pop_has_trait = trait_syncretic_proles
+						pop_group_has_trait = trait_syncretic_proles
 						is_pop_category = pre_sapients
 						has_living_standard = { type = living_standard_organic_trophy }
 					} 
@@ -1031,7 +1031,7 @@ country_event = {
 					}
 				}
 				save_event_target_as = fatherland_species
-				set_pop_flag = fatherland_rogue_pop
+				set_pop_group_flag = fatherland_rogue_pop
 			}
 		}
 		if = {	#### POTENTIAL EXTRA ROBOT POP
@@ -1041,16 +1041,16 @@ country_event = {
 					has_country_flag = fatherland_roguesetup_machineintelligence
 					has_country_flag = fatherland_roguesetup_synthrevolt
 				}
-				any_owned_pop = {
+				any_owned_pop_group = {
 					is_free_robot = no
 					is_robot_pop = yes	
 				}
 			}
-			random_owned_pop = {
+			weighted_random_owned_pop_group = {
 				limit = {
 					has_citizenship_rights = yes
 					NOR = {
-						pop_has_trait = trait_syncretic_proles
+						pop_group_has_trait = trait_syncretic_proles
 						is_pop_category = pre_sapients
 						has_living_standard = { type = living_standard_organic_trophy }
 					} 
@@ -1058,7 +1058,7 @@ country_event = {
 					is_robot_pop = yes
 				}  
 				species = { save_global_event_target_as = fatherland_robot_species }
-				#set_pop_flag = fatherland_rogue_robot_pop
+				#set_pop_group_flag = fatherland_rogue_robot_pop
 			}
 			set_country_flag = fatherland_roguesetup_extra_robot
 		}		
@@ -1726,7 +1726,7 @@ country_event = {
 							has_country_flag = fatherland_roguesetup_ai
 						}
 					}
-					create_pop = { species = last_created_species }
+					create_pop_group = { species = last_created_species }
 				}
 				else_if = {	### IF MACHINE EMPIRE CREATING MACHINE POP ROGUE
 					limit = {
@@ -1735,7 +1735,7 @@ country_event = {
 							has_country_flag = fatherland_roguesetup_machineintelligence
 						}
 					}
-					create_pop = { species = event_target:fatherland_species }
+					create_pop_group = { species = event_target:fatherland_species }
 				}
 				else = {	### IF NORMAL EMPIRE OR BIOTROPHIES
 					# limit = {
@@ -1750,25 +1750,34 @@ country_event = {
 					# 	}
 					# }
 					random_list = {
-						60 = {
+						15 = {
 							while = {
-								# count = 3
-								count = 6
-								create_pop = { species = event_target:fatherland_species }
+								count = 5
+								create_pop_group = { species = event_target:fatherland_species }
 							}
 						}
 						35 = {
 							while = {
-								# count = 4
-								count = 8
-								create_pop = { species = event_target:fatherland_species }
+								count = 10
+								create_pop_group = { species = event_target:fatherland_species }
+							}
+						}
+						35 = {
+							while = {
+								count = 15
+								create_pop_group = { species = event_target:fatherland_species }
+							}
+						}
+						10 = {
+							while = {
+								count = 20
+								create_pop_group = { species = event_target:fatherland_species }
 							}
 						}
 						5 = {
 							while = {
-								# count = 5
-								count = 10
-								create_pop = { species = event_target:fatherland_species }
+								count = 25
+								create_pop_group = { species = event_target:fatherland_species }
 							}
 						}
 					}
@@ -2047,15 +2056,15 @@ country_event = {
 					has_global_flag = fatherland_poploss_on
 					NOT = { has_country_flag = fatherland_roguesetup_machineintelligence }
 				}
-				random_owned_pop = {
-					limit = { has_pop_flag = fatherland_rogue_pop }
-					kill_pop = yes
+				weighted_random_owned_pop_group = {
+					limit = { has_pop_group_flag = fatherland_rogue_pop }
+					kill_pop_group = { pop_group = this amount = 10% }
 				}
 			}
 			else = {
-				random_owned_pop = {
-					limit = { has_pop_flag = fatherland_rogue_pop }
-					remove_pop_flag =  fatherland_rogue_pop
+				weighted_random_owned_pop_group = {
+					limit = { has_pop_group_flag = fatherland_rogue_pop }
+					remove_pop_group_flag =  fatherland_rogue_pop
 				}
 			}
 		}

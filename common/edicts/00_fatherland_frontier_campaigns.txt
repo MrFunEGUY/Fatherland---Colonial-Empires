@@ -160,14 +160,14 @@ increased_syncretic_prole_repression = {
 	}
 	potential = {
 		has_global_flag = fatherland_active
-		any_owned_pop = {
-			pop_has_trait = trait_syncretic_proles
+		any_owned_pop_group = {
+			pop_group_has_trait = trait_syncretic_proles
 		}
 	}
 	allow = { 
 		has_global_flag = fatherland_active
-		any_owned_pop = {
-			pop_has_trait = trait_syncretic_proles
+		any_owned_pop_group = {
+			pop_group_has_trait = trait_syncretic_proles
 		}
 	}
 	effect = {
@@ -256,10 +256,10 @@ liberate_our_servile_brothers = {
 	}
 	allow = { 
 		has_global_flag = fatherland_active
-		any_owned_pop = { has_trait = trait_syncretic_proles }
+		any_owned_pop_group = { has_trait = trait_syncretic_proles }
 	}
 	effect = {
-		every_owned_pop = {
+		every_owned_pop_group = {
 			limit = { has_trait = trait_syncretic_proles }
 			modify_species = {
 				species = this
