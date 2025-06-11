@@ -1,0 +1,3 @@
+add_crew_effect = {
+	# add_resource = { ecaf_crew = 1000 }
+}

@@ -116,7 +116,7 @@ get_rogue_colony_after_effect = {
 
 		if = {
 			limit = { has_global_flag = cultural_overhaul_funefork_active }
-			add_resource = { ecaf_crew = 500 }
+			add_crew_effect = yes
 		}
 
 		clear_variable = rogue_resources
@@ -130,8 +130,10 @@ get_rogue_colony_after_effect = {
 		species = owner_main_species
 		name = random
 		skill = 5
-		traits = { trait = random_traits }
 		background_planet = event_target:leader_homeworld
+		effect = {
+			add_trait = { trait = random_common }
+		}
 	}
 
 	if = {
@@ -177,900 +179,400 @@ get_fatherland_country_info = {
 
 set_fatherland_country_flags = {
 	if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 1 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_1_flag
-			save_global_event_target_as = fatherland_country_1
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_1_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 1 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 2 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_2_flag
-			save_global_event_target_as = fatherland_country_2
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_2_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 2 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 3 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_3_flag
-			save_global_event_target_as = fatherland_country_3
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_3_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 3 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 4 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_4_flag
-			save_global_event_target_as = fatherland_country_4
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_4_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 4 }
 	}
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 5 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_5_flag
-			save_global_event_target_as = fatherland_country_5
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_5_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 5 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 6 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_6_flag
-			save_global_event_target_as = fatherland_country_6
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_6_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 6 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 7 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_7_flag
-			save_global_event_target_as = fatherland_country_7
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_7_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 7 }
 	}
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 8 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_8_flag
-			save_global_event_target_as = fatherland_country_8
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_8_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 8 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 9 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_9_flag
-			save_global_event_target_as = fatherland_country_9
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_9_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 9 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 10 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_10_flag
-			save_global_event_target_as = fatherland_country_10
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_10_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 10 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 11 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_11_flag
-			save_global_event_target_as = fatherland_country_11
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_11_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 11 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 12 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_12_flag
-			save_global_event_target_as = fatherland_country_12
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_12_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 12 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 13 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_13_flag
-			save_global_event_target_as = fatherland_country_13
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_13_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 13 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 14 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_14_flag
-			save_global_event_target_as = fatherland_country_14
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_14_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 14 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 15 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_15_flag
-			save_global_event_target_as = fatherland_country_15
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_15_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 15 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 16 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_16_flag
-			save_global_event_target_as = fatherland_country_16
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_16_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 16 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 17 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_17_flag
-			save_global_event_target_as = fatherland_country_17
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_17_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 17 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 18 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_18_flag
-			save_global_event_target_as = fatherland_country_18
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_18_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 18 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 19 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_19_flag
-			save_global_event_target_as = fatherland_country_19
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_19_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 19 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 20 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_20_flag
-			save_global_event_target_as = fatherland_country_20
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_20_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 20 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 21 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_21_flag
-			save_global_event_target_as = fatherland_country_21
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_21_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 21 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 22 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_22_flag
-			save_global_event_target_as = fatherland_country_22
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_22_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 22 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 23 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_23_flag
-			save_global_event_target_as = fatherland_country_23
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_23_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 23 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 24 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_24_flag
-			save_global_event_target_as = fatherland_country_24
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_24_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 24 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 25 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_25_flag
-			save_global_event_target_as = fatherland_country_25
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_25_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 25 }
 	}
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 26 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_26_flag
-			save_global_event_target_as = fatherland_country_26
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_26_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 26 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 27 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_27_flag
-			save_global_event_target_as = fatherland_country_27
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_27_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 27 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 28 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_28_flag
-			save_global_event_target_as = fatherland_country_28
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_28_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 28 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 29 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_29_flag
-			save_global_event_target_as = fatherland_country_29
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_29_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 29 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 30 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_30_flag
-			save_global_event_target_as = fatherland_country_30
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_30_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 30 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 31 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_31_flag
-			save_global_event_target_as = fatherland_country_31
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_31_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 31 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 32 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_32_flag
-			save_global_event_target_as = fatherland_country_32
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_32_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 32 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 33 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_33_flag
-			save_global_event_target_as = fatherland_country_33
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_33_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 33 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 34 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_34_flag
-			save_global_event_target_as = fatherland_country_34
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_34_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 34 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 35 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_35_flag
-			save_global_event_target_as = fatherland_country_35
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_35_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 35 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 36 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_36_flag
-			save_global_event_target_as = fatherland_country_36
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_36_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 36 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 37 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_37_flag
-			save_global_event_target_as = fatherland_country_37
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_37_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 37 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 38 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_38_flag
-			save_global_event_target_as = fatherland_country_38
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_38_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 38 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 39 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_39_flag
-			save_global_event_target_as = fatherland_country_39
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_39_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 39 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 40 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_40_flag
-			save_global_event_target_as = fatherland_country_40
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_40_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 40 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 41 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_41_flag
-			save_global_event_target_as = fatherland_country_41
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_41_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 41 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 42 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_42_flag
-			save_global_event_target_as = fatherland_country_42
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_42_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 42 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 43 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_43_flag
-			save_global_event_target_as = fatherland_country_43
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_43_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 43 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 44 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_44_flag
-			save_global_event_target_as = fatherland_country_44
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_44_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 44 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 45 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_45_flag
-			save_global_event_target_as = fatherland_country_45
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_45_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 45 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 46 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_46_flag
-			save_global_event_target_as = fatherland_country_46
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_46_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 46 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 47 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_47_flag
-			save_global_event_target_as = fatherland_country_47
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_47_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 47 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 48 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_48_flag
-			save_global_event_target_as = fatherland_country_48
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_48_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 48 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 49 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_49_flag
-			save_global_event_target_as = fatherland_country_49
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_49_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 49 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 50 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_50_flag
-			save_global_event_target_as = fatherland_country_50
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_50_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 50 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 51 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_51_flag
-			save_global_event_target_as = fatherland_country_51
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_51_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 51 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 52 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_52_flag
-			save_global_event_target_as = fatherland_country_52
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_52_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 52 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 53 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_53_flag
-			save_global_event_target_as = fatherland_country_53
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_53_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 53 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 54 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_54_flag
-			save_global_event_target_as = fatherland_country_54
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_54_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 54 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 55 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_55_flag
-			save_global_event_target_as = fatherland_country_55
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_55_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 55 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 56 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_56_flag
-			save_global_event_target_as = fatherland_country_56
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_56_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 56 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 57 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_57_flag
-			save_global_event_target_as = fatherland_country_57
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_57_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 57 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 58 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_58_flag
-			save_global_event_target_as = fatherland_country_58
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_58_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 58 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 59 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_59_flag
-			save_global_event_target_as = fatherland_country_59
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_59_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 59 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 60 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_60_flag
-			save_global_event_target_as = fatherland_country_60
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_60_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 60 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 61 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_61_flag
-			save_global_event_target_as = fatherland_country_61
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_61_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 61 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 62 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_62_flag
-			save_global_event_target_as = fatherland_country_62
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_62_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 62 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 63 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_63_flag
-			save_global_event_target_as = fatherland_country_63
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_63_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 63 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 64 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_64_flag
-			save_global_event_target_as = fatherland_country_64
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_64_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 64 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 65 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_65_flag
-			save_global_event_target_as = fatherland_country_65
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_65_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 65 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 66 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_66_flag
-			save_global_event_target_as = fatherland_country_66
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_66_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 66 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 67 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_67_flag
-			save_global_event_target_as = fatherland_country_67
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_67_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 67 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 68 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_68_flag
-			save_global_event_target_as = fatherland_country_68
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_68_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 68 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 69 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_69_flag
-			save_global_event_target_as = fatherland_country_69
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_69_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 69 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 70 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_70_flag
-			save_global_event_target_as = fatherland_country_70
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_70_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 70 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 71 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_71_flag
-			save_global_event_target_as = fatherland_country_71
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_71_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 71 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 72 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_72_flag
-			save_global_event_target_as = fatherland_country_72
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_72_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 72 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 73 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_73_flag
-			save_global_event_target_as = fatherland_country_73
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_73_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 73 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 74 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_74_flag
-			save_global_event_target_as = fatherland_country_74
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_74_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 74 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 75 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_75_flag
-			save_global_event_target_as = fatherland_country_75
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_75_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 75 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 76 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_76_flag
-			save_global_event_target_as = fatherland_country_76
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_76_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 76 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 77 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_77_flag
-			save_global_event_target_as = fatherland_country_77
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_77_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 77 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 78 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_78_flag
-			save_global_event_target_as = fatherland_country_78
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_78_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 78 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 79 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_79_flag
-			save_global_event_target_as = fatherland_country_79
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_79_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 79 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 80 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_80_flag
-			save_global_event_target_as = fatherland_country_80
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_80_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 80 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 81 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_81_flag
-			save_global_event_target_as = fatherland_country_81
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_81_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 81 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 82 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_82_flag
-			save_global_event_target_as = fatherland_country_82
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_82_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 82 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 83 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_83_flag
-			save_global_event_target_as = fatherland_country_83
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_83_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 83 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 84 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_84_flag
-			save_global_event_target_as = fatherland_country_84
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_84_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 84 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 85 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_85_flag
-			save_global_event_target_as = fatherland_country_85
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_85_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 85 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 86 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_86_flag
-			save_global_event_target_as = fatherland_country_86
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_86_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 86 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 87 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_87_flag
-			save_global_event_target_as = fatherland_country_87
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_87_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 87 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 88 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_88_flag
-			save_global_event_target_as = fatherland_country_88
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_88_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 88 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 89 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_89_flag
-			save_global_event_target_as = fatherland_country_89
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_89_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 89 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 90 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_90_flag
-			save_global_event_target_as = fatherland_country_90
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_90_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 90 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 91 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_91_flag
-			save_global_event_target_as = fatherland_country_91
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_91_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 91 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 92 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_92_flag
-			save_global_event_target_as = fatherland_country_92
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_92_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 92 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 93 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_93_flag
-			save_global_event_target_as = fatherland_country_93
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_93_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 93 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 94 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_94_flag
-			save_global_event_target_as = fatherland_country_94
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_94_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 94 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 95 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_95_flag
-			save_global_event_target_as = fatherland_country_95
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_95_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 95 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 96 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_96_flag
-			save_global_event_target_as = fatherland_country_96
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_96_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 96 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 97 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_97_flag
-			save_global_event_target_as = fatherland_country_97
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_97_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 97 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 98 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_98_flag
-			save_global_event_target_as = fatherland_country_98
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_98_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 98 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 99 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_99_flag
-			save_global_event_target_as = fatherland_country_99
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_99_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 99 }
 	}
 
 	else_if = {
-		limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = 100 } } }
-		event_target:fatherland_empire = {
-			set_country_flag = fatherland_country_100_flag
-			save_global_event_target_as = fatherland_country_100
-		}
-		event_target:rogue_colony_nation = { set_country_flag = fatherland_country_100_leaver }
+		inline_script = { script = effects/set_fatherland_flag_effect NUM = 100 }
 	}
 }
 

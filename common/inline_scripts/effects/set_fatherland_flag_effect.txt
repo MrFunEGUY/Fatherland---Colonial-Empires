@@ -1,0 +1,6 @@
+limit = { event_target:global_event_country = { check_variable = { which = fatherland_country_count value = $NUM$ } } }
+event_target:fatherland_empire = {
+	set_country_flag = fatherland_country_$NUM$_flag
+	save_global_event_target_as = fatherland_country_$NUM$
+}
+event_target:rogue_colony_nation = { set_country_flag = fatherland_country_$NUM$_leaver }
