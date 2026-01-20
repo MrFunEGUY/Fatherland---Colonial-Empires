@@ -68,7 +68,7 @@ If you start as an altered UNE that has the human_1 flag (in empire creation edi
 
 [h1]Known Bugs & Issues[/h1]
 Known Bugs & Issues (Thanks to everyone whos reporting them in the comments!)
-- TBD
+- Hegira Worlds are Broken
 
 [h1]Support the Mod[/h1]
 

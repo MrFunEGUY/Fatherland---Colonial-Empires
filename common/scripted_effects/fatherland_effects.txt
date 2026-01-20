@@ -94,6 +94,23 @@ get_rogue_colony_after_effect = {
 		establish_communications_no_message = event_target:fatherland_empire
 	}
 
+	if = { ## Megacorp rogues are a	special circumstance
+		limit = {
+			is_megacorp = yes
+			root = {
+				is_megacorp = no				
+				NOT = { has_country_flag = fatherland_roguesetup_corpo }
+				NOT = { has_country_flag = fatherland_roguesetup_family_corpo }
+			}
+		}
+		change_government = {
+			authority = auth_oligarchic
+			cooldown = no
+			remove_invalid_civics = yes
+			civics = random
+		}
+	}
+
 	if = { 
 		limit = { has_global_flag = fatherland_bonusresources }
 		random_list = {
@@ -142,6 +159,18 @@ get_rogue_colony_after_effect = {
 	}
 	
 	set_leader = last_created_leader
+
+	# set_variable = { which = fatherland_birth_year value = 2200 }
+	# export_trigger_value_to_variable = {
+	# 	trigger = years_passed
+	# 	variable = years_passed_birthday
+	# }
+	# change_variable = { which = fatherland_birth_year value = this.years_passed_birthday }
+	# clear_variable = years_passed_birthday
+
+	# set_timed_country_flag = { flag = no_rogue_timer years = 25 }
+
+	# country_event = { id = action.502 }
 }
 
 ######

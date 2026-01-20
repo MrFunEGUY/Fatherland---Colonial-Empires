@@ -1107,80 +1107,81 @@ country_event = {
 							who = root
 						}
 						# Dont wanna be fanatic in same thing as fatherland
-						if = {
-							limit = {
-								has_ethic = ethic_fanatic_authoritarian
-								root = { has_ethic = ethic_fanatic_authoritarian }
-							}
-							shift_ethic = ethic_egalitarian
-						}
-						else_if = {
-							limit = {
-								has_ethic = ethic_fanatic_egalitarian
-								root = { has_ethic = ethic_fanatic_egalitarian }
-							}
-							shift_ethic = ethic_authoritarian
-						}
-						if = {
-							limit = {
-								has_ethic = ethic_fanatic_militarist
-								root = { has_ethic = ethic_fanatic_militarist }
-							}
-							shift_ethic = ethic_pacifist
-						}
-						else_if = {
-							limit = {
-								has_ethic = ethic_fanatic_pacifist
-								root = { has_ethic = ethic_fanatic_pacifist }
-							}
-							shift_ethic = ethic_militarist
-						}
-						if = {
-							limit = {
-								has_ethic = ethic_fanatic_materialist
-								root = { has_ethic = ethic_fanatic_materialist }
-							}
-							shift_ethic = ethic_spiritualist
-						}
-						else_if = {
-							limit = {
-								has_ethic = ethic_fanatic_spiritualist
-								root = { has_ethic = ethic_fanatic_spiritualist }
-							}
-							shift_ethic = ethic_materialist
-						}
-						if = {
-							limit = {
-								has_ethic = ethic_fanatic_xenophile
-								root = { has_ethic = ethic_fanatic_xenophile }
-							}
-							shift_ethic = ethic_xenophobe
-						}
-						else_if = {
-							limit = {
-								has_ethic = ethic_fanatic_xenophobe
-								root = { has_ethic = ethic_fanatic_xenophobe }
-							}
-							shift_ethic = ethic_xenophile
-						}
-						if = {
-							limit = {
-								has_ethic = ethic_fanatic_socialism
-								root = { has_ethic = ethic_fanatic_socialism }
-							}
-							shift_ethic = ethic_capitalism
-						}
-						else_if = {
-							limit = {
-								has_ethic = ethic_fanatic_capitalism
-								root = { has_ethic = ethic_fanatic_capitalism }
-							}
-							shift_ethic = ethic_socialism
-						}
-						change_government = {
-							authority = random
-							civics = random
-						}
+						## I think this is causing issues with placeholder civics from Civil Wars, etc.
+						# if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_authoritarian
+						# 		root = { has_ethic = ethic_fanatic_authoritarian }
+						# 	}
+						# 	shift_ethic = ethic_egalitarian
+						# }
+						# else_if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_egalitarian
+						# 		root = { has_ethic = ethic_fanatic_egalitarian }
+						# 	}
+						# 	shift_ethic = ethic_authoritarian
+						# }
+						# if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_militarist
+						# 		root = { has_ethic = ethic_fanatic_militarist }
+						# 	}
+						# 	shift_ethic = ethic_pacifist
+						# }
+						# else_if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_pacifist
+						# 		root = { has_ethic = ethic_fanatic_pacifist }
+						# 	}
+						# 	shift_ethic = ethic_militarist
+						# }
+						# if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_materialist
+						# 		root = { has_ethic = ethic_fanatic_materialist }
+						# 	}
+						# 	shift_ethic = ethic_spiritualist
+						# }
+						# else_if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_spiritualist
+						# 		root = { has_ethic = ethic_fanatic_spiritualist }
+						# 	}
+						# 	shift_ethic = ethic_materialist
+						# }
+						# if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_xenophile
+						# 		root = { has_ethic = ethic_fanatic_xenophile }
+						# 	}
+						# 	shift_ethic = ethic_xenophobe
+						# }
+						# else_if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_xenophobe
+						# 		root = { has_ethic = ethic_fanatic_xenophobe }
+						# 	}
+						# 	shift_ethic = ethic_xenophile
+						# }
+						# if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_socialism
+						# 		root = { has_ethic = ethic_fanatic_socialism }
+						# 	}
+						# 	shift_ethic = ethic_capitalism
+						# }
+						# else_if = {
+						# 	limit = {
+						# 		has_ethic = ethic_fanatic_capitalism
+						# 		root = { has_ethic = ethic_fanatic_capitalism }
+						# 	}
+						# 	shift_ethic = ethic_socialism
+						# }
+						# change_government = {
+						# 	authority = random
+						# 	civics = random
+						# }
 						get_rogue_colony_after_effect = yes
 					}
 				}
@@ -2010,12 +2011,12 @@ country_event = {
 				}
 			}
 			last_created_country = {
-				set_variable = { which = birth_year value = 2200 }
+				set_variable = { which = fatherland_birth_year value = 2200 }
 				export_trigger_value_to_variable = {
 					trigger = years_passed
 					variable = years_passed_birthday
 				}
-				change_variable = { which = birth_year value = this.years_passed_birthday }
+				change_variable = { which = fatherland_birth_year value = this.years_passed_birthday }
 				clear_variable = years_passed_birthday
 
 				set_timed_country_flag = { flag = no_rogue_timer years = 25 }

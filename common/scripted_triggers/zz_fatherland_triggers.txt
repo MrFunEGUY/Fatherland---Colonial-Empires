@@ -36,6 +36,7 @@ is_valid_rogue_planet = {
 		has_global_flag = fatherland_dangerousworlds_on
 		NOR = {
 			has_modifier = "holy_planet"
+			has_modifier = "pm_wenkwort_custodian"
 			has_planet_flag = phaseshifting_active
 			solar_system = { has_star_flag = hostile_system }
 			solar_system = { has_star_flag = sanctuary_system }

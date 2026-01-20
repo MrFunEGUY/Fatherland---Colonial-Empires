@@ -166,6 +166,7 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 		# if = { limit = { has_origin = origin_doomsday NOT = { has_global_flag = fatherland_defaults_enabled } }
 		# 	set_global_flag = fatherland_hegirans_active
 		# }
+		set_global_flag = fatherland_hegirans_active
 
 		if = { limit = { NOT = { has_global_flag = fatherland_defaults_enabled } }
 			set_global_flag = fatherland_defaults_enabled
