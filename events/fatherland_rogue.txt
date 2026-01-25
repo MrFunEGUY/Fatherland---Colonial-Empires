@@ -668,7 +668,7 @@ country_event = {
 							has_civic = civic_police_state
 							has_civic = civic_imperial_cult
 							has_ai_personality = harmonious_hierarchy
-							has_ethic = ethic_fanatic_authoritarian
+							is_fanatic_authoritarian = yes
 						}
     				}
     				modifier = {
@@ -707,7 +707,7 @@ country_event = {
     				}
 					modifier = {
 						factor = 0.25
-						has_ethic = ethic_fanatic_egalitarian
+						is_fanatic_egalitarian = yes
 					}
     			}
     			15 = { ### Ideological Dissidents
@@ -736,7 +736,7 @@ country_event = {
 					}
 					modifier = {
 						factor = 2
-						has_ethic = ethic_fanatic_socialism
+						is_fanatic_socialist = yes
 					}
     			}
     			1 = { ### Rogue Family Corporation (not megacorpo)
@@ -755,7 +755,7 @@ country_event = {
 					}
 					modifier = {
 						factor = 2
-						has_ethic = ethic_fanatic_socialism
+						is_fanatic_socialist = yes
 					}
 					modifier = {
 						factor = 1.25
@@ -814,7 +814,7 @@ country_event = {
     					factor = 0
 						OR = {
 							is_gestalt = yes
-							NOT = { has_ethic = ethic_fanatic_spiritualist }
+							is_fanatic_spiritualist = no
 						}
     				}
 
@@ -1166,14 +1166,14 @@ country_event = {
 						# }
 						# if = {
 						# 	limit = {
-						# 		has_ethic = ethic_fanatic_socialism
-						# 		root = { has_ethic = ethic_fanatic_socialism }
+						# 		is_fanatic_socialist = yes
+						# 		root = { is_fanatic_socialist = yes }
 						# 	}
 						# 	shift_ethic = ethic_capitalism
 						# }
 						# else_if = {
 						# 	limit = {
-						# 		has_ethic = ethic_fanatic_capitalism
+						# 		is_fanatic_capitalist = yes
 						# 		root = { has_ethic = ethic_fanatic_capitalism }
 						# 	}
 						# 	shift_ethic = ethic_socialism

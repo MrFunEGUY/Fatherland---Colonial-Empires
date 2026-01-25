@@ -17,7 +17,7 @@ is_valid_rogue_planet = {
 					exists = space_owner
 					space_owner = {
 						is_fallen_empire = yes
-						has_ethic = ethic_fanatic_xenophobe
+						is_fanatic_xenophobe = yes
 					}
 				}
 				use_bypasses = yes

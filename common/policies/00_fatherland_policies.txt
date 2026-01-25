@@ -91,7 +91,7 @@ colonial_policy = {
 		valid = {
 			NOR = { 
 				has_valid_civic = civic_police_state  
-				has_ethic = ethic_fanatic_authoritarian
+				is_fanatic_authoritarian = yes
 			}
 		}
 
