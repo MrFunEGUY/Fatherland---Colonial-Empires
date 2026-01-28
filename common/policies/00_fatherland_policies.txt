@@ -29,7 +29,7 @@ colonial_policy = {
 		}
 
 		modifier = {
-			pop_growth_from_immigration = -0.5
+			planet_resettlement_unemployed_destination_mult = -0.5
 			ships_upkeep_mult = 0.05
 			country_base_energy_produces_add = -5
 		}

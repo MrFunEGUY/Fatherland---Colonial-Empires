@@ -1496,9 +1496,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 5
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = scientist
@@ -1507,9 +1504,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = random
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}	
 			create_leader = {
 				class = scientist
@@ -1518,9 +1512,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = random
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = scientist
@@ -1528,9 +1519,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = random
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}	
 			create_leader = {
 				class = commander
@@ -1538,9 +1526,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = random
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = official
@@ -1548,9 +1533,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = random
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}					
 		}			
 		#### CLEANUP
@@ -2707,9 +2689,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 5
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = scientist
@@ -2729,9 +2708,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 5
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = scientist
@@ -2739,9 +2715,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 5
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}	
 			create_leader = {
 				class = commander
@@ -2749,9 +2722,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 5
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}
 			create_leader = {
 				class = official
@@ -2759,9 +2729,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				name = random
 				skill = 6
 				event_leader = no
-				traits = {
-					trait = random_trait
-				}							
 			}					
 		}
 		############################# INSTACOMMS									
@@ -2972,6 +2939,7 @@ country_event = { #Final Init
 	hide_window = yes
 
 	trigger = {
+		exists = capital_scope
 		capital_scope = {
 			#OR = {
 			#	has_modifier = doomsday_4
