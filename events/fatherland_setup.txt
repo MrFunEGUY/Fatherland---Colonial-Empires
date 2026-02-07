@@ -185,6 +185,7 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 			set_global_flag = fatherland_rogues_active
 
 			set_global_flag = fatherland_rogue_distance_limited
+			set_global_flag = fatherland_hegira_distance_limited
 			# set_global_flag = fatherland_rogue_poplimit
 			# set_global_flag = fatherland_rogue_timelimit_on
 			set_global_flag = fatherland_bonusresources
@@ -2123,6 +2124,21 @@ country_event = { #### HEGIRA COLONY SETUP
 		trigger = { has_global_flag = fatherland_limittomax_hegirans }
 		remove_global_flag = fatherland_limittomax_hegirans
 		hidden_effect = { country_event = { id = fatherland_setup.106 } }
+	}
+	#########################################
+	option = { ##### Distance Limiter (Is the distance Rogues can spawn from home empire limited by hyperdrive tech?)
+		name = fatherland_setup.104.roguedistancelimit_off
+		custom_tooltip = "fatherland_setup.106.hegiradistancelimit.tooltip"
+		trigger = { NOT = { has_global_flag = fatherland_hegira_distance_limited } }
+		set_global_flag = fatherland_hegira_distance_limited
+		hidden_effect = { country_event = { id = fatherland_setup.104 } }
+	}
+	option = { ##### Distance Limiter (Is the distance Rogues can spawn from home empire limited by hyperdrive tech?)
+		name = fatherland_setup.104.roguedistancelimit_on
+		custom_tooltip = "fatherland_setup.106.hegiradistancelimit.tooltip"
+		trigger = { has_global_flag = fatherland_hegira_distance_limited }
+		remove_global_flag = fatherland_hegira_distance_limited
+		hidden_effect = { country_event = { id = fatherland_setup.104 } }
 	}	
 	option = { ##### HEGIRA SPEED (DEFUALT 5yrs)
 	name = fatherland_setup.106.hegiraspeed

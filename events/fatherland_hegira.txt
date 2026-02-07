@@ -65,6 +65,292 @@ country_event = {
 }
 
 ####################### ROGUE COLONY ON ACTION CALL EVENTS
+
+country_event = { #### Hegira Initializer
+	id = fatherland_hegira.90
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_global_flag = fatherland_hegirans_active
+	}
+
+	immediate = {
+
+		species = { save_event_target_as = fatherland_species }
+
+		if = {	##### DISTANCE LIMITER ENABLED (Technology limited rogue spawning distance)
+			limit = { has_global_flag = fatherland_hegira_distance_limited }
+
+			if = {	# Hyperdrive I
+				limit = {
+					NOR = {
+						has_technology = tech_hyper_drive_2
+						has_technology = tech_hyper_drive_3
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 10
+								}
+							}
+							add_modifier = { modifier = hegira_target }
+							save_event_target_as = hegira_event_planet
+							set_planet_flag = hegira_target
+							log = "HEGIRA Planet: [this.GetName]"
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Hyperdrive II
+				limit = {
+					has_technology = tech_hyper_drive_2
+					NOR = {
+						has_technology = tech_hyper_drive_3
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 20
+								}
+							}
+							add_modifier = { modifier = hegira_target }
+							save_event_target_as = hegira_event_planet
+							set_planet_flag = hegira_target
+							log = "HEGIRA Planet: [this.GetName]"
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Hyperdrive III
+				limit = {
+					has_technology = tech_hyper_drive_3
+					NOR = {
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 40
+								}
+							}
+							add_modifier = { modifier = hegira_target }
+							save_event_target_as = hegira_event_planet
+							set_planet_flag = hegira_target
+							log = "HEGIRA Planet: [this.GetName]"
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+			if = {	# Jump Drive
+				limit = {
+					OR = {
+						has_technology = tech_jump_drive_1
+						has_technology = tech_psi_jump_drive_1
+					}
+				}
+				if = {
+					limit = {
+						any_system_within_border = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+						}
+					}
+					random_system_within_border = {
+						limit = {
+							closest_system = {
+								limit = { NOT = { exists = space_owner } }
+								use_bypasses = yes
+								max_steps = 1
+							}
+							any_galaxy_planet = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+						}
+						random_galaxy_planet = {
+							limit = {
+								is_valid_rogue_planet = yes
+								distance = {
+									source = prev
+									use_bypasses = yes
+									min_jumps = 0
+									max_jumps = 1000
+								}
+							}
+							add_modifier = { modifier = hegira_target }
+							save_event_target_as = hegira_event_planet
+							set_planet_flag = hegira_target
+							log = "HEGIRA Planet: [this.GetName]"
+						}
+					}
+					country_event = { id = fatherland_rogue.100 }
+				}
+			}
+		}
+		else_if = {
+			limit = { any_galaxy_planet = { is_valid_rogue_planet = yes } }
+			log = "PLANET EXISTS"
+			random_galaxy_planet = {
+				limit = { is_valid_rogue_planet = yes }
+				add_modifier = { modifier = hegira_target }
+				save_event_target_as = hegira_event_planet
+				set_planet_flag = hegira_target
+				log = "HEGIRA Planet: [this.GetName]"
+			}
+			country_event = { id = fatherland_hegira.100 }
+		}
+	}
+}
+
 country_event = { #### VERY FAST (Yearly)
 	id = fatherland_hegira.96
 	#title = "fatherland_rogue.96_name"
@@ -79,7 +365,7 @@ country_event = { #### VERY FAST (Yearly)
 	}
 
 	immediate = {
-		country_event = { id = fatherland_hegira.100  days = 5 random = 20 }	
+		country_event = { id = fatherland_hegira.90  days = 5 random = 20 }	
 	}
 
 }
@@ -95,7 +381,7 @@ country_event = { #### FASTER (Bi-Yearly)
 	}
 
 	immediate = {
-		country_event = { id = fatherland_hegira.100 days = 10 random = 60 }	
+		country_event = { id = fatherland_hegira.90 days = 10 random = 60 }	
 	}
 }
 country_event = { #### DEFAULT (Five-Yearly)
@@ -110,7 +396,7 @@ country_event = { #### DEFAULT (Five-Yearly)
 	}
 
 	immediate = {
-		country_event = { id = fatherland_hegira.100  days = 20 random = 120 }	
+		country_event = { id = fatherland_hegira.90  days = 20 random = 120 }	
 	}
 }
 country_event = { #### SLOW (Decade)
@@ -125,7 +411,7 @@ country_event = { #### SLOW (Decade)
 	}
 
 	immediate = {
-		country_event = { id = fatherland_hegira.100  days = 20 random = 365 }	
+		country_event = { id = fatherland_hegira.90  days = 20 random = 365 }	
 	}
 }
 
@@ -178,6 +464,7 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 	}
 
     immediate = {
+		log = "Main Event"
 ######################### DEFINE HEGIRA TYPE	
 	random_list = {	
 			50 = { ### Standard randomised hegira state
@@ -338,7 +625,7 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 			set_global_flag = fatherland_hegira_traditions_given
 		}			
 ######################### SELECTS FATHERLAND SPECIES THAT WILL APPEAR ON NEW HEGIRA
-		save_global_event_target_as = fatherland_empire
+		save_event_target_as = fatherland_empire
 		weighted_random_owned_pop_group = {
 			limit = {
 				NOR = { 
@@ -348,116 +635,30 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 					is_being_purged = yes
 				}  
 			}  
-			species = { save_global_event_target_as = fatherland_hegira_species }
+			species = { save_event_target_as = fatherland_species }
 			set_pop_group_flag = fatherland_hegira_pop
 		}
 ######################### FINDS A RANDOM HABITABAL WORLD FOR Hegira COLONY
-		random_system = {
-			limit = { 
-				NOT = { exists = space_owner }
-				distance = {
-					source = root.capital_scope
-					use_bypasses = yes
-					min_jumps = 3
-					max_jumps = 15
-				}
-				any_system_planet = { 
-					habitable_planet = yes
-					habitability = { who = event_target:fatherland_hegira_species value > 0.3 }
-					NOT = { is_inside_border = owner }
-					NOR = { has_modifier = recent_rogue_colony has_modifier = recent_hegiran_state }
-					OR = {
-						has_global_flag = fatherland_dangerousworlds_on
-						NOR = {
-							has_modifier = "holy_planet"
-							solar_system = {
-								has_star_flag = hostile_system
-							}
-							solar_system = { has_star_flag = hostile_system }
-							solar_system = { has_star_flag = sanctuary_system }
-							solar_system = { has_star_flag = scavenger_bot_system }
-							solar_system = { has_star_flag = sealed_system }
-							solar_system = { has_star_flag = amoeba_home_system }
-							solar_system = { has_star_flag = cybrex_beta }
-							solar_system = { has_star_flag = precursor_baol_1 }
-							solar_system = { has_star_flag = last_baol_system }
-							solar_system = { has_star_flag = caravaneer_home } 
-							solar_system = { has_star_flag = enigmatic_cache_system }
-							solar_system = { has_star_flag = crisis_sphere_system }
-							solar_system = { has_star_flag = cybrex }
-							solar_system = { has_star_flag = sealed_entry_system }
-							solar_system = { has_star_flag = first_grunur_site }
-							solar_system = { has_star_flag = horizonsignal_system }
-							solar_system = { has_star_flag = guardian }
-							solar_system = { has_star_flag = guardians_wraith_system }
-							solar_system = { has_star_flag = guardians_dragon_system }
-							solar_system = { has_star_flag = guardians_curators_system }
-							solar_system = { has_star_flag = guardians_dreadnought_system }
-							solar_system = { has_star_flag = guardians_hatchling_system }
-							solar_system = { has_star_flag = guardians_fortress_system }
-							solar_system = { has_star_flag = guardians_technosphere_system }
-							solar_system = { has_star_flag = guardians_horror_system }
-							solar_system = { has_star_flag = guardians_traders_system }
-							solar_system = { has_star_flag = guardians_stellarite_system }
-							solar_system = { has_star_flag = guardians_hive_system }
-							solar_system = { has_star_flag = guardians_of_zanaam }
-							solar_system = { has_star_flag = guardians_artists_system }							
-						}
-					}
-				}
-			}
-			random_system_planet = {
-				limit = { 
-					habitable_planet = yes
-					habitability = { who = event_target:fatherland_hegira_species value > 0.3 }
-					NOT = { is_inside_border = owner }
-					NOR = { has_modifier = recent_rogue_colony has_modifier = recent_hegiran_state }
-					OR = {
-						has_global_flag = fatherland_dangerousworlds_on
-						NOR = {
-							has_modifier = "holy_planet"
-							solar_system = {
-								has_star_flag = hostile_system
-							}
-							solar_system = { has_star_flag = hostile_system }
-							solar_system = { has_star_flag = sanctuary_system }
-							solar_system = { has_star_flag = scavenger_bot_system }
-							solar_system = { has_star_flag = sealed_system }
-							solar_system = { has_star_flag = amoeba_home_system }
-							solar_system = { has_star_flag = cybrex_beta }
-							solar_system = { has_star_flag = precursor_baol_1 }
-							solar_system = { has_star_flag = last_baol_system }
-							solar_system = { has_star_flag = caravaneer_home } 
-							solar_system = { has_star_flag = enigmatic_cache_system }
-							solar_system = { has_star_flag = crisis_sphere_system }
-							solar_system = { has_star_flag = cybrex }
-							solar_system = { has_star_flag = sealed_entry_system }
-							solar_system = { has_star_flag = first_grunur_site }
-							solar_system = { has_star_flag = horizonsignal_system }
-							solar_system = { has_star_flag = guardian }
-							solar_system = { has_star_flag = guardians_wraith_system }
-							solar_system = { has_star_flag = guardians_dragon_system }
-							solar_system = { has_star_flag = guardians_curators_system }
-							solar_system = { has_star_flag = guardians_dreadnought_system }
-							solar_system = { has_star_flag = guardians_hatchling_system }
-							solar_system = { has_star_flag = guardians_fortress_system }
-							solar_system = { has_star_flag = guardians_technosphere_system }
-							solar_system = { has_star_flag = guardians_horror_system }
-							solar_system = { has_star_flag = guardians_traders_system }
-							solar_system = { has_star_flag = guardians_stellarite_system }
-							solar_system = { has_star_flag = guardians_hive_system }
-							solar_system = { has_star_flag = guardians_of_zanaam }
-							solar_system = { has_star_flag = guardians_artists_system }							
-						}
-					}
-				}
-				set_planet_flag = hegira_target	
-				save_global_event_target_as = hegira_event_planet
-				add_modifier = {
-					modifier = hegira_target
-				}				
-			}
-		}	
+		# random_system = {
+		# 	limit = { 
+		# 		# distance = {
+		# 		# 	source = root.capital_scope
+		# 		# 	use_bypasses = yes
+		# 		# 	min_jumps = 3
+		# 		# 	max_jumps = 15
+		# 		# }
+		# 		any_system_planet = { is_valid_rogue_planet = yes }
+		# 	}
+		# 	random_system_planet = {
+		# 		limit = { is_valid_rogue_planet = yes }
+		# 		set_planet_flag = hegira_target	
+		# 		save_event_target_as = hegira_event_planet
+		# 		add_modifier = {
+		# 			modifier = hegira_target
+		# 		}
+		# 		log = "HEGIRA Planet: [this.GetName]"
+		# 	}
+		# }	
 	}
 ##################################################################
 
@@ -477,462 +678,315 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				}			
 			}
 		}
-		save_global_event_target_as = fatherland_empire
-	hidden_effect = {
+		save_event_target_as = fatherland_empire
+		hidden_effect = {
 ########################################################### BASIC HEGIRA COLONY (Fully random, not from Earth)
-		if = {  
-			limit = { has_country_flag = fatherland_hegiran_state }	
-			custom_tooltip = "fatherland_hegira.100.hegira.tooltip"		
-			create_country = {			
-				name = random
-				authority = random
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = random
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-						establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-						add_resource = { minerals = 500 }
-						add_resource = { energy = 500 }
-						add_resource = { food = 500 }
-						add_resource = { consumer_goods = 500 }
-						add_resource = { alloys = 500 }
-						add_resource = { influence = 250 }							
-					}
-					#add_opinion_modifier = { 
-					#	modifier = opinion_fatherland_hegira
-					#	who = root
-					#}									
-				}				
+			if = {  
+				limit = { has_country_flag = fatherland_hegiran_state }	
+				custom_tooltip = "fatherland_hegira.100.hegira.tooltip"		
+				create_country = {			
+					name = random
+					authority = random
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = random
+					type = default
+					effect = {
+						get_hegira_colony_after_effect = yes
+						remove_country_flag = fatherland_hegiran_from_earth
+						#add_opinion_modifier = { 
+						#	modifier = opinion_fatherland_hegira
+						#	who = root
+						#}									
+					}				
+				}
+				remove_country_flag = fatherland_hegiran_state
 			}
-			remove_country_flag = fatherland_hegiran_state
-		}
 ########################################################### CHINA
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_china }	
+				custom_tooltip = "fatherland_hegira.100.china.tooltip"		
+				create_country = {			
+					name = "Greater China"
+					authority = auth_imperial
+					civics = { 
+						civic = random
+						civic = civic_efficient_bureaucracy
+						civic = civic_agrarian_idyll
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_authoritarian"
+						ethic = "ethic_pacifist"
+						ethic = "ethic_spiritualist"
+					}
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_18.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"red"
+							"yellow"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = mandate_of_heaven
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_china
+				set_global_flag = fatherland_human_hegiran_china_created
+			}		
+########################################################### AMERICA
 		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_china }	
-			custom_tooltip = "fatherland_hegira.100.china.tooltip"		
+			limit = { has_country_flag = fatherland_human_hegiran_america }	
+			custom_tooltip = "fatherland_hegira.100.america.tooltip"		
 			create_country = {			
-				name = "Greater China"
-				authority = auth_imperial
+				name = "United Planets of America"
+				authority = auth_democratic
 				civics = { 
 					civic = random
-					civic = civic_efficient_bureaucracy
-					civic = civic_agrarian_idyll
+					civic = civic_beacon_of_liberty
+					civic = civic_citizen_service
 				}
 				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
+				species = event_target:fatherland_species
 				ignore_initial_colony_error = yes
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_authoritarian"
-					ethic = "ethic_pacifist"
-					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_egalitarian"
+					ethic = "ethic_militarist"
 				}
 				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_18.dds"
+					icon = {
+						category = "human"
+						file = "flag_human_8.dds"
 					}
-					background= {
+					background = {
 						category = "backgrounds"
-						file = "00_solid.dds"
+						file = "horizontal.dds"
 					}
 					colors={
 						"red"
-						"yellow"
+						"blue"
 						"null"
 						"null"
 					}
 				}
 				type = default
 				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-						add_resource = { minerals = 500 }
-						add_resource = { energy = 500 }
-						add_resource = { food = 500 }
-						add_resource = { consumer_goods = 500 }
-						add_resource = { alloys = 500 }
-						add_resource = { influence = 250 }
-					}
 					add_modifier = {
-						modifier = mandate_of_heaven
+						modifier = land_of_the_free
 						days = -1
-					}								
-				}				
+					}				
+					get_hegira_colony_after_effect = yes
+				}			
 			}
-			remove_country_flag = fatherland_human_hegiran_china
-			set_global_flag = fatherland_human_hegiran_china_created
-		}		
-########################################################### AMERICA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_america }	
-		custom_tooltip = "fatherland_hegira.100.america.tooltip"		
-		create_country = {			
-			name = "United Planets of America"
-			authority = auth_democratic
-			civics = { 
-				civic = random
-				civic = civic_beacon_of_liberty
-				civic = civic_citizen_service
-			}
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_fanatic_egalitarian"
-				ethic = "ethic_militarist"
-			}
-			flag = {
-				icon = {
-					category = "human"
-					file = "flag_human_8.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "horizontal.dds"
-				}
-				colors={
-					"red"
-					"blue"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 1000 }
-				add_resource = { energy = 1000 }
-				add_resource = { food = 1000 }
-				add_resource = { consumer_goods = 1000 }
-				add_resource = { alloys = 1000 }	
-				add_resource = { unity = 2500 }	
-				}
-				add_modifier = {
-					modifier = land_of_the_free
-					days = -1
-				}				
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_america
-		set_global_flag = fatherland_human_hegiran_america_created
-	}	
+			remove_country_flag = fatherland_human_hegiran_america
+			set_global_flag = fatherland_human_hegiran_america_created
+		}	
 ########################################################### AFRICA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_african }	
-		custom_tooltip = "fatherland_hegira.100.africa.tooltip"		
-		create_country = {			
-			name = "African Federation"
-			authority = random
-			civics = { 
-				civic = random
-				civic = civic_mining_guilds
-			}
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			ethos = random
-			flag = {
-				icon= {
-					category = "ornate"
-					file = "flag_ornate_2.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "inverted_v.dds"
-				}
-				colors={
-					"brown"
-					"red"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 100 }
-				add_resource = { energy = 100 }
-				add_resource = { food = 100 }
-				add_resource = { consumer_goods = 100 }
-				add_resource = { alloys = 100 }	
-				}	
-				add_modifier = {
-					modifier = legacy_of_africa
-					days = -1
-				}								
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_african
-		set_global_flag = fatherland_human_hegiran_africa_created
-		}	
-########################################################### SCANDINAVIA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_scandinavia }	
-			custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"
-			random_list = {
-				60 = {		
-					create_country = {			
-						name = "Scandinavian Union"
-						authority = auth_democratic
-						civics = { 
-							civic = random
-							civic = civic_functional_architecture
-							civic = civic_parliamentary_system
-						}
-						origin = origin_hegira_colony
-						species = event_target:fatherland_hegira_species
-						ignore_initial_colony_error = yes
-						randomize_ethos = yes
-						ethos = {
-							ethic = "ethic_fanatic_pacifist"
-							ethic = "ethic_materialist"
-						}
-						flag = {
-							icon= {
-								category = "ornate"
-								file = "flag_ornate_24.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "horizontal.dds"
-							}
-							colors={
-								"yellow"
-								"blue"
-								"null"
-								"null"
-							}
-						}
-						type = default
-						effect = {
-							copy_techs_from = { target = root }
-							set_country_flag = fatherland_hegiran_from_earth
-							save_global_event_target_as = hegira_colony_nation
-							set_graphical_culture = event_target:fatherland_empire
-							if = { 
-								limit = { has_global_flag = fatherland_instantcomms }
-							establish_communications = event_target:fatherland_empire
-							}
-							if = { 
-								limit = { has_global_flag = fatherland_bonusresources }					
-							add_resource = { minerals = 100 }
-							add_resource = { energy = 100 }
-							add_resource = { food = 100 }
-							add_resource = { consumer_goods = 100 }
-							add_resource = { alloys = 100 }	
-							}
-							add_modifier = {
-								modifier = legacy_of_scandinavia
-								days = -1
-							}									
-						}				
-					}
-					remove_country_flag = fatherland_human_hegiran_scandinavia
-					set_global_flag = fatherland_human_hegiran_scandinavia_created
-				}
-				40 = {
-					#custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"		
-					create_country = {			
-						name = "Scandinavian Empire"
-						authority = auth_imperial
-						civics = { 
-							civic = random
-							civic = civic_distinguished_admiralty
-							civic = civic_functional_architecture
-						}
-						origin = origin_hegira_colony
-						species = event_target:fatherland_hegira_species
-						ignore_initial_colony_error = yes
-						randomize_ethos = yes
-						ethos = {
-							ethic = "ethic_fanatic_militarist"
-							ethic = "ethic_authoritarian"
-						}
-						flag = {
-							icon= {
-								category = "domination"
-								file = "domination_10.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "horizontal.dds"
-							}
-							colors={
-								"yellow"
-								"blue"
-								"null"
-								"null"
-							}
-						}
-						type = default
-						effect = {
-							copy_techs_from = { target = root }
-							set_country_flag = fatherland_hegiran_from_earth
-							save_global_event_target_as = hegira_colony_nation
-							set_graphical_culture = event_target:fatherland_empire
-							if = { 
-								limit = { has_global_flag = fatherland_instantcomms }
-							establish_communications = event_target:fatherland_empire
-							}
-							if = { 
-								limit = { has_global_flag = fatherland_bonusresources }					
-							add_resource = { minerals = 1000 }
-							add_resource = { energy = 1000 }
-							add_resource = { food = 1000 }
-							add_resource = { consumer_goods = 1000 }
-							add_resource = { alloys = 3000 }
-							add_resource = { unity = 5000 }	
-							}
-							add_modifier = {
-								modifier = legacy_of_scandinavia
-								days = -1
-							}	
-							create_leader = {
-								class = commander
-								species = event_target:fatherland_hegira_species
-								name = "Sven Adolphus"
-								skill = 10
-								gender = male
-								set_age = 28
-								event_leader = no
-								traits = {
-									trait = leader_trait_aggressive
-									trait = leader_trait_scout
-								}							
-							}	
-							create_leader = {
-								class = official
-								species = event_target:fatherland_hegira_species
-								name = "Gustavus Adolphus"
-								skill = 10
-								gender = male
-								set_age = 30
-								event_leader = no
-								traits = {
-									trait = trait_ruler_expansionist
-									trait = trait_ruler_warlike
-									trait = trait_ruler_military_pioneer
-								}								
-							}
-							set_leader = last_created_leader																						
-						}				
-					}
-					remove_country_flag = fatherland_human_hegiran_scandinavia
-					set_global_flag = fatherland_human_hegiran_scandinavia_created
-				}				
-			}
-		}
-########################################################### GRAN COLUMBIA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_columbia }	
-		custom_tooltip = "fatherland_hegira.100.columbia.tooltip"		
-		create_country = {			
-			name = "Gran Columbia"
-			authority = auth_oligarchic
-			civics = random
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			ethos = random
-			flag = {
-				icon = {
-					category = "domination"
-					file = "domination_6.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "horizontal_stripe.dds"
-				}
-				colors={
-					"yellow"
-					"blue"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 100 }
-				add_resource = { energy = 100 }
-				add_resource = { food = 100 }
-				add_resource = { consumer_goods = 100 }
-				add_resource = { alloys = 100 }	
-				}	
-				add_modifier = {
-					modifier = legacy_of_gran_columbia
-					days = -1
-				}								
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_columbia
-		set_global_flag = fatherland_human_hegiran_columbia_created
-		}	
-########################################################### GERMANY
 		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_germany }	
-			custom_tooltip = "fatherland_hegira.100.germany.tooltip"		
+			limit = { has_country_flag = fatherland_human_hegiran_african }	
+			custom_tooltip = "fatherland_hegira.100.africa.tooltip"		
 			create_country = {			
-				name = "Greater Deutschland"
+				name = "African Federation"
 				authority = random
-				civics = random
+				civics = { 
+					civic = random
+					civic = civic_mining_guilds
+				}
 				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
+				species = event_target:fatherland_species
 				ignore_initial_colony_error = yes
 				ethos = random
 				flag = {
 					icon= {
+						category = "ornate"
+						file = "flag_ornate_2.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "inverted_v.dds"
+					}
+					colors={
+						"brown"
+						"red"
+						"null"
+						"null"
+					}
+				}
+				type = default
+				effect = {
+					add_modifier = {
+						modifier = legacy_of_africa
+						days = -1
+					}
+					get_hegira_colony_after_effect = yes								
+				}				
+			}
+			remove_country_flag = fatherland_human_hegiran_african
+			set_global_flag = fatherland_human_hegiran_africa_created
+			}	
+########################################################### SCANDINAVIA
+		if = {  
+			limit = { has_country_flag = fatherland_human_hegiran_scandinavia }	
+				custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"
+				random_list = {
+					60 = {		
+						create_country = {			
+							name = "Scandinavian Union"
+							authority = auth_democratic
+							civics = { 
+								civic = random
+								civic = civic_functional_architecture
+								civic = civic_parliamentary_system
+							}
+							origin = origin_hegira_colony
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_fanatic_pacifist"
+								ethic = "ethic_materialist"
+							}
+							flag = {
+								icon= {
+									category = "ornate"
+									file = "flag_ornate_24.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "horizontal.dds"
+								}
+								colors={
+									"yellow"
+									"blue"
+									"null"
+									"null"
+								}
+							}
+							type = default
+							effect = {
+								add_modifier = {
+									modifier = legacy_of_scandinavia
+									days = -1
+								}
+								get_hegira_colony_after_effect = yes									
+							}				
+						}
+						remove_country_flag = fatherland_human_hegiran_scandinavia
+						set_global_flag = fatherland_human_hegiran_scandinavia_created
+					}
+					40 = {
+						#custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"		
+						create_country = {			
+							name = "Scandinavian Empire"
+							authority = auth_imperial
+							civics = { 
+								civic = random
+								civic = civic_distinguished_admiralty
+								civic = civic_functional_architecture
+							}
+							origin = origin_hegira_colony
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_fanatic_militarist"
+								ethic = "ethic_authoritarian"
+							}
+							flag = {
+								icon= {
+									category = "domination"
+									file = "domination_10.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "horizontal.dds"
+								}
+								colors={
+									"yellow"
+									"blue"
+									"null"
+									"null"
+								}
+							}
+							type = default
+							effect = {
+								add_modifier = {
+									modifier = legacy_of_scandinavia
+									days = -1
+								}	
+								create_leader = {
+									class = commander
+									species = event_target:fatherland_species
+									name = "Sven Adolphus"
+									skill = 10
+									gender = male
+									set_age = 28
+									event_leader = no
+									traits = {
+										trait = leader_trait_aggressive
+										trait = leader_trait_scout
+									}							
+								}	
+								create_leader = {
+									class = official
+									species = event_target:fatherland_species
+									name = "Gustavus Adolphus"
+									skill = 10
+									gender = male
+									set_age = 30
+									event_leader = no
+									traits = {
+										trait = trait_ruler_expansionist
+										trait = trait_ruler_warlike
+										trait = trait_ruler_military_pioneer
+									}								
+								}
+								set_leader = last_created_leader
+								get_hegira_colony_after_effect = yes																					
+							}				
+						}
+						remove_country_flag = fatherland_human_hegiran_scandinavia
+						set_global_flag = fatherland_human_hegiran_scandinavia_created
+					}				
+				}
+			}
+########################################################### GRAN COLUMBIA
+		if = {  
+			limit = { has_country_flag = fatherland_human_hegiran_columbia }	
+			custom_tooltip = "fatherland_hegira.100.columbia.tooltip"		
+			create_country = {			
+				name = "Gran Columbia"
+				authority = auth_oligarchic
+				civics = random
+				origin = origin_hegira_colony
+				species = event_target:fatherland_species
+				ignore_initial_colony_error = yes
+				ethos = random
+				flag = {
+					icon = {
 						category = "domination"
-						file = "flag_human_2.dds"
+						file = "domination_6.dds"
 					}
 					background= {
 						category = "backgrounds"
@@ -940,626 +994,566 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 					}
 					colors={
 						"yellow"
-						"red"
+						"blue"
 						"null"
 						"null"
 					}
 				}
 				type = default
 				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
 					add_modifier = {
-						modifier = legacy_of_germany
+						modifier = legacy_of_gran_columbia
 						days = -1
-					}															
+					}
+					get_hegira_colony_after_effect = yes
 				}				
 			}
-			remove_country_flag = fatherland_human_hegiran_germany
-			set_global_flag = fatherland_human_hegiran_germany_created
+			remove_country_flag = fatherland_human_hegiran_columbia
+			set_global_flag = fatherland_human_hegiran_columbia_created
 			}	
+########################################################### GERMANY
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_germany }	
+				custom_tooltip = "fatherland_hegira.100.germany.tooltip"		
+				create_country = {			
+					name = "Greater Deutschland"
+					authority = random
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "domination"
+							file = "flag_human_2.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal_stripe.dds"
+						}
+						colors={
+							"yellow"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_germany
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_germany
+				set_global_flag = fatherland_human_hegiran_germany_created
+				}	
 ########################################################### BRITANNIAN EMPIRE
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_uk }	
-			custom_tooltip = "fatherland_hegira.100.uk.tooltip"		
-			create_country = {			
-				name = "Britannian Empire"
-				authority = auth_democratic
-				civics = { 
-					civic = random
-					civic = civic_parliamentary_system
-					civic = civic_distinguished_admiralty
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_uk }	
+				custom_tooltip = "fatherland_hegira.100.uk.tooltip"		
+				create_country = {			
+					name = "Britannian Empire"
+					authority = auth_democratic
+					civics = { 
+						civic = random
+						civic = civic_parliamentary_system
+						civic = civic_distinguished_admiralty
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "domination"
+							file = "domination_19.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"purple"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = britannia_rules_the_stars
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes														
+					}				
 				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "domination"
-						file = "domination_19.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "circle.dds"
-					}
-					colors={
-						"purple"
-						"red"
-						"null"
-						"null"
-					}
+				remove_country_flag = fatherland_human_hegiran_uk
+				set_global_flag = fatherland_human_hegiran_uk_created
 				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = britannia_rules_the_stars
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_uk
-			set_global_flag = fatherland_human_hegiran_uk_created
-			}
 ########################################################### OCEANIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_oceania }	
-			custom_tooltip = "fatherland_hegira.100.oceania.tooltip"		
-			create_country = {			
-				name = "Oceanic Leaugue"
-				authority = auth_democratic
-				civics = { 
-					civic = random
-					civic = civic_parliamentary_system
-					civic = civic_mining_guilds
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_oceania }	
+				custom_tooltip = "fatherland_hegira.100.oceania.tooltip"		
+				create_country = {			
+					name = "Oceanic Leaugue"
+					authority = auth_democratic
+					civics = { 
+						civic = random
+						civic = civic_parliamentary_system
+						civic = civic_mining_guilds
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "legion"
+							file = "flag_mp_beta_02.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"blue"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_oceania
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes														
+					}				
 				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "legion"
-						file = "flag_mp_beta_02.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"blue"
-						"blue"
-						"null"
-						"null"
-					}
+				remove_country_flag = fatherland_human_hegiran_oceania
+				set_global_flag = fatherland_human_hegiran_oceania_created
 				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_oceania
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_oceania
-			set_global_flag = fatherland_human_hegiran_oceania_created
-			}
 ########################################################### CALIPHATE
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_caliphate }	
-			custom_tooltip = "fatherland_hegira.100.caliphate.tooltip"		
-			create_country = {			
-				name = "The Caliphate"
-				authority = auth_dictatorial
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_fanatic_spiritualist"
-					ethic = "ethic_authoritarian"
-				}				
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_caliphate }	
+				custom_tooltip = "fatherland_hegira.100.caliphate.tooltip"		
+				create_country = {			
+					name = "The Caliphate"
+					authority = auth_dictatorial
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_fanatic_spiritualist"
+						ethic = "ethic_authoritarian"
+					}				
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
 
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_20.dds"
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_20.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"green"
+							"green"
+							"null"
+							"null"
+						}
 					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors={
-						"green"
-						"green"
-						"null"
-						"null"
-					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = the_caliphate
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes						
+					}				
 				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = the_caliphate
-						days = -1
-					}						
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_caliphate
-			set_global_flag = fatherland_human_hegiran_caliphate_created
-			}
+				remove_country_flag = fatherland_human_hegiran_caliphate
+				set_global_flag = fatherland_human_hegiran_caliphate_created
+				}
 ########################################################### NIPPON
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_nippon }	
-			custom_tooltip = "fatherland_hegira.100.nippon.tooltip"		
-			create_country = {			
-				name = "Nippon"
-				authority = auth_oligarchic
-				civics = { 
-					civic = random
-					civic = civic_shadow_council
-					civic = civic_functional_architecture
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_nippon }	
+				custom_tooltip = "fatherland_hegira.100.nippon.tooltip"		
+				create_country = {			
+					name = "Nippon"
+					authority = auth_oligarchic
+					civics = { 
+						civic = random
+						civic = civic_shadow_council
+						civic = civic_functional_architecture
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_militarist"
+						ethic = "ethic_spiritualist"
+					}
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "none"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"grey"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_nippon
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes														
+					}				
 				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_militarist"
-					ethic = "ethic_spiritualist"
-				}
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "none"
-					}
-					background= {
-						category = "backgrounds"
-						file = "circle.dds"
-					}
-					colors={
-						"grey"
-						"red"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = legacy_of_nippon
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_nippon
-			set_global_flag = fatherland_human_hegiran_nippon_created
-			}	
+				remove_country_flag = fatherland_human_hegiran_nippon
+				set_global_flag = fatherland_human_hegiran_nippon_created
+				}	
 ########################################################### RUSVIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_rusvia }	
-			custom_tooltip = "fatherland_hegira.100.rusvia.tooltip"		
-			create_country = {			
-				name = "Rusvia"
-				authority = auth_oligarchic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_militarist"
-					ethic = "ethic_xenophobe"
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_rusvia }	
+				custom_tooltip = "fatherland_hegira.100.rusvia.tooltip"		
+				create_country = {			
+					name = "Rusvia"
+					authority = auth_oligarchic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_militarist"
+						ethic = "ethic_xenophobe"
+					}
+					flag = {
+						icon= {
+							category = "domination"
+							file = "domination_3.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"blue"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = for_the_motherland
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes														
+					}				
 				}
-				flag = {
-					icon= {
-						category = "domination"
-						file = "domination_3.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors={
-						"blue"
-						"blue"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = for_the_motherland
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_rusvia
-			set_global_flag = fatherland_human_hegiran_rusvia_created
-			}	
+				remove_country_flag = fatherland_human_hegiran_rusvia
+				set_global_flag = fatherland_human_hegiran_rusvia_created
+				}	
 ########################################################### INDIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_india }	
-			custom_tooltip = "fatherland_hegira.100.india.tooltip"		
-			create_country = {			
-				name = "New India"
-				authority = auth_democratic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_pacifist"
-					ethic = "ethic_xenophile"
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_india }	
+				custom_tooltip = "fatherland_hegira.100.india.tooltip"		
+				create_country = {			
+					name = "New India"
+					authority = auth_democratic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_pacifist"
+						ethic = "ethic_xenophile"
+					}
+					flag = {
+						icon= {
+							category = "spherical"
+							file = "flag_spherical_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"orange"
+							"green"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_dharma
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes															
+					}				
 				}
-				flag = {
-					icon= {
-						category = "spherical"
-						file = "flag_spherical_4.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"orange"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_dharma
-						days = -1
-					}															
+				remove_country_flag = fatherland_human_hegiran_india
+				set_global_flag = fatherland_human_hegiran_india_created
 				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_india
-			set_global_flag = fatherland_human_hegiran_india_created
-			}				
 ########################################################### BRAZIL
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_brazil }	
-			custom_tooltip = "fatherland_hegira.100.brazil.tooltip"		
-			create_country = {			
-				name = "Union of Brazil"
-				authority = auth_democratic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_21.dds"
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_brazil }	
+				custom_tooltip = "fatherland_hegira.100.brazil.tooltip"		
+				create_country = {			
+					name = "Union of Brazil"
+					authority = auth_democratic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_21.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "double_triangles.dds"
+						}
+						colors={
+							"orange"
+							"green"
+							"null"
+							"null"
+						}
 					}
-					background= {
-						category = "backgrounds"
-						file = "double_triangles.dds"
-					}
-					colors={
-						"orange"
-						"green"
-						"null"
-						"null"
-					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_brazil
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes
+					}				
 				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_brazil
-						days = -1
-					}															
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_brazil
-			set_global_flag = fatherland_human_hegiran_brazil_created
-			}	
+				remove_country_flag = fatherland_human_hegiran_brazil
+				set_global_flag = fatherland_human_hegiran_brazil_created
+				}	
 ########################################################### INTERMARIUM
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_intermarium }	
-			custom_tooltip = "fatherland_hegira.100.intermarium.tooltip"		
-			create_country = {			
-				name = "The Commonwealth"
-				authority = auth_democratic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "blocky"
-						file = "flag_blocky_20.dds"
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_intermarium }	
+				custom_tooltip = "fatherland_hegira.100.intermarium.tooltip"		
+				create_country = {			
+					name = "The Commonwealth"
+					authority = auth_democratic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "blocky"
+							file = "flag_blocky_20.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"red"
+							"grey"
+							"null"
+							"null"
+						}
 					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"red"
-						"grey"
-						"null"
-						"null"
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_intermarium
+							days = -1
+						}
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_intermarium
+				set_global_flag = fatherland_human_hegiran_intermarium_created
+			}	
+			event_target:hegira_event_planet = {
+				solar_system = {
+					create_starbase = {
+						size = starbase_starhold
+						building = crew_quarters
+						owner = event_target:hegira_colony_nation
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = shipyard
+							}
+							set_starbase_module = {
+								slot = 2
+								module = shipyard
+							}
+							set_starbase_module = {
+								slot = 3
+								module = trading_hub
+							}
+							set_starbase_module = {
+								slot = 4
+								module = hangar_bay
+							}
+						}
 					}
 				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
+				set_owner = event_target:hegira_colony_nation
+				set_capital = yes
+				random_list = {
+					33 = { add_district = district_farming }
+					33 = { add_district = district_farming
+						add_district = district_farming }
+					33 = { add_district = district_farming
+						add_district = district_farming
+						add_district = district_farming }
+				}
+				add_district = district_city
+				add_district = district_mining
+				add_district = district_generator
+				if = { limit = { owner = { is_machine_empire = yes } }
+					create_pop_group = { species = last_created_species }
+				}
+				if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
+					create_pop_group = { species = event_target:fatherland_species }
+				}
+				random_list = {
+					15 = {
+						while = {
+							count = 5
+							create_pop_group = { species = owner_main_species }
+						}
 					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
+					35 = {
+						while = {
+							count = 10
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					35 = {
+						while = {
+							count = 15
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					10 = {
+						while = {
+							count = 20
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					5 = {
+						while = {
+							count = 25
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+				}
+				add_modifier = {
+					modifier = hegira_colonial_world
+					days = -1
+				}	
+				add_modifier = {
+					modifier = recent_hegiran_state
+					years = 10
+				}		
+				############################# LEADERS
+				event_target:hegira_colony_nation = { 
+					create_leader = {
+						class = scientist
+						sub_type = survey
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+					}
+					create_leader = {
+						class = scientist
+						sub_type = engineering
+						species = event_target:fatherland_species
+						name = random
+						skill = random
+						event_leader = no
 					}	
-					add_modifier = {
-						modifier = legacy_of_intermarium
-						days = -1
-					}													
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_intermarium
-			set_global_flag = fatherland_human_hegiran_intermarium_created
-			}	
-
-	event_target:hegira_event_planet = {
-		solar_system = {
-			create_starbase = {
-				size = starbase_starport
-				module = shipyard
-				building = crew_quarters
-				owner = event_target:hegira_colony_nation
-				effect = {
-					set_starbase_module = {
-						slot = 1
-						module = hangar_bay
+					create_leader = {
+						class = scientist
+						sub_type = physics
+						species = event_target:fatherland_species
+						name = random
+						skill = random
+						event_leader = no
 					}
-				}
-			}
-		}
-		set_owner = event_target:hegira_colony_nation
-		set_capital = yes
-		random_list = {
-			33 = { add_district = district_farming }
-			33 = { add_district = district_farming
-				   add_district = district_farming }
-			33 = { add_district = district_farming
-				   add_district = district_farming
-				   add_district = district_farming }
-		}
-		add_district = district_city
-		add_district = district_mining
-		add_district = district_generator
-		if = { limit = { owner = { is_machine_empire = yes } }
-			create_pop_group = { species = last_created_species }
-		}
-		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
-			create_pop_group = { species = fatherland_hegira_species }
-		}	
-		add_modifier = {
-			modifier = hegira_colonial_world
-			days = -1
-		}	
-		add_modifier = {
-			modifier = recent_hegiran_state
-			years = 10
-		}		
-		############################# LEADERS
-		event_target:hegira_colony_nation = { 
-			create_leader = {
-				class = scientist
-				sub_type = survey
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-			}
-			create_leader = {
-				class = scientist
-				sub_type = engineering
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = random
-				event_leader = no
-			}	
-			create_leader = {
-				class = scientist
-				sub_type = physics
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = random
-				event_leader = no
-			}
-			create_leader = {
-				class = scientist
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = random
-				event_leader = no
-			}	
-			create_leader = {
-				class = commander
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = random
-				event_leader = no
-			}
-			create_leader = {
-				class = official
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = random
-				event_leader = no
-			}					
-		}			
-		#### CLEANUP
-		remove_planet_flag = hegira_target 
-		remove_modifier = hegira_target	
-
-		if = { 
-			limit = { has_global_flag = fatherland_instantcomms }
-		solar_system = {
-			every_system_planet = {
-				set_surveyed = {
-					surveyed = yes
+					create_leader = {
+						class = scientist
+						species = event_target:fatherland_species
+						name = random
+						skill = random
+						event_leader = no
+					}	
+					create_leader = {
+						class = commander
+						species = event_target:fatherland_species
+						name = random
+						skill = random
+						event_leader = no
 					}
+					create_leader = {
+						class = official
+						species = event_target:fatherland_species
+						name = random
+						skill = random
+						event_leader = no
+					}					
+				}			
+				#### CLEANUP
+				remove_planet_flag = hegira_target 
+				remove_modifier = hegira_target	
+
+				if = { 
+					limit = { has_global_flag = fatherland_instantcomms }
+					solar_system = { every_system_planet = { set_surveyed = { surveyed = yes } } }
 				}
-			}
-		}
-			event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_currentglobal_hegirans
-				value = 1
-				}
-			}
-			root = {
-				clear_global_event_target = fatherland_empire
-				set_variable = {
+				event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+				change_variable = {
 					which = fatherland_currentglobal_hegirans
-					value = event_target:global_event_country.fatherland_currentglobal_hegirans
+					value = 1
+					}
+				}
+				root = {
+					set_variable = {
+						which = fatherland_currentglobal_hegirans
+						value = event_target:global_event_country.fatherland_currentglobal_hegirans
 					}
 					if = {
 						limit = { is_ai = yes }
@@ -1577,22 +1571,14 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 					}					
 				}	
 			}	
-		every_country = {
-			country_event = { id = fatherland_hegira.101 days = 2 }
-			country_event = { id = fatherland_hegira.103 days = 7 }						
-			}	
+			every_country = { country_event = { id = fatherland_hegira.101 days = 2 } }
+			event_target:hegira_colony_nation = { country_event = { id = fatherland_hegira.103 days = 7 } }		
 		}
-		if = { limit = { has_global_flag = fatherland_hegiran_hegemony }
-		custom_tooltip = "fatherland_hegira.100.federation.tooltip"
-		hidden_effect = {
-			event_target:hegira_colony_nation = {
-				join_alliance = { who = root override_requirements = yes } 		
-				}		
-			}
+		if = {
+			limit = { has_global_flag = fatherland_hegiran_hegemony }
+			custom_tooltip = "fatherland_hegira.100.federation.tooltip"
+			hidden_effect = { event_target:hegira_colony_nation = { join_alliance = { who = root override_requirements = yes } }		 }
 		}
-		event_target:hegira_colony_nation = { 
-			clear_global_event_target = hegira_colony_nation
-		}	
 		hidden_effect = {
 		if = { limit = { has_global_flag = fatherland_hegiran_hegemony NOT = { has_global_flag = fatherland_hegira_federation_setup } }
 			federation = {
@@ -1628,597 +1614,347 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				}			
 			}
 		}
-		save_global_event_target_as = fatherland_empire
-	hidden_effect = {
-########################################################### Main Event
-		if = {  
-			limit = { has_country_flag = fatherland_hegiran_state }	
-			custom_tooltip = "fatherland_hegira.100.hegira.tooltip"		
-			create_country = {			
-				name = random
-				authority = root
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = root
-				flag = random
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					#add_opinion_modifier = { 
-					#	modifier = opinion_fatherland_hegira
-					#	who = root
-					#}									
-				}				
+		save_event_target_as = fatherland_empire
+		hidden_effect = {
+	########################################################### Main Event
+			if = {  
+				limit = { has_country_flag = fatherland_hegiran_state }	
+				custom_tooltip = "fatherland_hegira.100.hegira.tooltip"		
+				create_country = {			
+					name = random
+					authority = root
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = root
+					flag = random
+					type = default
+					effect = {
+						copy_techs_from = { target = root }
+						save_global_event_target_as = hegira_colony_nation
+						set_graphical_culture = event_target:fatherland_empire
+						if = { 
+							limit = { has_global_flag = fatherland_instantcomms }
+						establish_communications = event_target:fatherland_empire
+						}
+						if = { 
+							limit = { has_global_flag = fatherland_bonusresources }					
+						add_resource = { minerals = 100 }
+						add_resource = { energy = 100 }
+						add_resource = { food = 100 }
+						add_resource = { consumer_goods = 100 }
+						add_resource = { alloys = 100 }	
+						}
+						#add_opinion_modifier = { 
+						#	modifier = opinion_fatherland_hegira
+						#	who = root
+						#}									
+					}				
+				}
+				remove_country_flag = fatherland_hegiran_state
 			}
-			remove_country_flag = fatherland_hegiran_state
-		}
-########################################################### IMPERIAL CHINA
+	########################################################### IMPERIAL CHINA
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_china }	
+				custom_tooltip = "fatherland_hegira.100.china.tooltip"		
+				create_country = {			
+					name = "Imperial China"
+					authority = auth_imperial
+					civics = { 
+						civic = random
+						civic = civic_efficient_bureaucracy
+						civic = civic_agrarian_idyll
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_authoritarian"
+						ethic = "ethic_pacifist"
+						ethic = "ethic_spiritualist"
+					}
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_18.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"red"
+							"yellow"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = mandate_of_heaven
+							days = -1
+						}									
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_china
+				set_global_flag = fatherland_human_hegiran_china_created
+			}		
+	########################################################### AMERICA
 		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_china }	
-			custom_tooltip = "fatherland_hegira.100.china.tooltip"		
+			limit = { has_country_flag = fatherland_human_hegiran_america }	
+			custom_tooltip = "fatherland_hegira.100.america.tooltip"		
 			create_country = {			
-				name = "Imperial China"
-				authority = auth_imperial
+				name = "United Planets of America"
+				authority = auth_democratic
 				civics = { 
 					civic = random
-					civic = civic_efficient_bureaucracy
-					civic = civic_agrarian_idyll
+					civic = civic_beacon_of_liberty
+					civic = civic_citizen_service
 				}
 				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
+				species = event_target:fatherland_species
 				ignore_initial_colony_error = yes
 				randomize_ethos = yes
 				ethos = {
-					ethic = "ethic_authoritarian"
-					ethic = "ethic_pacifist"
-					ethic = "ethic_spiritualist"
+					ethic = "ethic_fanatic_egalitarian"
+					ethic = "ethic_militarist"
 				}
 				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_18.dds"
+					icon = {
+						category = "human"
+						file = "flag_human_8.dds"
 					}
-					background= {
+					background = {
 						category = "backgrounds"
-						file = "00_solid.dds"
+						file = "horizontal.dds"
 					}
 					colors={
 						"red"
-						"yellow"
+						"blue"
 						"null"
 						"null"
 					}
 				}
 				type = default
 				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
 					add_modifier = {
-						modifier = mandate_of_heaven
+						modifier = land_of_the_free
 						days = -1
-					}									
+					}
+					get_hegira_colony_after_effect = yes					
 				}				
 			}
-			remove_country_flag = fatherland_human_hegiran_china
-			set_global_flag = fatherland_human_hegiran_china_created
-		}		
-########################################################### AMERICA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_america }	
-		custom_tooltip = "fatherland_hegira.100.america.tooltip"		
-		create_country = {			
-			name = "United Planets of America"
-			authority = auth_democratic
-			civics = { 
-				civic = random
-				civic = civic_beacon_of_liberty
-				civic = civic_citizen_service
+			remove_country_flag = fatherland_human_hegiran_america
+			set_global_flag = fatherland_human_hegiran_america_created
+			capital_scope = {
+				set_name = "America"
 			}
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_fanatic_egalitarian"
-				ethic = "ethic_militarist"
-			}
-			flag = {
-				icon = {
-					category = "human"
-					file = "flag_human_8.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "horizontal.dds"
-				}
-				colors={
-					"red"
-					"blue"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 1000 }
-				add_resource = { energy = 1000 }
-				add_resource = { food = 1000 }
-				add_resource = { consumer_goods = 1000 }
-				add_resource = { alloys = 1000 }	
-				add_resource = { unity = 2500 }	
-				}
-				add_modifier = {
-					modifier = land_of_the_free
-					days = -1
-				}					
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_america
-		set_global_flag = fatherland_human_hegiran_america_created
-		capital_scope = {
-			set_name = "America"
-		}
-	}	
-########################################################### AFRICA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_african }	
-		custom_tooltip = "fatherland_hegira.100.africa.tooltip"		
-		create_country = {			
-			name = "African Federation"
-			authority = random
-			civics = { 
-				civic = random
-				civic = civic_mining_guilds
-				civic = random
-			}
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			ethos = random
-			flag = {
-				icon= {
-					category = "ornate"
-					file = "flag_ornate_2.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "inverted_v.dds"
-				}
-				colors={
-					"brown"
-					"red"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 100 }
-				add_resource = { energy = 100 }
-				add_resource = { food = 100 }
-				add_resource = { consumer_goods = 100 }
-				add_resource = { alloys = 100 }	
-				}	
-				add_modifier = {
-					modifier = legacy_of_africa
-					days = -1
-				}							
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_african
-		set_global_flag = fatherland_human_hegiran_africa_created
 		}	
-########################################################### SCANDINAVIA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_scandinavia }	
-			custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"
-			random_list = {
-				68 = { #SCANDINAVIAN UNION	
-				modifier = {
-					factor = 0.5
-					NOT = { has_authority = auth_democratic }
-				}	
-					create_country = {			
-						name = "Scandinavian Union"
-						authority = auth_democratic
-						civics = { 
-							civic = random
-							civic = civic_functional_architecture
-							civic = civic_parliamentary_system
-						}
-						origin = origin_hegira_colony
-						species = event_target:fatherland_hegira_species
-						ignore_initial_colony_error = yes
-						randomize_ethos = yes
-						ethos = {
-							ethic = "ethic_fanatic_pacifist"
-							ethic = "ethic_materialist"
-						}
-						flag = {
-							icon= {
-								category = "ornate"
-								file = "flag_ornate_24.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "horizontal.dds"
-							}
-							colors={
-								"yellow"
-								"blue"
-								"null"
-								"null"
-							}
-						}
-						type = default
-						effect = {
-							copy_techs_from = { target = root }
-							set_country_flag = fatherland_hegiran_from_earth
-							save_global_event_target_as = hegira_colony_nation
-							set_graphical_culture = event_target:fatherland_empire
-							if = { 
-								limit = { has_global_flag = fatherland_instantcomms }
-							establish_communications = event_target:fatherland_empire
-							}
-							if = { 
-								limit = { has_global_flag = fatherland_bonusresources }					
-							add_resource = { minerals = 100 }
-							add_resource = { energy = 100 }
-							add_resource = { food = 100 }
-							add_resource = { consumer_goods = 100 }
-							add_resource = { alloys = 100 }	
-							}
-							add_modifier = {
-								modifier = legacy_of_scandinavia
-								days = -1
-							}									
-						}				
-					}
-					remove_country_flag = fatherland_human_hegiran_scandinavia
-					set_global_flag = fatherland_human_hegiran_scandinavia_created
-				}
-				32 = { #SCANDINAVIAN EMPIRE!
-					modifier = {
-						factor = 2
-						NOT = { has_authority = auth_democratic }
-					}				
-					#custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"		
-					create_country = {			
-						name = "Scandinavian Empire"
-						authority = auth_imperial
-						civics = { 
-							civic = random
-							civic = civic_distinguished_admiralty
-							civic = civic_functional_architecture
-						}
-						origin = origin_hegira_colony
-						species = event_target:fatherland_hegira_species
-						ignore_initial_colony_error = yes
-						randomize_ethos = yes
-						ethos = {
-							ethic = "ethic_fanatic_militarist"
-							ethic = "ethic_authoritarian"
-						}
-						flag = {
-							icon= {
-								category = "domination"
-								file = "domination_10.dds"
-							}
-							background= {
-								category = "backgrounds"
-								file = "horizontal.dds"
-							}
-							colors={
-								"yellow"
-								"blue"
-								"null"
-								"null"
-							}
-						}
-						type = default
-						effect = {
-							copy_techs_from = { target = root }
-							set_country_flag = fatherland_hegiran_from_earth
-							save_global_event_target_as = hegira_colony_nation
-							set_graphical_culture = event_target:fatherland_empire
-							if = { 
-								limit = { has_global_flag = fatherland_instantcomms }
-							establish_communications = event_target:fatherland_empire
-							}
-							if = { 
-								limit = { has_global_flag = fatherland_bonusresources }					
-							add_resource = { minerals = 1000 }
-							add_resource = { energy = 1000 }
-							add_resource = { food = 1000 }
-							add_resource = { consumer_goods = 1000 }
-							add_resource = { alloys = 3000 }
-							add_resource = { unity = 4000 }	
-							}
-							add_modifier = {
-								modifier = legacy_of_scandinavia
-								days = -1
-							}	
-							create_leader = {
-								class = commander
-								species = event_target:fatherland_hegira_species
-								name = "Sven Adolphus"
-								skill = 8
-								gender = male
-								set_age = 28
-								event_leader = no
-								traits = {
-									trait = leader_trait_aggressive
-									trait = leader_trait_scout
-								}							
-							}	
-							create_leader = {
-								class = official
-								species = event_target:fatherland_hegira_species
-								name = "Gustavus Adolphus"
-								skill = 8
-								gender = male
-								set_age = 30
-								event_leader = no
-								traits = {
-									trait = trait_ruler_expansionist
-									trait = trait_ruler_warlike
-									trait = trait_ruler_military_pioneer
-								}								
-							}
-							set_leader = last_created_leader																						
-						}				
-					}
-					remove_country_flag = fatherland_human_hegiran_scandinavia
-					set_global_flag = fatherland_human_hegiran_scandinavia_created
-				}				
-			}
-		}
-########################################################### GRAN COLUMBIA
-	if = {  
-		limit = { has_country_flag = fatherland_human_hegiran_columbia }	
-		custom_tooltip = "fatherland_hegira.100.columbia.tooltip"		
-		create_country = {			
-			name = "Gran Columbia"
-			authority = auth_oligarchic
-			civics = random
-			origin = origin_hegira_colony
-			species = event_target:fatherland_hegira_species
-			ignore_initial_colony_error = yes
-			ethos = random
-			flag = {
-				icon = {
-					category = "domination"
-					file = "domination_6.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "horizontal_stripe.dds"
-				}
-				colors={
-					"yellow"
-					"blue"
-					"null"
-					"null"
-				}
-			}
-			type = default
-			effect = {
-				copy_techs_from = { target = root }
-				set_country_flag = fatherland_hegiran_from_earth
-				save_global_event_target_as = hegira_colony_nation
-				set_graphical_culture = event_target:fatherland_empire
-				if = { 
-					limit = { has_global_flag = fatherland_instantcomms }
-				establish_communications = event_target:fatherland_empire
-				}
-				if = { 
-					limit = { has_global_flag = fatherland_bonusresources }					
-				add_resource = { minerals = 100 }
-				add_resource = { energy = 100 }
-				add_resource = { food = 100 }
-				add_resource = { consumer_goods = 100 }
-				add_resource = { alloys = 100 }	
-				}	
-				add_modifier = {
-					modifier = legacy_of_gran_columbia
-					days = -1
-				}						
-			}				
-		}
-		remove_country_flag = fatherland_human_hegiran_columbia
-		set_global_flag = fatherland_human_hegiran_columbia_created
-		}	
-########################################################### GERMANY
+	########################################################### AFRICA
 		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_germany }	
-			custom_tooltip = "fatherland_hegira.100.germany.tooltip"		
+			limit = { has_country_flag = fatherland_human_hegiran_african }	
+			custom_tooltip = "fatherland_hegira.100.africa.tooltip"		
 			create_country = {			
-				name = "Greater Deutschland"
+				name = "African Federation"
 				authority = random
-				civics = random
+				civics = { 
+					civic = random
+					civic = civic_mining_guilds
+					civic = random
+				}
 				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
+				species = event_target:fatherland_species
 				ignore_initial_colony_error = yes
 				ethos = random
 				flag = {
 					icon= {
+						category = "ornate"
+						file = "flag_ornate_2.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "inverted_v.dds"
+					}
+					colors={
+						"brown"
+						"red"
+						"null"
+						"null"
+					}
+				}
+				type = default
+				effect = {
+					add_modifier = {
+						modifier = legacy_of_africa
+						days = -1
+					}
+					get_hegira_colony_after_effect = yes
+				}				
+			}
+			remove_country_flag = fatherland_human_hegiran_african
+			set_global_flag = fatherland_human_hegiran_africa_created
+			}	
+	########################################################### SCANDINAVIA
+		if = {  
+			limit = { has_country_flag = fatherland_human_hegiran_scandinavia }	
+				custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"
+				random_list = {
+					68 = { #SCANDINAVIAN UNION	
+						modifier = {
+							factor = 0.5
+							NOT = { has_authority = auth_democratic }
+						}	
+						create_country = {			
+							name = "Scandinavian Union"
+							authority = auth_democratic
+							civics = { 
+								civic = random
+								civic = civic_functional_architecture
+								civic = civic_parliamentary_system
+							}
+							origin = origin_hegira_colony
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_fanatic_pacifist"
+								ethic = "ethic_materialist"
+							}
+							flag = {
+								icon= {
+									category = "ornate"
+									file = "flag_ornate_24.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "horizontal.dds"
+								}
+								colors={
+									"yellow"
+									"blue"
+									"null"
+									"null"
+								}
+							}
+							type = default
+							effect = {
+								add_modifier = {
+									modifier = legacy_of_scandinavia
+									days = -1
+								}
+								get_hegira_colony_after_effect = yes									
+							}				
+						}
+						remove_country_flag = fatherland_human_hegiran_scandinavia
+						set_global_flag = fatherland_human_hegiran_scandinavia_created
+					}
+					32 = { #SCANDINAVIAN EMPIRE!
+						modifier = {
+							factor = 2
+							NOT = { has_authority = auth_democratic }
+						}				
+						#custom_tooltip = "fatherland_hegira.100.scandinavia.tooltip"		
+						create_country = {			
+							name = "Scandinavian Empire"
+							authority = auth_imperial
+							civics = { 
+								civic = random
+								civic = civic_distinguished_admiralty
+								civic = civic_functional_architecture
+							}
+							origin = origin_hegira_colony
+							species = event_target:fatherland_species
+							ignore_initial_colony_error = yes
+							randomize_ethos = yes
+							ethos = {
+								ethic = "ethic_fanatic_militarist"
+								ethic = "ethic_authoritarian"
+							}
+							flag = {
+								icon= {
+									category = "domination"
+									file = "domination_10.dds"
+								}
+								background= {
+									category = "backgrounds"
+									file = "horizontal.dds"
+								}
+								colors={
+									"yellow"
+									"blue"
+									"null"
+									"null"
+								}
+							}
+							type = default
+							effect = {
+								add_modifier = {
+									modifier = legacy_of_scandinavia
+									days = -1
+								}	
+								create_leader = {
+									class = commander
+									species = event_target:fatherland_species
+									name = "Sven Adolphus"
+									skill = 8
+									gender = male
+									set_age = 28
+									event_leader = no
+									traits = {
+										trait = leader_trait_aggressive
+										trait = leader_trait_scout
+									}							
+								}	
+								create_leader = {
+									class = official
+									species = event_target:fatherland_species
+									name = "Gustavus Adolphus"
+									skill = 8
+									gender = male
+									set_age = 30
+									event_leader = no
+									traits = {
+										trait = trait_ruler_expansionist
+										trait = trait_ruler_warlike
+										trait = trait_ruler_military_pioneer
+									}								
+								}
+								set_leader = last_created_leader
+								get_hegira_colony_after_effect = yes																						
+							}				
+						}
+						remove_country_flag = fatherland_human_hegiran_scandinavia
+						set_global_flag = fatherland_human_hegiran_scandinavia_created
+					}				
+				}
+			}
+	########################################################### GRAN COLUMBIA
+		if = {  
+			limit = { has_country_flag = fatherland_human_hegiran_columbia }	
+			custom_tooltip = "fatherland_hegira.100.columbia.tooltip"		
+			create_country = {			
+				name = "Gran Columbia"
+				authority = auth_oligarchic
+				civics = random
+				origin = origin_hegira_colony
+				species = event_target:fatherland_species
+				ignore_initial_colony_error = yes
+				ethos = random
+				flag = {
+					icon = {
 						category = "domination"
-						file = "flag_human_2.dds"
+						file = "domination_6.dds"
 					}
 					background= {
 						category = "backgrounds"
 						file = "horizontal_stripe.dds"
 					}
 					colors={
-						"black"
 						"yellow"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_germany
-						days = -1
-					}															
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_germany
-			set_global_flag = fatherland_human_hegiran_germany_created
-			}	
-########################################################### BRITANNIAN EMPIRE
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_uk }	
-			custom_tooltip = "fatherland_hegira.100.uk.tooltip"		
-			create_country = {			
-				name = "Britannian Empire"
-				authority = auth_democratic
-				civics = { 
-					civic = random
-					civic = civic_parliamentary_system
-					civic = civic_distinguished_admiralty
-				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "domination"
-						file = "domination_19.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "circle.dds"
-					}
-					colors={
-						"purple"
-						"red"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = britannia_rules_the_stars
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_uk
-			set_global_flag = fatherland_human_hegiran_uk_created
-			}
-########################################################### OCEANIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_oceania }	
-			custom_tooltip = "fatherland_hegira.100.oceania.tooltip"		
-			create_country = {			
-				name = "Oceanic Leaugue"
-				authority = auth_democratic
-				civics = { 
-					civic = random
-					civic = civic_parliamentary_system
-					civic = civic_mining_guilds
-				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "legion"
-						file = "flag_mp_beta_02.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"blue"
 						"blue"
 						"null"
 						"null"
@@ -2226,566 +1962,632 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 				}
 				type = default
 				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
 					add_modifier = {
-						modifier = legacy_of_oceania
+						modifier = legacy_of_gran_columbia
 						days = -1
-					}															
+					}
+					get_hegira_colony_after_effect = yes
 				}				
 			}
-			remove_country_flag = fatherland_human_hegiran_oceania
-			set_global_flag = fatherland_human_hegiran_oceania_created
-			}
-########################################################### CALIPHATE
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_caliphate }	
-			custom_tooltip = "fatherland_hegira.100.caliphate.tooltip"		
-			create_country = {			
-				name = "The Caliphate"
-				authority = auth_dictatorial
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_fanatic_spiritualist"
-					ethic = "ethic_authoritarian"
-				}				
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_20.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors={
-						"green"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = the_caliphate
-						days = -1
-					}						
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_caliphate
-			set_global_flag = fatherland_human_hegiran_caliphate_created
-			}
-########################################################### NIPPON
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_nippon }	
-			custom_tooltip = "fatherland_hegira.100.nippon.tooltip"		
-			create_country = {			
-				name = "Nippon"
-				authority = random
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_militarist"
-					ethic = "ethic_spiritualist"
-				}				
-				civics = { 
-					civic = random
-					civic = civic_warrior_culture
-					civic = civic_nationalistic_zeal
-				}
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "none"
-					}
-					background= {
-						category = "backgrounds"
-						file = "circle.dds"
-					}
-					colors={
-						"grey"
-						"red"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = legacy_of_nippon
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_nippon
-			set_global_flag = fatherland_human_hegiran_nippon_created
+			remove_country_flag = fatherland_human_hegiran_columbia
+			set_global_flag = fatherland_human_hegiran_columbia_created
 			}	
-########################################################### RUSVIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_rusvia }	
-			custom_tooltip = "fatherland_hegira.100.rusvia.tooltip"		
-			create_country = {			
-				name = "Rusvia"
-				authority = auth_oligarchic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_militarist"
-					ethic = "ethic_xenophobe"
-				}
-				flag = {
-					icon= {
-						category = "domination"
-						file = "domination_3.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "00_solid.dds"
-					}
-					colors={
-						"blue"
-						"blue"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = for_the_motherland
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_rusvia
-			set_global_flag = fatherland_human_hegiran_rusvia_created
-			}	
-########################################################### INDIA
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_india }	
-			custom_tooltip = "fatherland_hegira.100.india.tooltip"		
-			create_country = {			
-				name = "New India"
-				authority = auth_democratic
-				randomize_ethos = yes
-				ethos = {
-					ethic = "ethic_materialist"
-					ethic = "ethic_pacifist"
-					ethic = "ethic_xenophile"
-				}			
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				flag = {
-					icon= {
-						category = "spherical"
-						file = "flag_spherical_4.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"orange"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_dharma
-						days = -1
-					}														
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_india
-			set_global_flag = fatherland_human_hegiran_india_created
-			}				
-########################################################### BRAZIL
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_brazil }	
-			custom_tooltip = "fatherland_hegira.100.brazil.tooltip"		
-			create_country = {			
-				name = "Union of Brazil"
-				authority = auth_democratic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "ornate"
-						file = "flag_ornate_21.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "double_triangles.dds"
-					}
-					colors={
-						"orange"
-						"green"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}
-					add_modifier = {
-						modifier = legacy_of_brazil
-						days = -1
-					}															
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_brazil
-			set_global_flag = fatherland_human_hegiran_brazil_created
-			}	
-########################################################### INTERMARIUM
-		if = {  
-			limit = { has_country_flag = fatherland_human_hegiran_intermarium }	
-			custom_tooltip = "fatherland_hegira.100.intermarium.tooltip"		
-			create_country = {			
-				name = "The Intermarium"
-				authority = auth_democratic
-				civics = random
-				origin = origin_hegira_colony
-				species = event_target:fatherland_hegira_species
-				ignore_initial_colony_error = yes
-				ethos = random
-				flag = {
-					icon= {
-						category = "blocky"
-						file = "flag_blocky_20.dds"
-					}
-					background= {
-						category = "backgrounds"
-						file = "horizontal.dds"
-					}
-					colors={
-						"red"
-						"grey"
-						"null"
-						"null"
-					}
-				}
-				type = default
-				effect = {
-					copy_techs_from = { target = root }
-					set_country_flag = fatherland_hegiran_from_earth
-					save_global_event_target_as = hegira_colony_nation
-					set_graphical_culture = event_target:fatherland_empire
-					if = { 
-						limit = { has_global_flag = fatherland_instantcomms }
-					establish_communications = event_target:fatherland_empire
-					}
-					if = { 
-						limit = { has_global_flag = fatherland_bonusresources }					
-					add_resource = { minerals = 100 }
-					add_resource = { energy = 100 }
-					add_resource = { food = 100 }
-					add_resource = { consumer_goods = 100 }
-					add_resource = { alloys = 100 }	
-					}	
-					add_modifier = {
-						modifier = legacy_of_intermarium
-						days = -1
-					}															
-				}				
-			}
-			remove_country_flag = fatherland_human_hegiran_intermarium
-			set_global_flag = fatherland_human_hegiran_intermarium_created
-			}						
-	event_target:hegira_event_planet = {
-		solar_system = {
-			create_starbase = {
-				size = starbase_starport
-				module = shipyard
-				building = crew_quarters
-				owner = event_target:hegira_colony_nation
-				effect = {
-					set_starbase_module = {
-						slot = 1
-						module = hangar_bay
-					}
-				}
-			}
-		}
-		set_owner = event_target:hegira_colony_nation
-		set_capital = yes
-		random_list = {
-			33 = { add_district = district_farming }
-			33 = { add_district = district_farming
-				   add_district = district_farming }
-			33 = { add_district = district_farming
-				   add_district = district_farming
-				   add_district = district_farming }
-		}
-		add_district = district_city
-		add_district = district_mining
-		add_district = district_generator
-		############################################################## GET POPS
-		if = { limit = { owner = { is_machine_empire = yes } }
-			create_pop_group = { species = last_created_species }
-			create_pop_group = { species = last_created_species }
-			create_pop_group = { species = last_created_species }
-			create_pop_group = { species = last_created_species }
-			create_pop_group = { species = last_created_species }
-		}
-		if = { limit = { NOT = { owner = { is_machine_empire = yes } } }
-			create_pop_group = { species = fatherland_hegira_species }
-			create_pop_group = { species = fatherland_hegira_species }
-			create_pop_group = { species = fatherland_hegira_species }
-			create_pop_group = { species = fatherland_hegira_species }
-			create_pop_group = { species = fatherland_hegira_species }
-		}	
-		############################################################## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
-		if = { 
-			limit = {
-				root = { 
-					NOT = { 
-						is_machine_empire = yes
-					}
-				} 
-				this.planet = { 
-					NOR = { 
-						has_modifier = rogue_colonial_world 
-						has_modifier = hegira_colonial_world
-						has_modifier = frontier_colonial_world #Not an error, needs FW Addon
-						is_artificial = yes
-						habitable_planet = no
-					} 		
-				}  
-			}
-			add_modifier = {
-				modifier = hegira_colonial_world
-				days = -1
-			}
-			add_modifier = {
-				modifier = recent_hegiran_state
-				years = 10
-			}			
-		}			
-		############################################################## CLEANUP	
-		#### CLEANUP
-		remove_planet_flag = hegira_target 
-		remove_modifier = hegira_target	
-		############################# BECOME EMPIRE PLAYER
-		event_target:hegira_colony_nation = { set_player = event_target:fatherland_empire }	
-		############################# LEADERS
-		event_target:hegira_colony_nation = { 
-			create_leader = {
-				class = scientist
-				sub_type = survey
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-			}
-			create_leader = {
-				class = scientist
-				sub_type = engineering
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-				traits = {
-					trait = leader_trait_spark_of_genius
-				}							
-			}	
-			create_leader = {
-				class = scientist
-				sub_type = physics
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-			}
-			create_leader = {
-				class = scientist
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-			}	
-			create_leader = {
-				class = commander
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 5
-				event_leader = no
-			}
-			create_leader = {
-				class = official
-				species = event_target:fatherland_hegira_species
-				name = random
-				skill = 6
-				event_leader = no
-			}					
-		}
-		############################# INSTACOMMS									
-		if = { 
-			limit = { has_global_flag = fatherland_instantcomms }
-			solar_system = {
-				every_system_planet = {
-					set_surveyed = {
-						surveyed = yes
+	########################################################### GERMANY
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_germany }	
+				custom_tooltip = "fatherland_hegira.100.germany.tooltip"		
+				create_country = {			
+					name = "Greater Deutschland"
+					authority = random
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "domination"
+							file = "flag_human_2.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal_stripe.dds"
+						}
+						colors={
+							"black"
+							"yellow"
+							"null"
+							"null"
 						}
 					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_germany
+							days = -1
+						}															
+						get_hegira_colony_after_effect = yes
+					}				
 				}
-		}
-		event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
-			change_variable = {
-				which = fatherland_currentglobal_hegirans
-				value = 1
-				}
-			}
-			root = {
-				clear_global_event_target = fatherland_empire
-				set_variable = {
-					which = fatherland_currentglobal_hegirans
-					value = event_target:global_event_country.fatherland_currentglobal_hegirans
-					}
-					if = {
-						limit = { is_ai = yes }
-						set_variable = {
-							which = fatherland_aicurrent_hegirans
-							value = 1
-						}
-					}	
-					if = {
-						limit = { is_ai = no }
-						set_variable = {
-							which = fatherland_playercurrent_hegirans
-							value = 1
-						}
-					}					
+				remove_country_flag = fatherland_human_hegiran_germany
+				set_global_flag = fatherland_human_hegiran_germany_created
 				}	
-			}	
-		every_country = {
-			country_event = { id = fatherland_hegira.101 days = 2 }		
-			country_event = { id = fatherland_hegira.103 days = 7 }			
-			}	
+	########################################################### BRITANNIAN EMPIRE
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_uk }	
+				custom_tooltip = "fatherland_hegira.100.uk.tooltip"		
+				create_country = {			
+					name = "Britannian Empire"
+					authority = auth_democratic
+					civics = { 
+						civic = random
+						civic = civic_parliamentary_system
+						civic = civic_distinguished_admiralty
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "domination"
+							file = "domination_19.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"purple"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = britannia_rules_the_stars
+							days = -1
+						}														
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_uk
+				set_global_flag = fatherland_human_hegiran_uk_created
+				}
+	########################################################### OCEANIA
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_oceania }	
+				custom_tooltip = "fatherland_hegira.100.oceania.tooltip"		
+				create_country = {			
+					name = "Oceanic Leaugue"
+					authority = auth_democratic
+					civics = { 
+						civic = random
+						civic = civic_parliamentary_system
+						civic = civic_mining_guilds
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "legion"
+							file = "flag_mp_beta_02.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"blue"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_oceania
+							days = -1
+						}															
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_oceania
+				set_global_flag = fatherland_human_hegiran_oceania_created
+				}
+	########################################################### CALIPHATE
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_caliphate }	
+				custom_tooltip = "fatherland_hegira.100.caliphate.tooltip"		
+				create_country = {			
+					name = "The Caliphate"
+					authority = auth_dictatorial
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_fanatic_spiritualist"
+						ethic = "ethic_authoritarian"
+					}				
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_20.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"green"
+							"green"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = the_caliphate
+							days = -1
+						}						
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_caliphate
+				set_global_flag = fatherland_human_hegiran_caliphate_created
+				}
+	########################################################### NIPPON
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_nippon }	
+				custom_tooltip = "fatherland_hegira.100.nippon.tooltip"		
+				create_country = {			
+					name = "Nippon"
+					authority = random
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_militarist"
+						ethic = "ethic_spiritualist"
+					}				
+					civics = { 
+						civic = random
+						civic = civic_warrior_culture
+						civic = civic_nationalistic_zeal
+					}
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "none"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"grey"
+							"red"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_nippon
+							days = -1
+						}														
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_nippon
+				set_global_flag = fatherland_human_hegiran_nippon_created
+				}	
+	########################################################### RUSVIA
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_rusvia }	
+				custom_tooltip = "fatherland_hegira.100.rusvia.tooltip"		
+				create_country = {			
+					name = "Rusvia"
+					authority = auth_oligarchic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_militarist"
+						ethic = "ethic_xenophobe"
+					}
+					flag = {
+						icon= {
+							category = "domination"
+							file = "domination_3.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "00_solid.dds"
+						}
+						colors={
+							"blue"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = for_the_motherland
+							days = -1
+						}														
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_rusvia
+				set_global_flag = fatherland_human_hegiran_rusvia_created
+				}	
+	########################################################### INDIA
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_india }	
+				custom_tooltip = "fatherland_hegira.100.india.tooltip"		
+				create_country = {			
+					name = "New India"
+					authority = auth_democratic
+					randomize_ethos = yes
+					ethos = {
+						ethic = "ethic_materialist"
+						ethic = "ethic_pacifist"
+						ethic = "ethic_xenophile"
+					}			
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					flag = {
+						icon= {
+							category = "spherical"
+							file = "flag_spherical_4.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"orange"
+							"green"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_dharma
+							days = -1
+						}														
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_india
+				set_global_flag = fatherland_human_hegiran_india_created
+				}				
+	########################################################### BRAZIL
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_brazil }	
+				custom_tooltip = "fatherland_hegira.100.brazil.tooltip"		
+				create_country = {			
+					name = "Union of Brazil"
+					authority = auth_democratic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "ornate"
+							file = "flag_ornate_21.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "double_triangles.dds"
+						}
+						colors={
+							"orange"
+							"green"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_brazil
+							days = -1
+						}															
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_brazil
+				set_global_flag = fatherland_human_hegiran_brazil_created
+				}	
+	########################################################### INTERMARIUM
+			if = {  
+				limit = { has_country_flag = fatherland_human_hegiran_intermarium }	
+				custom_tooltip = "fatherland_hegira.100.intermarium.tooltip"		
+				create_country = {			
+					name = "The Intermarium"
+					authority = auth_democratic
+					civics = random
+					origin = origin_hegira_colony
+					species = event_target:fatherland_species
+					ignore_initial_colony_error = yes
+					ethos = random
+					flag = {
+						icon= {
+							category = "blocky"
+							file = "flag_blocky_20.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "horizontal.dds"
+						}
+						colors={
+							"red"
+							"grey"
+							"null"
+							"null"
+						}
+					}
+					type = default
+					effect = {
+						add_modifier = {
+							modifier = legacy_of_intermarium
+							days = -1
+						}															
+						get_hegira_colony_after_effect = yes
+					}				
+				}
+				remove_country_flag = fatherland_human_hegiran_intermarium
+				set_global_flag = fatherland_human_hegiran_intermarium_created
+			}						
+			event_target:hegira_event_planet = {
+				solar_system = {
+					create_starbase = {
+						size = starbase_starhold
+						building = crew_quarters
+						owner = event_target:hegira_colony_nation
+						effect = {
+							set_starbase_module = {
+								slot = 1
+								module = shipyard
+							}
+							set_starbase_module = {
+								slot = 2
+								module = shipyard
+							}
+							set_starbase_module = {
+								slot = 3
+								module = trading_hub
+							}
+							set_starbase_module = {
+								slot = 4
+								module = hangar_bay
+							}
+						}
+					}
+				}
+				set_owner = event_target:hegira_colony_nation
+				set_capital = yes
+				random_list = {
+					33 = { add_district = district_farming }
+					33 = { add_district = district_farming
+						add_district = district_farming }
+					33 = { add_district = district_farming
+						add_district = district_farming
+						add_district = district_farming }
+				}
+				add_district = district_city
+				add_district = district_mining
+				add_district = district_generator
+				############################################################## GET POPS
+				# if = { limit = { owner = { is_machine_empire = yes } }
+				# 	create_pop_group = { species = last_created_species }
+				# 	create_pop_group = { species = last_created_species }
+				# 	create_pop_group = { species = last_created_species }
+				# 	create_pop_group = { species = last_created_species }
+				# 	create_pop_group = { species = last_created_species }
+				# }
+				# if = { limit = { owner = { is_machine_empire = no } }
+				# 	create_pop_group = { species = fatherland_species }
+				# 	create_pop_group = { species = fatherland_species }
+				# 	create_pop_group = { species = fatherland_species }
+				# 	create_pop_group = { species = fatherland_species }
+				# 	create_pop_group = { species = fatherland_species }
+				# }
+				random_list = {
+					15 = {
+						while = {
+							count = 5
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					35 = {
+						while = {
+							count = 10
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					35 = {
+						while = {
+							count = 15
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					10 = {
+						while = {
+							count = 20
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+					5 = {
+						while = {
+							count = 25
+							create_pop_group = { species = owner_main_species }
+						}
+					}
+				}
+				############################################################## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
+				if = { 
+					limit = {
+						root = { 
+							NOT = { 
+								is_machine_empire = yes
+							}
+						} 
+						this.planet = { 
+							NOR = { 
+								has_modifier = rogue_colonial_world 
+								has_modifier = hegira_colonial_world
+								has_modifier = frontier_colonial_world #Not an error, needs FW Addon
+								is_artificial = yes
+								habitable_planet = no
+							} 		
+						}  
+					}
+					add_modifier = {
+						modifier = hegira_colonial_world
+						days = -1
+					}
+					add_modifier = {
+						modifier = recent_hegiran_state
+						years = 10
+					}			
+				}			
+				############################################################## CLEANUP	
+				#### CLEANUP
+				remove_planet_flag = hegira_target 
+				remove_modifier = hegira_target	
+				############################# BECOME EMPIRE PLAYER
+				event_target:hegira_colony_nation = { set_player = event_target:fatherland_empire }	
+				############################# LEADERS
+				event_target:hegira_colony_nation = { 
+					create_leader = {
+						class = scientist
+						sub_type = survey
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+					}
+					create_leader = {
+						class = scientist
+						sub_type = engineering
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+						traits = {
+							trait = leader_trait_spark_of_genius
+						}							
+					}	
+					create_leader = {
+						class = scientist
+						sub_type = physics
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+					}
+					create_leader = {
+						class = scientist
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+					}	
+					create_leader = {
+						class = commander
+						species = event_target:fatherland_species
+						name = random
+						skill = 5
+						event_leader = no
+					}
+					create_leader = {
+						class = official
+						species = event_target:fatherland_species
+						name = random
+						skill = 6
+						event_leader = no
+					}					
+				}
+				############################# INSTACOMMS									
+				if = { 
+					limit = { has_global_flag = fatherland_instantcomms }
+					solar_system = {
+						every_system_planet = {
+							set_surveyed = {
+								surveyed = yes
+								}
+							}
+						}
+				}
+				event_target:global_event_country = { #Sets the globalmax variable for global_event_country. 
+					change_variable = {
+						which = fatherland_currentglobal_hegirans
+						value = 1
+					}
+				}
+				root = {
+					set_variable = {
+						which = fatherland_currentglobal_hegirans
+						value = event_target:global_event_country.fatherland_currentglobal_hegirans
+					}
+						if = {
+							limit = { is_ai = yes }
+							set_variable = {
+								which = fatherland_aicurrent_hegirans
+								value = 1
+							}
+						}	
+						if = {
+							limit = { is_ai = no }
+							set_variable = {
+								which = fatherland_playercurrent_hegirans
+								value = 1
+							}
+						}					
+				}	
+			}
+
+			every_country = { country_event = { id = fatherland_hegira.101 days = 2 } }
+			event_target:hegira_colony_nation = { country_event = { id = fatherland_hegira.103 days = 7 } }	
 		}
-		if = { limit = { has_global_flag = fatherland_hegiran_hegemony }
-		custom_tooltip = "fatherland_hegira.100.federation.tooltip"
-		hidden_effect = {
+
+		if = {
+			limit = { has_global_flag = fatherland_hegiran_hegemony }
+			custom_tooltip = "fatherland_hegira.100.federation.tooltip"
+			hidden_effect = {
 			event_target:hegira_colony_nation = {
 				join_alliance = { who = root override_requirements = yes } 		
 				}		
 			}
 		}
-		event_target:hegira_colony_nation = { clear_global_event_target = hegira_colony_nation }				
 		hidden_effect = {
-		if = { limit = { has_global_flag = fatherland_hegiran_hegemony NOT = { has_global_flag = fatherland_hegira_federation_setup } }
+		if = {
+			limit = { has_global_flag = fatherland_hegiran_hegemony NOT = { has_global_flag = fatherland_hegira_federation_setup } }
 			federation = {
 				set_federation_type = hegemony_federation
 				set_name = prev
@@ -2806,12 +2608,10 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		root = { #Removes flagging for types
 			remove_country_flag = fatherland_hegiran_state
 		}
-		clear_global_event_target = fatherland_hegira_species
 		weighted_random_owned_pop_group = { limit = { has_pop_group_flag = fatherland_hegira_pop } 
 			remove_pop_group_flag = fatherland_hegira_pop 
 		}
-		event_target:fatherland_hegira_species = { 
-			clear_global_event_target = fatherland_hegira_species 
+		event_target:fatherland_species = { 
 			remove_pop_group_flag = fatherland_hegira_pop 	
 		}	
 		event_target:global_event_country = { #Sets variable tracking failures, if this gets too high will ask players if they want to disable hegirans  (to avoid spam)
@@ -2920,13 +2720,6 @@ country_event = { #Hegira Renaming Event
 
 	immediate = {	
 		set_name = random
-		# Whatever this is below does not work as intended
-		# random_list = {
-		# 	10 = { set_name = any }	
-		# 	15 = { set_name = ruler }	
-		# 	25 = { set_name = random }	
-		# 	50 = { set_name = capital_scope.solar_system }
-		# }	
 		set_country_flag = fatherland_rogues_namecheck
 	}
 
@@ -3071,7 +2864,7 @@ country_event = { #Great Migrant Fleet
 				is_being_purged = yes
 				}  
 			}  
-		species = { save_global_event_target_as = fatherland_hegira_species }
+		species = { save_global_event_target_as = fatherland_species }
 		set_pop_group_flag = fatherland_hegira_pop
 		}
 ######################### FINDS A RANDOM HABITABAL WORLD FOR Hegira COLONY
@@ -3086,7 +2879,7 @@ country_event = { #Great Migrant Fleet
 				}
 				any_system_planet = { 
 					habitable_planet = yes
-					habitability = { who = event_target:fatherland_hegira_species value > 0.3 }
+					habitability = { who = event_target:fatherland_species value > 0.3 }
 					has_anomaly = no
 					#is_planet_class = pc_gaia
 					NOR = {
@@ -3129,7 +2922,7 @@ country_event = { #Great Migrant Fleet
 			random_system_planet = {
 				limit = { 
 					habitable_planet = yes
-					habitability = { who = event_target:fatherland_hegira_species value > 0.3 }
+					habitability = { who = event_target:fatherland_species value > 0.3 }
 					NOT = { is_inside_border = owner }
 					#has_global_flag = fatherland_dangerousworlds_on
 					NOR = {
@@ -3206,13 +2999,24 @@ country_event = { #Great Migrant Fleet
 	event_target:hegira_fleet_event_planet = {
 		solar_system = {
 			create_starbase = {
-				size = starbase_starport
-				module = shipyard
+				size = starbase_starhold
 				building = crew_quarters
 				owner = event_target:hegira_fleet_nation
 				effect = {
 					set_starbase_module = {
 						slot = 1
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 2
+						module = shipyard
+					}
+					set_starbase_module = {
+						slot = 3
+						module = trading_hub
+					}
+					set_starbase_module = {
+						slot = 4
 						module = hangar_bay
 					}
 				}
@@ -3221,7 +3025,7 @@ country_event = { #Great Migrant Fleet
 		set_owner = event_target:hegira_fleet_nation
 		set_capital = yes
 		############################################################## GET POPS
-		create_pop_group = { species = fatherland_hegira_species }
+		create_pop_group = { species = event_target:fatherland_species }
 		while = {
 			limit = { 
 				root = {
@@ -3237,7 +3041,7 @@ country_event = { #Great Migrant Fleet
 					value = -1
 				}
 			}			
-			create_pop_group = { species = fatherland_hegira_species }
+			create_pop_group = { species = event_target:fatherland_species }
 		}
 		############################################################## ADD ROGUE COLONY WORLD BONUS TO NEW PLANET
 		if = { 
