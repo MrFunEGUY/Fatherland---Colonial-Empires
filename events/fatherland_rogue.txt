@@ -6,6 +6,7 @@ country_event = { #### Rogue Initializer
 	is_triggered_only = yes
 
 	trigger = {
+		capital_scope = { is_doomsday_planet = no }
 		NOT = { has_country_flag = no_rogue_timer }
 	}
 

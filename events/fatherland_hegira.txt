@@ -72,6 +72,7 @@ country_event = { #### Hegira Initializer
 	is_triggered_only = yes
 
 	trigger = {
+		capital_scope = { is_doomsday_planet = yes }
 		has_global_flag = fatherland_hegirans_active
 	}
 
@@ -143,7 +144,7 @@ country_event = { #### Hegira Initializer
 							log = "HEGIRA Planet: [this.GetName]"
 						}
 					}
-					country_event = { id = fatherland_rogue.100 }
+					country_event = { id = fatherland_hegira.100 }
 				}
 			}
 			if = {	# Hyperdrive II
@@ -207,7 +208,7 @@ country_event = { #### Hegira Initializer
 							log = "HEGIRA Planet: [this.GetName]"
 						}
 					}
-					country_event = { id = fatherland_rogue.100 }
+					country_event = { id = fatherland_hegira.100 }
 				}
 			}
 			if = {	# Hyperdrive III
@@ -270,7 +271,7 @@ country_event = { #### Hegira Initializer
 							log = "HEGIRA Planet: [this.GetName]"
 						}
 					}
-					country_event = { id = fatherland_rogue.100 }
+					country_event = { id = fatherland_hegira.100 }
 				}
 			}
 			if = {	# Jump Drive
@@ -332,19 +333,17 @@ country_event = { #### Hegira Initializer
 							log = "HEGIRA Planet: [this.GetName]"
 						}
 					}
-					country_event = { id = fatherland_rogue.100 }
+					country_event = { id = fatherland_hegira.100 }
 				}
 			}
 		}
 		else_if = {
 			limit = { any_galaxy_planet = { is_valid_rogue_planet = yes } }
-			log = "PLANET EXISTS"
 			random_galaxy_planet = {
 				limit = { is_valid_rogue_planet = yes }
 				add_modifier = { modifier = hegira_target }
 				save_event_target_as = hegira_event_planet
 				set_planet_flag = hegira_target
-				log = "HEGIRA Planet: [this.GetName]"
 			}
 			country_event = { id = fatherland_hegira.100 }
 		}
@@ -353,19 +352,17 @@ country_event = { #### Hegira Initializer
 
 country_event = { #### VERY FAST (Yearly)
 	id = fatherland_hegira.96
-	#title = "fatherland_rogue.96_name"
-	#title = "fatherland_rogue.96_desc"
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = origin_doomsday
+		capital_scope = { is_doomsday_planet = yes }
 		has_global_flag = fatherland_hegirans_active
 		has_global_flag = fatherland_faster_hegira		
 	}
 
 	immediate = {
-		country_event = { id = fatherland_hegira.90  days = 5 random = 20 }	
+		country_event = { id = fatherland_hegira.90  days = 2 random = 350 }	
 	}
 
 }
@@ -375,7 +372,7 @@ country_event = { #### FASTER (Bi-Yearly)
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = origin_doomsday
+		capital_scope = { is_doomsday_planet = yes }
 		has_global_flag = fatherland_hegirans_active
 		has_global_flag = fatherland_fast_hegira
 	}
@@ -390,7 +387,7 @@ country_event = { #### DEFAULT (Five-Yearly)
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = origin_doomsday
+		capital_scope = { is_doomsday_planet = yes }
 		has_global_flag = fatherland_hegirans_active
 		has_global_flag = fatherland_standard_hegirans
 	}
@@ -405,7 +402,7 @@ country_event = { #### SLOW (Decade)
 	is_triggered_only = yes
 
 	trigger = {
-		has_origin = origin_doomsday
+		capital_scope = { is_doomsday_planet = yes }
 		has_global_flag = fatherland_hegirans_active
 		has_global_flag = fatherland_slow_hegirans
 	}
@@ -464,7 +461,6 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 	}
 
     immediate = {
-		log = "Main Event"
 ######################### DEFINE HEGIRA TYPE	
 	random_list = {	
 			50 = { ### Standard randomised hegira state
@@ -626,6 +622,10 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 		}			
 ######################### SELECTS FATHERLAND SPECIES THAT WILL APPEAR ON NEW HEGIRA
 		save_event_target_as = fatherland_empire
+		log = "----------------------"
+		log = "HEGIRA Fatherland: [this.GetName]"
+		log = "HEGIRA Planet: [hegira_event_planet.GetName]"
+		log = "----------------------"
 		weighted_random_owned_pop_group = {
 			limit = {
 				NOR = { 
@@ -1596,7 +1596,7 @@ country_event = { ####### THE MAIN HEGIRA EVENT
 ########################################################################################
 	option = { ###################### ALTERNATE PLAY-AS HEGIRA EVENT
 		name = fatherland_hegira.100.b
-		custom_tooltip = "fatherland_rogue.100.playas.tooltip"
+		custom_tooltip = "fatherland_hegira.100.playas.tooltip"
 		trigger = { 
 			any_galaxy_planet = {
 				has_planet_flag = hegira_target

@@ -191,6 +191,7 @@ country_event = { #### INITIAL SETUP / PRESET SCREEN (Singleplayer)
 			set_global_flag = fatherland_bonusresources
 			#set_global_flag = fatherland_dangerousworlds_on
 			set_global_flag = fatherland_poploss_on	
+			# set_global_flag = fatherland_fast_rogues
 			set_global_flag = fatherland_standard_rogues	
 			
 			if = { limit = { has_global_flag = fatherland_frontiers_installed }
